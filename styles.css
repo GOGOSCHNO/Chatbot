@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#chatbot {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fond clair pour le conteneur du chatbot */
+}
+
+#messages {
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff; /* Fond blanc pour la zone des messages */
+}
+
+#userInput {
+    width: calc(100% - 90px);
+    padding: 5px;
+    border: 1px solid #ccc; /* Bordure pour le champ de saisie de l'utilisateur */
+    border-radius: 4px; /* Arrondir les coins du champ de saisie */
+}
+
+#sendButton {
+    width: 80px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: #007bff; /* Couleur de fond du bouton Envoyer */
+    color: white; /* Texte blanc pour le bouton Envoyer */
+    border: none; /* Aucune bordure pour le bouton Envoyer */
+    border-radius: 4px; /* Arrondir les coins du bouton Envoyer */
+    cursor: pointer; /* Curseur en forme de pointeur pour indiquer que le bouton est cliquable */
+}
+
+#sendButton:hover {
+    background-color: #0056b3; /* Assombrir le bouton au survol pour un feedback visuel */
+}
+
+.image-response {
+    max-width: 100%; /* Assure que l'image ne dépasse pas le conteneur de messages */
+    height: auto; /* Maintient le rapport hauteur / largeur de l'image */
+    display: block; /* Les images sont affichées en block pour éviter les marges d'espace blanc par défaut */
+    margin: 10px auto; /* Centre l'image et ajoute un peu d'espace au-dessus et en dessous */
+}
+
+.user, .bot {
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.user {
+    text-align: right; /* Alignement des messages de l'utilisateur à droite */
+    color: #4a76a8; /* Couleur des messages de l'utilisateur */
+}
+
+.bot {
+    text-align: left; /* Alignement des messages du bot à gauche */
+    color: #333; /* Couleur des messages du bot */
+}
+
