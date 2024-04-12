@@ -2,38 +2,31 @@ document.getElementById('sendButton').addEventListener('click', function() {
     var userInput = document.getElementById('userInput').value;
     if (userInput) {
         // Envoie userInput à votre serveur backend
-        fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: userInput })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Data received from server:", data); // Console log pour voir la structure des données reçues
+fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message: userInput })
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Data received from server:", data); // Utilisez ceci pour voir toute la structure de l'objet
+    console.log("Formatted reply:", JSON.stringify(data.reply, null, 2)); // Pour voir la structure de 'reply'
 
-            displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur
+    displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur
 
-            // Vérifie si la réponse inclut du contenu textuel
-            if (data.reply) {
-                console.log("Reply from server:", data.reply); // Console log pour voir le contenu de la réponse
-                displayMessage(data.reply, 'bot'); // Affiche la réponse du bot
-            } else {
-                console.log("No reply content received"); // Log s'il n'y a pas de contenu de réponse
-            }
-
-            // Vérifie si une URL d'image est présente et l'affiche
-            if (data.imageUrl) {
-                displayImage(data.imageUrl);
-            }
-
-            document.getElementById('userInput').value = ''; // Efface l'input après envoi
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            displayMessage("Une erreur est survenue.", 'bot');
-        });
+    if (typeof data.reply === 'string') {
+        displayMessage(data.reply, 'bot'); // Si 'reply' est une chaîne, l'affiche directement
+    } else {
+        // Si 'reply' n'est pas une chaîne, essaie de voir si c'est un objet et le stringify
+        displayMessage(JSON.stringify(data.reply), 'bot');
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+    displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+});
     }
 });
 
