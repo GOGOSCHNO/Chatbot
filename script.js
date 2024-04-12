@@ -11,11 +11,16 @@ document.getElementById('sendButton').addEventListener('click', function() {
         })
         .then(response => response.json())
         .then(data => {
+            console.log("Data received from server:", data); // Console log pour voir la structure des données reçues
+
             displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur
 
             // Vérifie si la réponse inclut du contenu textuel
             if (data.reply) {
+                console.log("Reply from server:", data.reply); // Console log pour voir le contenu de la réponse
                 displayMessage(data.reply, 'bot'); // Affiche la réponse du bot
+            } else {
+                console.log("No reply content received"); // Log s'il n'y a pas de contenu de réponse
             }
 
             // Vérifie si une URL d'image est présente et l'affiche
