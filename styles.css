@@ -8,20 +8,25 @@ body {
 }
 
 #chatbot {
-    width: 300px;
-    border: 1px solid #ccc;
+    width: 400px; /* Augmenter la largeur */
+    background-color: #f0f0f0;
+    border: 2px solid #dedede;
     border-radius: 5px;
-    padding: 10px;
-    background-color: #f9f9f9; /* Fond clair pour le conteneur du chatbot */
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 #messages {
-    height: 150px;
-    overflow-y: auto;
-    margin-bottom: 10px;
+    height: 300px; /* Augmenter la hauteur */
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: white;
     border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff; /* Fond blanc pour la zone des messages */
+    border-radius: 5px;
 }
 
 #userInput {
@@ -53,17 +58,21 @@ body {
     margin: 10px auto; /* Centre l'image et ajoute un peu d'espace au-dessus et en dessous */
 }
 
+/* Styles pour les messages de l'utilisateur et du bot */
 .user, .bot {
-    margin-bottom: 10px; /* Espacement entre les messages */
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    color: white;
 }
 
 .user {
-    text-align: right; /* Alignement des messages de l'utilisateur à droite */
-    color: #4a76a8; /* Couleur des messages de l'utilisateur */
+    background-color: #007BFF;
+    align-self: flex-end;
 }
 
 .bot {
-    text-align: left; /* Alignement des messages du bot à gauche */
-    color: #333; /* Couleur des messages du bot */
+    background-color: #333333;
+    align-self: flex-start;
 }
 
