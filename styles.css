@@ -8,7 +8,7 @@ body {
 }
 
 #chatbot {
-    width: 400px; /* Augmenter la largeur */
+    width: 800px; /* Augmenter la largeur */
     background-color: #f0f0f0;
     border: 2px solid #dedede;
     border-radius: 5px;
