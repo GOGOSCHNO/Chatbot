@@ -34,7 +34,12 @@ document.getElementById('sendButton').addEventListener('click', function() {
 function displayMessage(message, sender) {
     var messagesContainer = document.getElementById('messages');
     var messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
+    // Utilise `formatMessage` pour formater le texte avant de l'afficher
+    if (sender === 'bot') {
+        messageDiv.innerHTML = formatMessage(message);
+    } else {
+        messageDiv.textContent = message;
+    }
     messageDiv.className = sender; // 'user' ou 'bot'
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
@@ -42,4 +47,32 @@ function displayMessage(message, sender) {
 
 function scrollToBottom(container) {
     container.scrollTop = container.scrollHeight;
+}
+function formatMessage(text) {
+    const lines = text.split('\n');
+    let formattedMessage = '';
+    let inList = false;
+
+    lines.forEach(line => {
+        if (line.trim().startsWith('-')) {
+            if (!inList) {
+                formattedMessage += '<ul>';
+                inList = true;
+            }
+            // Ajoute un élément de liste pour chaque ligne commençant par '-'
+            formattedMessage += `<li>${line.trim().substring(1).trim()}</li>`;
+        } else {
+            if (inList) {
+                formattedMessage += '</ul>';
+                inList = false;
+            }
+            formattedMessage += `<p>${line}</p>`;
+        }
+    });
+
+    if (inList) {
+        formattedMessage += '</ul>';
+    }
+
+    return formattedMessage;
 }
