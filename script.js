@@ -51,10 +51,9 @@ function formatMessage(text) {
 
     lines.forEach(line => {
         let trimmedLine = line.trim();
-        // Gérer les titres qui sont souvent en gras dans Markdown
-        if (trimmedLine.startsWith('**')) {
-            trimmedLine = `<strong>${trimmedLine.slice(2, -2)}</strong>`;
-        }
+
+        // Convertir les motifs Markdown pour le gras (**texte**) en HTML <strong>
+        trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
         if (trimmedLine.startsWith('-')) {
             if (!inList) {
