@@ -53,14 +53,16 @@ function formatMessage(text) {
         let trimmedLine = line.trim();
 
         // Convertir les motifs Markdown pour le gras (**texte**) en HTML <strong>
-        trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Assurez-vous de traiter correctement les lignes contenant des titres
+        if (/^\*\*.+\*\*$/.test(trimmedLine)) {
+            trimmedLine = trimmedLine.replace(/^\*\*(.+)\*\*$/, '<strong>$1</strong>');
+        }
 
         if (trimmedLine.startsWith('-')) {
             if (!inList) {
                 formattedMessage += '<ul>';
                 inList = true;
             }
-            // Ajoute un élément de liste pour chaque ligne commençant par '-'
             formattedMessage += `<li>${trimmedLine.substring(1).trim()}</li>`;
         } else {
             if (inList) {
