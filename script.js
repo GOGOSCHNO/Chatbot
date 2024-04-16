@@ -51,28 +51,29 @@ function formatMessage(text) {
 
     lines.forEach(line => {
         let trimmedLine = line.trim();
+        // Gérer les titres qui sont souvent en gras dans Markdown
+        if (trimmedLine.startsWith('**')) {
+            trimmedLine = `<strong>${trimmedLine.slice(2, -2)}</strong>`;
+        }
 
-        // Appliquer le gras en remplaçant les motifs Markdown
-        trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-        // Gérer les éléments de liste marqués par '-'
         if (trimmedLine.startsWith('-')) {
             if (!inList) {
-                formattedMessage += '<ul>'; // Commencer une nouvelle liste
+                formattedMessage += '<ul>';
                 inList = true;
             }
-            formattedMessage += `<li>${trimmedLine.substring(1).trim()}</li>`; // Ajouter l'élément de liste
+            // Ajoute un élément de liste pour chaque ligne commençant par '-'
+            formattedMessage += `<li>${trimmedLine.substring(1).trim()}</li>`;
         } else {
             if (inList) {
-                formattedMessage += '</ul>'; // Fermer la liste si on n'est plus dans un élément de liste
+                formattedMessage += '</ul>';
                 inList = false;
             }
-            formattedMessage += `<p>${trimmedLine}</p>`; // Ajouter comme paragraphe
+            formattedMessage += `<p>${trimmedLine}</p>`;
         }
     });
 
     if (inList) {
-        formattedMessage += '</ul>'; // S'assurer que la liste est fermée à la fin
+        formattedMessage += '</ul>';
     }
 
     return formattedMessage;
