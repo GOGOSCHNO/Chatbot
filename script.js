@@ -50,24 +50,29 @@ function formatMessage(text) {
     let inList = false;
 
     lines.forEach(line => {
-        if (line.trim().startsWith('-')) {
+        let trimmedLine = line.trim();
+
+        // Appliquer le gras en remplaçant les motifs Markdown
+        trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // Gérer les éléments de liste marqués par '-'
+        if (trimmedLine.startsWith('-')) {
             if (!inList) {
-                formattedMessage += '<ul>';
+                formattedMessage += '<ul>'; // Commencer une nouvelle liste
                 inList = true;
             }
-            // Ajoute un élément de liste pour chaque ligne commençant par '-'
-            formattedMessage += `<li>${line.trim().substring(1).trim()}</li>`;
+            formattedMessage += `<li>${trimmedLine.substring(1).trim()}</li>`; // Ajouter l'élément de liste
         } else {
             if (inList) {
-                formattedMessage += '</ul>';
+                formattedMessage += '</ul>'; // Fermer la liste si on n'est plus dans un élément de liste
                 inList = false;
             }
-            formattedMessage += `<p>${line}</p>`;
+            formattedMessage += `<p>${trimmedLine}</p>`; // Ajouter comme paragraphe
         }
     });
 
     if (inList) {
-        formattedMessage += '</ul>';
+        formattedMessage += '</ul>'; // S'assurer que la liste est fermée à la fin
     }
 
     return formattedMessage;
