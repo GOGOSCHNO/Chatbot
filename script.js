@@ -54,19 +54,25 @@ function formatMessage(text) {
     let inList = false;
 
     lines.forEach(line => {
-        if (line.trim().startsWith('-')) {
+        let trimmedLine = line.trim();
+        // Gérer les titres qui sont souvent en gras dans Markdown
+        if (trimmedLine.startsWith('**')) {
+            trimmedLine = `<strong>${trimmedLine.slice(2, -2)}</strong>`;
+        }
+
+        if (trimmedLine.startsWith('-')) {
             if (!inList) {
                 formattedMessage += '<ul>';
                 inList = true;
             }
             // Ajoute un élément de liste pour chaque ligne commençant par '-'
-            formattedMessage += `<li>${line.trim().substring(1).trim()}</li>`;
+            formattedMessage += `<li>${trimmedLine.substring(1).trim()}</li>`;
         } else {
             if (inList) {
                 formattedMessage += '</ul>';
                 inList = false;
             }
-            formattedMessage += `<p>${line}</p>`;
+            formattedMessage += `<p>${trimmedLine}</p>`;
         }
     });
 
