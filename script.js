@@ -52,10 +52,9 @@ function formatMessage(text) {
     lines.forEach(line => {
         let trimmedLine = line.trim();
 
-        // Appliquer le gras en remplaçant les motifs Markdown
+        // Convertir les motifs Markdown pour le gras (**texte**) en HTML <strong>
         trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-        // Gérer les éléments de liste marqués par '-'
         if (trimmedLine.startsWith('-')) {
             if (!inList) {
                 formattedMessage += '<ul>'; // Commencer une nouvelle liste
