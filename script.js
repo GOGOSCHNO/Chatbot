@@ -14,21 +14,18 @@ document.getElementById('sendButton').addEventListener('click', function() {
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Data received from server:", data); // Pour le débogage
-
-            // Vérifie si la réponse est une chaîne de caractères
-            if (typeof data.reply === 'string') {
-                displayMessage(data.reply, 'bot'); // Affiche la réponse du bot
-            } else {
-                // Si la réponse n'est pas une chaîne, stringify l'objet pour débogage
-                console.log("Reply from server is not a string:", JSON.stringify(data.reply, null, 2));
-                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
-        });
+    console.log("Data received from server:", data);
+    if (typeof data.reply === 'string') {
+        typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
+    } else {
+        console.log("Reply from server is not a string:", JSON.stringify(data.reply, null, 2));
+        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+    displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+});
     }
 });
 
@@ -75,4 +72,22 @@ function formatMessage(text) {
     }
 
     return formattedMessage;
+}
+function typeMessage(message, sender) {
+    let index = 0;
+    const container = document.getElementById('messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = sender; // 'user' ou 'bot'
+    container.appendChild(messageDiv);
+
+    function typeChar() {
+        if (index < message.length) {
+            messageDiv.textContent += message.charAt(index);
+            index++;
+            setTimeout(typeChar, 30); // Règle ici la vitesse de "frappe"
+        }
+        scrollToBottom(container);
+    }
+
+    typeChar();
 }
