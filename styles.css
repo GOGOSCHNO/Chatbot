@@ -50,6 +50,31 @@ body {
 #sendButton:hover {
     background-color: #0056b3; /* Assombrir le bouton au survol pour un feedback visuel */
 }
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}
+
+.typing-indicator {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.typing-indicator span {
+    animation: blink 1.4s infinite;
+    animation-fill-mode: both;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: .4s;
+}
+
 
 .image-response {
     max-width: 100%; /* Assure que l'image ne dépasse pas le conteneur de messages */
