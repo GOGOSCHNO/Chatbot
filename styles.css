@@ -16,7 +16,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #messages {
@@ -50,10 +50,11 @@ body {
 #sendButton:hover {
     background-color: #0056b3; /* Assombrir le bouton au survol pour un feedback visuel */
 }
+
 @keyframes blink {
-    0% { opacity: .2; }
+    0% { opacity: 0.2; }
     20% { opacity: 1; }
-    100% { opacity: .2; }
+    100% { opacity: 0.2; }
 }
 
 .typing-indicator {
@@ -68,13 +69,12 @@ body {
 }
 
 .typing-indicator span:nth-child(2) {
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .typing-indicator span:nth-child(3) {
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
-
 
 .image-response {
     max-width: 100%; /* Assure que l'image ne dépasse pas le conteneur de messages */
@@ -83,7 +83,6 @@ body {
     margin: 10px auto; /* Centre l'image et ajoute un peu d'espace au-dessus et en dessous */
 }
 
-/* Styles pour les messages de l'utilisateur et du bot */
 .user, .bot {
     padding: 10px 20px;
     margin: 5px;
@@ -92,7 +91,7 @@ body {
 }
 
 .user {
-    background-color: #007BFF;
+    background-color: #007bff;
     align-self: flex-end;
 }
 
@@ -100,4 +99,3 @@ body {
     background-color: #333333;
     align-self: flex-start;
 }
-
