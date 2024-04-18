@@ -4,7 +4,8 @@ document.getElementById('sendButton').addEventListener('click', function() {
         displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur dans le chat
         document.getElementById('userInput').value = ''; // Efface le champ de texte après l'envoi
 
-        // Envoie userInput à votre serveur backend
+        const typingIndicator = showTypingIndicator(); // Montre l'indicateur de frappe
+
         fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
             method: 'POST',
             headers: {
@@ -14,18 +15,20 @@ document.getElementById('sendButton').addEventListener('click', function() {
         })
         .then(response => response.json())
         .then(data => {
-    console.log("Data received from server:", data);
-    if (typeof data.reply === 'string') {
-        typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
-    } else {
-        console.log("Reply from server is not a string:", JSON.stringify(data.reply, null, 2));
-        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-    }
-})
-.catch(error => {
-    console.error('Error:', error);
-    displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
-});
+            hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe
+            console.log("Data received from server:", data);
+            if (typeof data.reply === 'string') {
+                typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
+            } else {
+                console.log("Reply from server is not a string:", JSON.stringify(data.reply, null, 2));
+                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+            }
+        })
+        .catch(error => {
+            hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe en cas d'erreur
+            console.error('Error:', error);
+            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+        });
     }
 });
 
