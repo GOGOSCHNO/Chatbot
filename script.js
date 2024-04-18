@@ -77,15 +77,17 @@ function formatMessage(text) {
     return formattedMessage;
 }
 function typeMessage(message, sender) {
+    let formattedMessage = formatMessage(message); // Formatter le message avant de commencer à le taper
     let index = 0;
     const container = document.getElementById('messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = sender; // 'user' ou 'bot'
+    messageDiv.innerHTML = ''; // Utiliser innerHTML pour intégrer du HTML
     container.appendChild(messageDiv);
 
     function typeChar() {
-        if (index < message.length) {
-            messageDiv.textContent += message.charAt(index);
+        if (index < formattedMessage.length) {
+            messageDiv.innerHTML += formattedMessage.charAt(index);
             index++;
             setTimeout(typeChar, 30); // Règle ici la vitesse de "frappe"
         }
