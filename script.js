@@ -78,11 +78,10 @@ function formatMessage(text) {
 }
 function typeMessage(message, sender) {
     let formattedMessage = formatMessage(message); // Formatter le message avant de commencer à le taper
-    let index = 0;
     const container = document.getElementById('messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = sender; // 'user' ou 'bot'
-    messageDiv.innerHTML = ''; // Utiliser innerHTML pour intégrer du HTML
+    messageDiv.innerHTML = formattedMessage; // Utiliser innerHTML pour intégrer du HTML
     container.appendChild(messageDiv);
 
     function typeChar() {
