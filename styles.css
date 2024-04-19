@@ -3,25 +3,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Hauteur du viewport pour centrer verticalement */
     margin: 0;
+    background-color: #f5f5f5; /* Couleur de fond légèrement grise pour le contraste */
 }
 
 #chatbot {
-    width: 800px; /* Augmenter la largeur */
+    width: 80%; /* Largeur à 80% de l'espace disponible */
+    max-width: 800px; /* Largeur maximale pour éviter que le chatbot ne soit trop large sur grands écrans */
+    min-height: 400px; /* Hauteur minimale pour une meilleure visibilité */
     background-color: #f0f0f0;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 20px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Organiser le contenu verticalement */
 }
 
 #messages {
-    height: 300px; /* Augmenter la hauteur */
-    overflow-y: scroll;
+    flex: 1; /* Prend le reste de l'espace disponible dans #chatbot */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
     margin-bottom: 20px;
     padding: 10px;
     background: white;
@@ -29,43 +31,35 @@ body {
     border-radius: 5px;
 }
 
+#userInput, #sendButton {
+    padding: 10px;
+    border-radius: 4px;
+}
+
 #userInput {
-    width: calc(100% - 90px);
-    padding: 5px;
-    border: 1px solid #ccc; /* Bordure pour le champ de saisie de l'utilisateur */
-    border-radius: 4px; /* Arrondir les coins du champ de saisie */
+    flex-grow: 1; /* Permet à l'input de prendre tout l'espace horizontal disponible */
+    border: 1px solid #ccc;
 }
 
 #sendButton {
-    width: 80px;
-    padding: 5px;
-    margin-left: 10px;
-    background-color: #007bff; /* Couleur de fond du bouton Envoyer */
-    color: white; /* Texte blanc pour le bouton Envoyer */
-    border: none; /* Aucune bordure pour le bouton Envoyer */
-    border-radius: 4px; /* Arrondir les coins du bouton Envoyer */
-    cursor: pointer; /* Curseur en forme de pointeur pour indiquer que le bouton est cliquable */
+    margin-left: 10px; /* Espace entre le champ de saisie et le bouton */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 #sendButton:hover {
-    background-color: #0056b3; /* Assombrir le bouton au survol pour un feedback visuel */
-}
-
-@keyframes blink {
-    0% { opacity: 0.2; }
-    20% { opacity: 1; }
-    100% { opacity: 0.2; }
+    background-color: #0056b3; /* Assombrir le bouton au survol */
 }
 
 .typing-indicator {
-    display: inline-block;
-    margin-left: 5px;
     font-size: 16px;
+    margin-top: auto; /* Pousse l'indicateur de frappe en bas */
 }
 
 .typing-indicator span {
     animation: blink 1.4s infinite;
-    animation-fill-mode: both;
 }
 
 .typing-indicator span:nth-child(2) {
@@ -77,10 +71,9 @@ body {
 }
 
 .image-response {
-    max-width: 100%; /* Assure que l'image ne dépasse pas le conteneur de messages */
-    height: auto; /* Maintient le rapport hauteur / largeur de l'image */
-    display: block; /* Les images sont affichées en block pour éviter les marges d'espace blanc par défaut */
-    margin: 10px auto; /* Centre l'image et ajoute un peu d'espace au-dessus et en dessous */
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
 }
 
 .user, .bot {
@@ -93,9 +86,4 @@ body {
 .user {
     background-color: #007bff;
     align-self: flex-end;
-}
-
-.bot {
-    background-color: #333333;
-    align-self: flex-start;
 }
