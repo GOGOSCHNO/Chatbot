@@ -1,34 +1,35 @@
-document.getElementById('sendButton').addEventListener('click', function() {
-    var userInput = document.getElementById('userInput').value;
-    if (userInput.trim() !== '') {
-        displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur dans le chat
-        document.getElementById('userInput').value = ''; // Efface le champ de texte après l'envoi
+document.getElementById('userInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey) { // Vérifie si la touche "Entrée" est pressée sans la touche "Shift"
+        event.preventDefault(); // Empêche le comportement par défaut de la touche "Entrée" qui peut inclure l'insertion d'une nouvelle ligne ou la soumission d'un formulaire
+        var userInput = this.value;
+        if (userInput.trim() !== '') {
+            displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur dans le chat
+            this.value = ''; // Efface le champ de texte après l'envoi
 
-        const typingIndicator = showTypingIndicator(); // Montre l'indicateur de frappe
+            const typingIndicator = showTypingIndicator(); // Montre l'indicateur de frappe
 
-        fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: userInput })
-        })
-        .then(response => response.json())
-        .then(data => {
-            hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe
-            console.log("Data received from server:", data);
-            if (typeof data.reply === 'string') {
-                typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
-            } else {
-                console.log("Reply from server is not a string:", JSON.stringify(data.reply, null, 2));
-                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-            }
-        })
-        .catch(error => {
-            hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe en cas d'erreur
-            console.error('Error:', error);
-            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
-        });
+            fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe
+                if (typeof data.reply === 'string') {
+                    typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
+                } else {
+                    displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+                }
+            })
+            .catch(error => {
+                hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe en cas d'erreur
+                console.error('Error:', error);
+                displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+            });
+        }
     }
 });
 
