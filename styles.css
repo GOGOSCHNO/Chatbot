@@ -64,14 +64,10 @@ body {
     background-color: #0056b3; /* Assombrir le bouton au survol */
 }
 #extra-content {
-    width: 80%;
-    max-width: 800px;
     display: flex;
     justify-content: center; /* Centre les éléments horizontalement */
-    align-items: center; /* Centre les éléments verticalement */
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si l'espace horizontal est insuffisant */
-    gap: 20px; /* Espacement entre les éléments */
-    margin-bottom: 30px; /* Espace après le dernier élément */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    gap: 10px; /* Espace entre les images */
 }
 .typing-indicator {
     font-size: 16px;
@@ -108,16 +104,14 @@ body {
     align-self: flex-end;
 }
 .image-link {
-    /* Supprimez la largeur et le max-width si vous voulez que les images utilisent leur taille intrinsèque */
-    margin: 0; /* Réinitialiser les marges pour les éléments .image-link si nécessaire */
-    flex: 0 1 auto; /* Les éléments peuvent rétrécir mais pas grandir, et utiliseront leur taille automatique par défaut */
+    flex: 1 1 200px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
+    max-width: calc(33.333% - 10px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur */
 }
 
 .image-link img {
-    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas son conteneur */
+    max-width: 100%; /* Assure que l'image ne dépasse pas son conteneur */
     height: auto;
-    border-radius: 5px; /* Coins arrondis, si souhaité */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour de la profondeur, si souhaité */
 }
 
 .image-link a {
