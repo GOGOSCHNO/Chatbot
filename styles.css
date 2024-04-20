@@ -59,7 +59,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 40px; /* Espace entre le header et le chatbot */
     margin-bottom: 40px; /* Espacement entre le chatbot et les images */
@@ -78,13 +78,14 @@ body {
 }
 
 #userInput, #sendButton {
+    flex-grow: 0;
     padding: 10px;
     margin: 0 5px;
     border-radius: 4px;
 }
 
 #userInput {
-    width: 100%; /* Utiliser toute la largeur disponible du conteneur */
+    width: 50%; /* Utiliser toute la largeur disponible du conteneur */
     flex-grow: 1; /* Permet à l'input de prendre tout l'espace horizontal disponible */
     margin-right: 10px;
     border: 1px solid #ccc;
