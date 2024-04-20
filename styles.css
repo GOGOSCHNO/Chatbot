@@ -1,24 +1,33 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Hauteur du viewport pour centrer verticalement */
-    margin: 0;
-    background-color: #f5f5f5; /* Couleur de fond légèrement grise pour le contraste */
+    height: 100vh; /* Ajusté pour centrer verticalement seulement le conteneur principal */
+    background-color: #f5f5f5;
+    overflow: auto; /* Permet le défilement vertical si nécessaire */
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px; /* Ajout d'un peu d'espace au-dessus du chatbot */
 }
 
 #chatbot {
-    width: 80%; /* Largeur à 80% de l'espace disponible */
-    max-width: 800px; /* Largeur maximale pour éviter que le chatbot ne soit trop large sur grands écrans */
-    min-height: 400px; /* Hauteur minimale pour une meilleure visibilité */
+    width: 80%;
+    max-width: 800px;
+    min-height: 400px;
     background-color: #f0f0f0;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Organiser le contenu verticalement */
+    margin-bottom: 20px; /* Espacement entre le chatbot et les images */
 }
 
 #messages {
@@ -88,19 +97,19 @@ body {
     align-self: flex-end;
 }
 .image-link {
-    width: 80%; /* Réglez la largeur selon le design souhaité */
-    max-width: 600px; /* Limite maximale de la largeur de l'image */
+    width: 80%; /* Correspond à la largeur du chatbot */
+    max-width: 600px; /* Limitation de la largeur maximale pour les images */
     margin-top: 20px;
-    text-align: center; /* Centrage des images et des liens */
+    text-align: center; /* Assure que les images et les liens sont centrés */
 }
 
 .image-link img {
-    width: 100%; /* Utilise la largeur définie par .image-link */
-    height: auto; /* Garde les proportions de l'image */
-    border-radius: 5px; /* Optionnel: ajoute des coins arrondis aux images */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optionnel: ajoute une légère ombre pour la profondeur */
+    width: 100%; /* Utilise la largeur du conteneur de lien */
+    height: auto; /* Maintient les proportions */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .image-link a {
-    display: block; /* Fait du lien un bloc pour envelopper entièrement l'image */
+    display: block; /* Assure que le lien enveloppe complètement l'image */
 }
