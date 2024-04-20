@@ -24,7 +24,7 @@ footer {
 }
 
 footer img {
-    max-height: 400px; /* Ajuster selon la taille désirée */
+    max-height: 500px; /* Ajuster selon la taille désirée */
     margin-bottom: 10px;
 }
 body {
@@ -49,7 +49,7 @@ body {
 
 #chatbot {
     width: 80%;
-    max-width: 800px;
+    max-width: 1000px;
     min-height: 400px;
     background-color: #f0f0f0;
     border: 2px solid #dedede;
