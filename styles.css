@@ -63,7 +63,16 @@ body {
 #sendButton:hover {
     background-color: #0056b3; /* Assombrir le bouton au survol */
 }
-
+#extra-content {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si l'espace horizontal est insuffisant */
+    gap: 20px; /* Espacement entre les éléments */
+    margin-bottom: 30px; /* Espace après le dernier élément */
+}
 .typing-indicator {
     font-size: 16px;
     margin-top: auto; /* Pousse l'indicateur de frappe en bas */
@@ -99,17 +108,16 @@ body {
     align-self: flex-end;
 }
 .image-link {
-    width: 80%; /* Correspond à la largeur du chatbot */
-    max-width: 600px; /* Limitation de la largeur maximale pour les images */
-    margin-top: 20px;
-    text-align: center; /* Assure que les images et les liens sont centrés */
+    /* Supprimez la largeur et le max-width si vous voulez que les images utilisent leur taille intrinsèque */
+    margin: 0; /* Réinitialiser les marges pour les éléments .image-link si nécessaire */
+    flex: 0 1 auto; /* Les éléments peuvent rétrécir mais pas grandir, et utiliseront leur taille automatique par défaut */
 }
 
 .image-link img {
-    width: 100%; /* Utilise la largeur du conteneur de lien */
-    height: auto; /* Maintient les proportions */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas son conteneur */
+    height: auto;
+    border-radius: 5px; /* Coins arrondis, si souhaité */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre pour de la profondeur, si souhaité */
 }
 
 .image-link a {
