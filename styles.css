@@ -87,3 +87,20 @@ body {
     background-color: #007bff;
     align-self: flex-end;
 }
+.image-link {
+    width: 80%; /* Réglez la largeur selon le design souhaité */
+    max-width: 600px; /* Limite maximale de la largeur de l'image */
+    margin-top: 20px;
+    text-align: center; /* Centrage des images et des liens */
+}
+
+.image-link img {
+    width: 100%; /* Utilise la largeur définie par .image-link */
+    height: auto; /* Garde les proportions de l'image */
+    border-radius: 5px; /* Optionnel: ajoute des coins arrondis aux images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optionnel: ajoute une légère ombre pour la profondeur */
+}
+
+.image-link a {
+    display: block; /* Fait du lien un bloc pour envelopper entièrement l'image */
+}
