@@ -1,21 +1,21 @@
 header {
     width: 100%;
     padding: 10px 0;
-    background-color: #007bff; /* Ou autre couleur de fond */
+    background-color: #164e45; /* Ou autre couleur de fond */
     color: white;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header img {
-    max-height: 100px; /* Ajuster selon la taille désirée */
+    max-height: 150px; /* Ajuster selon la taille désirée */
     margin-bottom: 10px;
 }
 
 footer {
     width: 100%;
     padding: 10px 0;
-    background-color: #333; /* Ou autre couleur de fond */
+    background-color: #ffffff; /* Ou autre couleur de fond */
     color: white;
     text-align: center;
     position: relative; /* Modifier si nécessaire selon la disposition du contenu */
@@ -24,7 +24,7 @@ footer {
 }
 
 footer img {
-    max-height: 50px; /* Ajuster selon la taille désirée */
+    max-height: 400px; /* Ajuster selon la taille désirée */
     margin-bottom: 10px;
 }
 body {
