@@ -9,7 +9,7 @@ header {
 
 header img {
     max-height: 150px; /* Ajuster selon la taille désirée */
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 footer {
@@ -48,14 +48,15 @@ body {
 }
 
 #chatbot {
-    width: 80%;
+    width: 90%;
     max-width: 1000px;
-    min-height: 400px;
+    min-height: 600px;
     background-color: #f0f0f0;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espace entre le header et le chatbot */
     margin-bottom: 30px; /* Espacement entre le chatbot et les images */
 }
 
@@ -133,8 +134,8 @@ body {
     align-self: flex-end;
 }
 .image-link {
-    flex: 1 1 200px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
-    max-width: calc(33.333% - 10px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
+    flex: 1 1 150px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
+    max-width: calc(25% - 10px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
     box-sizing: border-box; /* Inclut padding et border dans la largeur */
 }
 
