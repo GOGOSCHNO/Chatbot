@@ -66,10 +66,8 @@ body {
 }
 
 #messages {
-    height: 300px; /* Hauteur fixe pour permettre le défilement */
-    flex: 1; /* Prend le reste de l'espace disponible dans #chatbot */
+    flex: 8; /* Cela permet à #messages d'occuper 80% de l'espace disponible */
     overflow-y: auto; /* Permet le défilement vertical si nécessaire */
-    margin: 20px 0; /* Ajoute de l'espace autour de la zone des messages */
     margin-bottom: 20px;
     padding: 10px;
     background: white;
@@ -85,20 +83,28 @@ body {
 }
 
 #userInput {
-    width: 50%; /* Utiliser toute la largeur disponible du conteneur */
-    flex-grow: 1; /* Permet à l'input de prendre tout l'espace horizontal disponible */
-    margin-right: 10px;
+    flex: 1; /* Cela permet à l'input de prendre 10% de l'espace restant */
     border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
 #sendButton {
-    width: auto;
+    flex: 1; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
     padding: 10px 20px;
-    margin-left: 10px; /* Espace entre le champ de saisie et le bouton */
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+}
+/* Container pour userInput et sendButton pour les aligner horizontalement */
+.input-container {
+    display: flex;
+    justify-content: space-between; /* Cela sépare le champ de texte et le bouton */
+    align-items: center;
+    width: 100%; /* Cela prend la pleine largeur de #chatbot */
 }
 
 #sendButton:hover {
