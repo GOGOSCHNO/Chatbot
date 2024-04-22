@@ -1,35 +1,44 @@
+// Fonction pour envoyer le message de l'utilisateur
+function sendUserInput() {
+    var userInput = document.getElementById('userInput').value;
+    if (userInput.trim() !== '') {
+        displayMessage(userInput, 'user');
+        document.getElementById('userInput').value = ''; // Effacer la zone de saisie après l'envoi
+
+        const typingIndicator = showTypingIndicator();
+
+        fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: userInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            hideTypingIndicator(typingIndicator);
+            if (typeof data.reply === 'string') {
+                typeMessage(data.reply, 'bot');
+            } else {
+                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+            }
+        })
+        .catch(error => {
+            hideTypingIndicator(typingIndicator);
+            console.error('Error:', error);
+            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+        });
+    }
+}
+
+// Événement pour le bouton "Envoyer"
+document.getElementById('sendButton').addEventListener('click', sendUserInput);
+
+// Événement pour la touche "Entrée"
 document.getElementById('userInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) { // Vérifie si la touche "Entrée" est pressée sans la touche "Shift"
-        event.preventDefault(); // Empêche le comportement par défaut de la touche "Entrée" qui peut inclure l'insertion d'une nouvelle ligne ou la soumission d'un formulaire
-        var userInput = this.value;
-        if (userInput.trim() !== '') {
-            displayMessage(userInput, 'user'); // Affiche le message de l'utilisateur dans le chat
-            this.value = ''; // Efface le champ de texte après l'envoi
-
-            const typingIndicator = showTypingIndicator(); // Montre l'indicateur de frappe
-
-            fetch('https://blooming-shore-69795-97715c61a60a.herokuapp.com/send_message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message: userInput })
-            })
-            .then(response => response.json())
-            .then(data => {
-                hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe
-                if (typeof data.reply === 'string') {
-                    typeMessage(data.reply, 'bot'); // Utiliser typeMessage pour simuler la frappe
-                } else {
-                    displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-                }
-            })
-            .catch(error => {
-                hideTypingIndicator(typingIndicator); // Cache l'indicateur de frappe en cas d'erreur
-                console.error('Error:', error);
-                displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
-            });
-        }
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendUserInput();
     }
 });
 
