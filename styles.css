@@ -93,7 +93,7 @@ body {
 #sendButton {
     flex: 0,5; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #164e45;
     color: white;
     border: none;
     cursor: pointer;
@@ -143,7 +143,7 @@ body {
     padding: 10px 20px;
     margin: 5px;
     border-radius: 10px;
-    color: #164e45;
+    color: #ffffff;
 }
 .bot {
     color: #333; /* Couleur foncée pour le texte de l'assistant, remplacez selon vos besoins */
@@ -152,7 +152,7 @@ body {
 }
 
 .user {
-    background-color: #007bff;
+    background-color: #164e45;
     color: #333
     align-self: flex-end;
 }
