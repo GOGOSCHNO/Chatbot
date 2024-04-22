@@ -45,8 +45,8 @@ document.getElementById('userInput').addEventListener('keydown', function(event)
 function displayMessage(message, sender) {
     var messagesContainer = document.getElementById('messages');
     var messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-    messageDiv.className = sender; // 'user' ou 'bot'
+    messageDiv.className = sender;
+    messageDiv.innerHTML = message;  // Changé de textContent à innerHTML
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
 }
@@ -87,24 +87,13 @@ function formatMessage(text) {
     return formattedMessage;
 }
 function typeMessage(message, sender) {
-    let formattedMessage = formatMessage(message); // Formatter le message avant de commencer à le taper
+    let formattedMessage = formatMessage(message);
     const container = document.getElementById('messages');
     const messageDiv = document.createElement('div');
-    messageDiv.className = sender; // 'user' ou 'bot'
-    messageDiv.innerHTML = ''; // Commencer avec un contenu vide
+    messageDiv.className = sender;
+    messageDiv.innerHTML = formattedMessage;  // Directement afficher le message formaté
     container.appendChild(messageDiv);
-    let index = 0; // Initialisez l'index à 0
-
-    function typeChar() {
-        if (index < formattedMessage.length) {
-            messageDiv.innerHTML += formattedMessage.charAt(index);
-            index++;
-            setTimeout(typeChar, 30); // Règle ici la vitesse de "frappe"
-        }
-        scrollToBottom(container);
-    }
-
-    typeChar();
+    scrollToBottom(container);
 }
 function showTypingIndicator() {
     const container = document.getElementById('messages');
@@ -121,3 +110,11 @@ function hideTypingIndicator(indicator) {
         indicator.remove();
     }
 }
+
+document.getElementById('sendButton').addEventListener('click', sendUserInput);
+document.getElementById('userInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendUserInput();
+    }
+});
