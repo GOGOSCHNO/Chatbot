@@ -145,9 +145,15 @@ body {
     border-radius: 10px;
     color: #164e45;
 }
+.bot {
+    color: #333; /* Couleur foncée pour le texte de l'assistant, remplacez selon vos besoins */
+    background-color: #ffffff; /* Arrière-plan blanc, vous pouvez omettre cette ligne si le fond est déjà blanc */
+    /* ... autres styles ... */
+}
 
 .user {
     background-color: #007bff;
+    color: #333
     align-self: flex-end;
 }
 .image-link {
