@@ -91,8 +91,9 @@ function typeMessage(message, sender) {
     const container = document.getElementById('messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = sender; // 'user' ou 'bot'
-    messageDiv.innerHTML = formattedMessage; // Utiliser innerHTML pour intégrer du HTML
+    messageDiv.innerHTML = ''; // Commencer avec un contenu vide
     container.appendChild(messageDiv);
+    let index = 0; // Initialisez l'index à 0
 
     function typeChar() {
         if (index < formattedMessage.length) {
