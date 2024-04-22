@@ -164,3 +164,23 @@ body {
 .image-link a {
     display: block; /* Assure que le lien enveloppe complètement l'image */
 }
+/* Réinitialiser les marges pour le body et les éléments de header/footer */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Assurez-vous que le header et le footer collent au haut et au bas de la page */
+header, footer {
+    width: 100%;
+    /* ... autres styles ... */
+}
+
+/* Si vous avez des espaces dus aux premiers et derniers enfants du header ou du footer */
+header > :first-child, footer > :first-child {
+    margin-top: 0;
+}
+
+header > :last-child, footer > :last-child {
+    margin-bottom: 0;
+}
