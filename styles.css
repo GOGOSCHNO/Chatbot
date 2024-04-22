@@ -83,7 +83,7 @@ body {
 }
 
 #userInput {
-    flex: 1; /* Cela permet à l'input de prendre 10% de l'espace restant */
+    flex: 1,5; /* Cela permet à l'input de prendre 10% de l'espace restant */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 4px;
@@ -91,7 +91,7 @@ body {
 }
 
 #sendButton {
-    flex: 1; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
+    flex: 0,5; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
