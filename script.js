@@ -12,6 +12,7 @@ function sendUserInput() {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include', // Inclure les cookies de session dans la requête
             body: JSON.stringify({ message: userInput })
         })
         .then(response => response.json())
