@@ -12,7 +12,8 @@ function sendUserInput() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ message: userInput })
+            body: JSON.stringify({ message: userInput }),
+            signal: AbortSignal.timeout(30000) // Timeout de 30 secondes
         })
         .then(response => response.json())
         .then(data => {
