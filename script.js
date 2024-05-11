@@ -13,7 +13,7 @@ function sendUserInput() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message: userInput }),
-            signal: AbortSignal.timeout(30000) // Timeout de 30 secondes
+            credentials: 'include'  // Inclure les cookies pour les requêtes cross-origin
         })
         .then(response => response.json())
         .then(data => {
