@@ -13,7 +13,6 @@ function sendUserInput() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message: userInput }),
-            credentials: 'include'
         })
         .then(response => {
             if (!response.ok) {
