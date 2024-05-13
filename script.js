@@ -14,12 +14,7 @@ function sendUserInput() {
             },
             body: JSON.stringify({ message: userInput }),
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Réponse du serveur non OK');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             hideTypingIndicator(typingIndicator);
             if (typeof data.reply === 'string') {
