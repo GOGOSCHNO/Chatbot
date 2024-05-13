@@ -116,11 +116,3 @@ function hideTypingIndicator(indicator) {
         indicator.remove();
     }
 }
-
-document.getElementById('sendButton').addEventListener('click', sendUserInput);
-document.getElementById('userInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        sendUserInput();
-    }
-});
