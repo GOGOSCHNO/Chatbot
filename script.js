@@ -1,4 +1,3 @@
-// Fonction pour envoyer le message de l'utilisateur
 function sendUserInput() {
     var userInput = document.getElementById('userInput').value;
     if (userInput.trim() !== '') {
@@ -15,7 +14,12 @@ function sendUserInput() {
             credentials: 'include', // Important pour inclure les cookies
             body: JSON.stringify({ message: userInput }),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             hideTypingIndicator(typingIndicator);
             if (typeof data.reply === 'string') {
