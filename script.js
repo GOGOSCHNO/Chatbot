@@ -12,6 +12,7 @@ function sendUserInput() {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include', // Important pour inclure les cookies
             body: JSON.stringify({ message: userInput }),
         })
         .then(response => response.json())
