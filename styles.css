@@ -117,12 +117,17 @@ body {
     gap: 10px; /* Espace entre les images */
 }
 .typing-indicator {
-    font-size: 16px;
-    margin-top: auto; /* Pousse l'indicateur de frappe en bas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px; /* Ajuste selon tes besoins */
+    font-size: 24px; /* Augmente la taille de la police pour rendre les points plus visibles */
 }
 
 .typing-indicator span {
-    animation: blink 1.4s infinite;
+    animation: blink 1.4s infinite; /* Augmente la durée de l'animation pour un effet plus doux */
+    display: inline-block;
+    margin: 0 4px; /* Augmente l'espacement entre les points */
 }
 
 .typing-indicator span:nth-child(2) {
@@ -131,6 +136,15 @@ body {
 
 .typing-indicator span:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 80%, 100% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
 }
 
 .image-response {
