@@ -120,8 +120,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 24px; /* Ajuste selon tes besoins */
-    font-size: 24px; /* Augmente la taille de la police pour rendre les points plus visibles */
+    height: 55px; /* Ajuste selon tes besoins */
+    font-size: 55px; /* Augmente la taille de la police pour rendre les points plus visibles */
     margin-left: 10px; /* Ajouter une marge à gauche pour les espacer du bord */
 }
 
