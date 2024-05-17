@@ -70,6 +70,12 @@ function formatMessage(text) {
         // Convertir les motifs Markdown pour le gras (**texte**) en HTML <strong>
         trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
+        // Convertir les titres Markdown ### en HTML <h3>
+        if (trimmedLine.startsWith('###')) {
+            formattedMessage += `<h3>${trimmedLine.substring(3).trim()}</h3>`;
+            return;
+        }
+
         if (trimmedLine.startsWith('-')) {
             if (!inList) {
                 formattedMessage += '<ul>'; // Commencer une nouvelle liste
