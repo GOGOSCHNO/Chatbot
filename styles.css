@@ -185,6 +185,9 @@ body {
 .image-link a {
     display: block; /* Assure que le lien enveloppe complètement l'image */
 }
+.hidden {
+    display: none;
+}
 /* Réinitialiser les marges pour le body et les éléments de header/footer */
 body, h1, p {
     margin: 0;
