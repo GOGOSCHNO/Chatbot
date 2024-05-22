@@ -45,11 +45,11 @@
     font-weight: 700; /* Assure une police en gras */
     color: white;
     margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .description {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: normal;
     /* Vous pouvez également ajuster cette valeur pour augmenter l'espace au-dessus de la description */
     margin-top: 10px; 
@@ -266,11 +266,17 @@ body {
     flex: 1 1 150px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
     max-width: calc(25% - 10px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
     box-sizing: border-box; /* Inclut padding et border dans la largeur */
+    transition: transform 0.3s ease; /* Animation de la transformation */
 }
 
 .image-link img {
     max-width: 100%; /* Assure que l'image ne dépasse pas son conteneur */
     height: auto;
+    display: block; /* Supprime les espaces blancs autour des images */
+}
+
+.image-link:hover {
+    transform: scale(1.1); /* Agrandit l'image de 10% au survol */
 }
 
 .image-link a {
