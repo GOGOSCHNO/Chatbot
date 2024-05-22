@@ -16,8 +16,8 @@
 }
 
 .header-title {
-    background-color: #f5f5f5;
-    color: #2c9181;
+    background-color: #2c9181;
+    color: #f5f5f5;
     width: 100%;
     text-align: center;
     padding: 20px 0;
@@ -54,7 +54,7 @@ body {
     align-items: center; /* Centrer les éléments horizontalement */
     height: auto; /* Laisser la hauteur s'ajuster au contenu */
     min-height: 100vh; /* Assurer un minimum de hauteur pleine fenêtre */
-    background-color: #f5f5f5; /* Couleur de fond */
+    background-color: #2c9181; /* Couleur de fond */
     overflow: auto; /* Permettre le défilement vertical si le contenu dépasse */
     padding-top: 60px; /* Ajuster selon la hauteur de l'en-tête */
     padding-bottom: 60px;
@@ -71,7 +71,7 @@ body {
     width: 90%;
     max-width: 1000px;
     min-height: 600px;
-    background-color: #164e45;
+    background-color: #f5f5f5;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 20px;
