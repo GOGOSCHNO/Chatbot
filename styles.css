@@ -3,14 +3,14 @@
     padding: 10px 20px; /* Ajuster selon vos besoins */
     background-color: #164e45;
     color: white;
-    display: flex;
-    justify-content: space-between; /* Logo à gauche, bouton à droite */
-    align-items: center;
-    position: fixed; /* Figer le header */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Assurer que le header reste au-dessus des autres contenus */
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-logo img {
@@ -24,6 +24,7 @@
     align-items: center;
     width: 90%; /* Ajuster pour centrer le contenu */
     max-width: 1200px;
+    padding: 0 20px;
 }
 
 .header-title {
