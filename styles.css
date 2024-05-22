@@ -45,11 +45,11 @@
     font-weight: 700; /* Assure une police en gras */
     color: white;
     margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
-    font-size: 70px;
+    font-size: 40px;
 }
 
 .description {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: normal;
     /* Vous pouvez également ajuster cette valeur pour augmenter l'espace au-dessus de la description */
     margin-top: 10px; 
