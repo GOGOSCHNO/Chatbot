@@ -32,7 +32,7 @@
     width: 100%;
     text-align: center;
     padding: 100px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -44,14 +44,15 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700; /* Assure une police en gras */
     color: white;
-    margin-bottom: 20px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+    font-size: 70px;
 }
 
 .description {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: normal;
     /* Vous pouvez également ajuster cette valeur pour augmenter l'espace au-dessus de la description */
-    margin-top: 20px; 
+    margin-top: 10px; 
 }
 .orderNowButton {
     background-color: #2c9181; /* Couleur du bouton */
@@ -235,6 +236,8 @@ body {
 
 /* Importation des polices depuis Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 .image-response {
     max-width: 100%;
