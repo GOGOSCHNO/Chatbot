@@ -12,7 +12,7 @@
 
 .header-logo img {
     max-height: 150px; /* Ajuster selon la taille désirée */
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .header-title {
@@ -21,8 +21,9 @@
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    margin-top: 20px; /* Ajoute un espace entre le header logo et le header title */
+    margin-top: 10px; /* Ajoute un espace entre le header logo et le header title */
     font-family: 'Roboto', sans-serif; /* Utilise la police Roboto de Google Fonts */
+    font-weight: bold;
 }
 
 .header-title h1 {
@@ -39,6 +40,7 @@
     font-family: 'Helvetica', sans-serif;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .orderNowButton:hover {
@@ -94,7 +96,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 40px; /* Espace entre le header et le chatbot */
+    margin-top: 20px; /* Espace entre le header et le chatbot */
     margin-bottom: 40px; /* Espacement entre le chatbot et les images */
 }
 
