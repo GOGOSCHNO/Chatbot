@@ -87,6 +87,12 @@
     align-items: flex-start; /* Aligne le texte à gauche de l'image */
     text-align: left; /* Assurez-vous que le texte est aligné à gauche */
 }
+
+/* Style pour les mots en couleur */
+.highlight {
+    color: #e0ff47;
+}
+
 footer {
     width: 100%;
     padding: 10px 0;
