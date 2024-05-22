@@ -1,4 +1,4 @@
-#header-logo {
+.header-logo {
     width: 100%;
     padding: 20px 0;
     background-color: #164e45; /* Ou autre couleur de fond */
@@ -10,12 +10,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#header-logo img {
+.header-logo img {
     max-height: 150px; /* Ajuster selon la taille désirée */
     margin-bottom: 40px;
 }
 
-#header-title {
+.header-title {
     background-color: #f5f5f5;
     color: #164e45;
     width: 100%;
@@ -25,7 +25,7 @@
     font-family: 'Roboto', sans-serif; /* Utilise la police Roboto de Google Fonts */
 }
 
-#header-title h1 {
+.header-title h1 {
     margin: 0;
     font-size: 24px;
 }
