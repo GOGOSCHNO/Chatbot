@@ -31,7 +31,7 @@
     color: #f5f5f5;
     width: 100%;
     text-align: center;
-    padding: 100px 20px 50px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
+    padding: 100px 20px 30px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     display: flex;
@@ -60,7 +60,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 20px; /* Décale le bouton 'Order Now' vers la gauche */
+    margin-right: 50px; /* Décale le bouton 'Order Now' vers la gauche */
 }
 
 .orderNowButton:hover {
