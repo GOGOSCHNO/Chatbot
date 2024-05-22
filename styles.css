@@ -1,6 +1,6 @@
 .header-logo {
     width: 100%;
-    padding: 5px 0px; /* Ajuster selon vos besoins */
+    padding: 10px 20px; /* Ajuster selon vos besoins */
     background-color: #164e45;
     color: white;
     display: flex;
@@ -32,7 +32,7 @@
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    margin-top: 10px; /* Ajoute un espace entre le header logo et le header title */
+    margin-top: 70px; /* Ajoute un espace entre le header logo et le header title */
     font-family: 'Roboto', sans-serif; /* Utilise la police Roboto de Google Fonts */
     font-weight: bold;
     display: flex;
@@ -42,11 +42,11 @@
 
 .header-title h1 {
     margin: 0;
-    font-size: 35px;
+    font-size: 45px;
 }
 
 .description {
-    font-size: 18px; /* Taille du texte de description */
+    font-size: 25px; /* Taille du texte de description */
     font-weight: normal;
 }
 .orderNowButton {
@@ -76,7 +76,7 @@
 }
 
 .title-image {
-    max-width: 100px; /* Ajustez la taille de l'image selon vos besoins */
+    max-width: 500px; /* Ajustez la taille de l'image selon vos besoins */
     height: auto;
 }
 
