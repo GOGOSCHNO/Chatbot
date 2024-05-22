@@ -1,4 +1,4 @@
-header {
+header-logo {
     width: 100%;
     padding: 10px 0;
     background-color: #164e45; /* Ou autre couleur de fond */
@@ -7,9 +7,22 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-header img {
+header-logo img {
     max-height: 150px; /* Ajuster selon la taille désirée */
     margin-bottom: 40px;
+}
+
+.header-title {
+    background-color: #00796b;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
 footer {
