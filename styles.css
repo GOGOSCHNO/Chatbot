@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     width: 90%; /* Ajuster pour centrer le contenu */
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 0 20px;
 }
 
@@ -72,11 +72,11 @@
     justify-content: center;
     gap: 20px; /* Espacement entre l'image et le texte */
     width: 90%; /* Ajuster pour centrer le contenu */
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 .title-image {
-    max-width: 500px; /* Ajustez la taille de l'image selon vos besoins */
+    max-width: 400px; /* Ajustez la taille de l'image selon vos besoins */
     height: auto;
 }
 
