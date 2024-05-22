@@ -31,7 +31,7 @@
     color: #f5f5f5;
     width: 100%;
     text-align: center;
-    padding: 100px 20px 30px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
+    padding: 100px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     display: flex;
@@ -41,13 +41,17 @@
 }
 
 .header-title h1 {
-    margin: 0;
-    font-size: 45px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700; /* Assure une police en gras */
+    color: white;
+    margin-bottom: 20px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
 }
 
 .description {
-    font-size: 25px; /* Taille du texte de description */
+    font-size: 25px;
     font-weight: normal;
+    /* Vous pouvez également ajuster cette valeur pour augmenter l'espace au-dessus de la description */
+    margin-top: 20px; 
 }
 .orderNowButton {
     background-color: #2c9181; /* Couleur du bouton */
@@ -60,7 +64,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 50px; /* Décale le bouton 'Order Now' vers la gauche */
+    margin-right: 70px; /* Décale le bouton 'Order Now' vers la gauche */
 }
 
 .orderNowButton:hover {
