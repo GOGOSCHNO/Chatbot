@@ -200,7 +200,8 @@ body {
     display: flex;
     justify-content: center; /* Centre les éléments horizontalement */
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-    gap: 15px; /* Espace entre les images */
+    gap: 20px; /* Espace entre les images */
+    margin-bottom: 40px; /* Ajout d'espace en dessous des images */
 }
 .typing-indicator {
     display: flex;
