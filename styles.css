@@ -13,11 +13,6 @@
     align-items: center;
 }
 
-.header-logo img {
-    max-height: 150px; /* Ajuster selon la taille désirée */
-    margin-bottom: 20px;
-}
-
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -27,18 +22,22 @@
     padding: 0 20px;
 }
 
+.logo {
+    max-height: 50px;
+}
+
 .header-title {
     background-color: #2c9181;
     color: #f5f5f5;
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 70px; /* Ajoute un espace entre le header logo et le header title */
-    font-family: 'Roboto', sans-serif; /* Utilise la police Roboto de Google Fonts */
+    padding: 100px 20px 40px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Pour centrer verticalement */
 }
 
 .header-title h1 {
