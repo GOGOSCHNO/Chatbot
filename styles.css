@@ -17,7 +17,7 @@
 
 .header-title {
     background-color: #f5f5f5;
-    color: #164e45;
+    color: #2c9181;
     width: 100%;
     text-align: center;
     padding: 20px 0;
@@ -71,7 +71,7 @@ body {
     width: 90%;
     max-width: 1000px;
     min-height: 600px;
-    background-color: #f0f0f0;
+    background-color: #164e45;
     border: 2px solid #dedede;
     border-radius: 5px;
     padding: 20px;
@@ -111,7 +111,7 @@ body {
 #sendButton {
     flex: 0,5; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
     padding: 10px 20px;
-    background-color: #164e45;
+    background-color: #2c9181;
     color: white;
     border: none;
     cursor: pointer;
@@ -185,7 +185,7 @@ body {
 }
 
 .user {
-    background-color: #164e45;
+    background-color: #2c9181;
     color: #333
     align-self: flex-end;
 }
