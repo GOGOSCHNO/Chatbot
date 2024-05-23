@@ -1,8 +1,10 @@
 /* Dégradé de fond pour le conteneur principal */
 .main-content {
-    background-color: #2c9181; /* Couleur de fond pour la zone B */
+    background: linear-gradient(to bottom, #2c9181 0%, #164e45 100%); /* Dégradé de vert */
     padding: 20px;
     flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
+    width: 100%;
+    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
 }
 
 .header-logo {
@@ -86,6 +88,7 @@
     gap: 20px; /* Espacement entre l'image et le texte */
     width: 90%; /* Ajuster pour centrer le contenu */
     max-width: 1000px;
+    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
 }
 
 .title-image {
