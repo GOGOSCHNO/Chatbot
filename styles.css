@@ -218,6 +218,8 @@ body {
     width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
     max-width: 1000px;
     box-sizing: border-box;
+    padding-left: 5%; /* Aligne les images avec le chatbot */
+    padding-right: 5%; /* Aligne les images avec le chatbot */
 }
 .typing-indicator {
     display: flex;
@@ -280,8 +282,8 @@ body {
     align-self: flex-end;
 }
 .image-link {
-    flex: 1 1 150px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
-    max-width: calc(33.333% - 20px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
+    flex: 1 1 30%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
+    max-width: 30%; /* Prend un tiers de l'espace disponible */
     box-sizing: border-box; /* Inclut padding et border dans la largeur */
     transition: transform 0.3s ease; /* Animation de la transformation */
 }
