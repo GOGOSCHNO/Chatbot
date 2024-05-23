@@ -1,6 +1,6 @@
 /* Dégradé de fond pour le conteneur principal */
 .main-content {
-    background: linear-gradient(to bottom, #2c9181 0%, #164e45 100%); /* Dégradé de vert */
+    background: linear-gradient(to bottom, #2c9181, #164e45); /* Dégradé de vert */
     padding: 20px;
     flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
     width: 100%;
@@ -47,6 +47,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Pour centrer verticalement */
+    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
 }
 
 .header-title h1 {
