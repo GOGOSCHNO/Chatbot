@@ -214,6 +214,7 @@ body {
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
     gap: 20px; /* Espace entre les images */
     margin-bottom: 40px; /* Ajout d'espace en dessous des images */
+    background: linear-gradient(to top, #164e45, #2c9181); /* Dégradé de vert */
 }
 .typing-indicator {
     display: flex;
