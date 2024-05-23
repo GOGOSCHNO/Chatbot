@@ -1,3 +1,10 @@
+/* Dégradé de fond pour le conteneur principal */
+.main-content {
+    background: linear-gradient(to right, #164e45, #2c9181); /* Dégradé de vert */
+    padding: 20px;
+    flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
+}
+
 .header-logo {
     width: 100%;
     padding: 10px 20px; /* Ajuster selon vos besoins */
