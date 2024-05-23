@@ -4,6 +4,7 @@
     flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
     width: 100%;
     box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
+    background: none; /* Supprime toute couleur de fond supplémentaire */
 }
 
 .header-logo {
@@ -35,7 +36,7 @@
 }
 
 .header-title {
-    background-color: #2c9181;
+    background-color: none;
     color: #f5f5f5;
     width: 100%;
     text-align: center;
@@ -138,7 +139,7 @@ body {
     padding-bottom: 60px;
 }
 #main-container {
-    background: linear-gradient(to bottom, #164e45, #2c9181); /* Dégradé de vert */
+    background: none; /* Dégradé de vert */
     display: flex;
     flex-direction: column;
     align-items: center;
