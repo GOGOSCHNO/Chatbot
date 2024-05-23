@@ -1,6 +1,6 @@
 /* Dégradé de fond pour le conteneur principal */
 .main-content {
-    background: linear-gradient(to right, #164e45, #2c9181); /* Dégradé de vert */
+    background-color: #2c9181; /* Couleur de fond pour la zone B */
     padding: 20px;
     flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
 }
@@ -129,7 +129,7 @@ body {
     align-items: center; /* Centrer les éléments horizontalement */
     height: auto; /* Laisser la hauteur s'ajuster au contenu */
     min-height: 100vh; /* Assurer un minimum de hauteur pleine fenêtre */
-    background-color: #2c9181; /* Couleur de fond */
+    background-color: #164e45; /* Couleur de fond */
     overflow: auto; /* Permettre le défilement vertical si le contenu dépasse */
     padding-top: 40px; /* Ajuster selon la hauteur de l'en-tête */
     padding-bottom: 60px;
