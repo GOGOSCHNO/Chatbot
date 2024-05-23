@@ -215,7 +215,9 @@ body {
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
     gap: 20px; /* Espace entre les images */
     margin-bottom: 40px; /* Ajout d'espace en dessous des images */
-    background: none;
+    width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
+    max-width: 1000px;
+    box-sizing: border-box;
 }
 .typing-indicator {
     display: flex;
@@ -279,7 +281,7 @@ body {
 }
 .image-link {
     flex: 1 1 150px; /* Les éléments peuvent grandir et rétrécir, avec une base de 200px */
-    max-width: calc(25% - 10px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
+    max-width: calc(33.333% - 20px); /* Prend un tiers de l'espace disponible, en soustrayant l'espacement */
     box-sizing: border-box; /* Inclut padding et border dans la largeur */
     transition: transform 0.3s ease; /* Animation de la transformation */
 }
