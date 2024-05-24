@@ -134,7 +134,7 @@ body {
     align-items: center; /* Centrer les éléments horizontalement */
     height: auto; /* Laisser la hauteur s'ajuster au contenu */
     min-height: 100vh; /* Assurer un minimum de hauteur pleine fenêtre */
-    background: linear-gradient(to bottom, #164e45, #2c9181); /* Dégradé de vert */
+    background: radial-gradient(circle, #2c9181, #164e45); /* Dégradé de vert */
     overflow: auto; /* Permettre le défilement vertical si le contenu dépasse */
     padding-top: 40px; /* Ajuster selon la hauteur de l'en-tête */
     padding-bottom: 60px;
