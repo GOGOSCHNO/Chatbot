@@ -382,7 +382,7 @@ header > :last-child, footer > :last-child {
 @media (max-width: 768px) {
     #main-container {
         flex-grow: 1;
-        overflow: hidden;
+        overflow: auto; /* Permettre le défilement */
     }
 
     #chatbot {
@@ -393,7 +393,7 @@ header > :last-child, footer > :last-child {
 
     #messages {
         flex-grow: 1;
-        overflow-y: auto;
+        overflow-y: auto; /* Permettre le défilement vertical */
     }
 }
 
@@ -401,7 +401,7 @@ header > :last-child, footer > :last-child {
 @media (max-width: 768px) {
     html, body {
         height: 100%;
-        overflow: hidden;
+        overflow: auto; /* Permettre le défilement */
     }
 
     body {
@@ -413,14 +413,14 @@ header > :last-child, footer > :last-child {
         flex: 1;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: auto; /* Permettre le défilement */
     }
 
     #chatbot {
         flex: 1;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: auto; /* Permettre le défilement */
     }
 
     #messages {
@@ -428,4 +428,3 @@ header > :last-child, footer > :last-child {
         overflow-y: auto;
     }
 }
-
