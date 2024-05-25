@@ -325,54 +325,107 @@ header > :last-child, footer > :last-child {
     margin-bottom: 0;
 }
 
-/* Media Queries pour appareils mobiles */
-@media (max-width: 767px) {
+/* Ajout de media queries pour les petits écrans */
+@media (max-width: 768px) {
     .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .title-container {
         flex-direction: column;
         align-items: center;
     }
 
     .orderNowButton {
-        margin-top: 10px;
         margin-right: 0;
+        margin-top: 10px;
     }
 
     .header-title {
-        padding: 50px 20px 20px;
+        padding: 80px 10px 10px;
     }
 
-    .title-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .title-image {
-        max-width: 80%;
+    .header-title h1 {
+        font-size: 24px;
     }
 
     .description {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #chatbot {
-        width: 100%;
+        width: 95%;
+        margin-top: 10px;
     }
 
     .input-container {
         flex-direction: column;
+    }
+
+    #userInput, #sendButton {
         width: 100%;
-    }
-
-    #userInput {
         margin: 5px 0;
-        width: calc(100% - 20px);
     }
 
-    #sendButton {
-        width: calc(100% - 20px);
+    #extra-content {
+        width: 95%;
     }
 
-    #extra-content .image-link {
-        max-width: 90%;
+    .image-link {
+        flex: 1 1 45%; /* Les éléments peuvent grandir et rétrécir, avec une base de 45% */
+        max-width: 45%; /* Prend presque la moitié de l'espace disponible */
     }
 }
+
+/* Ajustement dynamique pour le chatbot */
+@media (max-width: 768px) {
+    #main-container {
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    #chatbot {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #messages {
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+}
+
+/* Ajout de styles pour l'apparition du clavier */
+@media (max-width: 768px) {
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #chatbot {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #messages {
+        flex: 1;
+        overflow-y: auto;
+    }
+}
+
