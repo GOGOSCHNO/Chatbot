@@ -102,9 +102,22 @@ function typeMessage(message, sender) {
     const container = document.getElementById('messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = sender;
-    messageDiv.innerHTML = formattedMessage;  // Directement afficher le message formaté
     container.appendChild(messageDiv);
-    scrollToBottom(container);
+
+    let i = 0;
+    const interval = 50; // Vitesse de l'effet d'écriture (en millisecondes)
+
+    function typeLetter() {
+        if (i < formattedMessage.length) {
+            messageDiv.innerHTML += formattedMessage.charAt(i);
+            i++;
+            setTimeout(typeLetter, interval);
+        } else {
+            scrollToBottom(container); // S'assurer que le défilement se fait jusqu'au bas à la fin
+        }
+    }
+
+    typeLetter();
 }
 function showTypingIndicator() {
     const container = document.getElementById('messages');
