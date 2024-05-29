@@ -1,3 +1,21 @@
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+function adjustChatbotHeight() {
+    if (isMobileDevice()) {
+        const chatbotContainer = document.getElementById('chatbot');
+        const viewportHeight = window.innerHeight;
+        chatbotContainer.style.height = `${viewportHeight}px`;
+    }
+}
+
+// Appeler cette fonction lors du redimensionnement de la fenêtre
+window.addEventListener('resize', adjustChatbotHeight);
+
+// Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
+window.addEventListener('load', adjustChatbotHeight);
+
 function sendUserInput() {
     var userInput = document.getElementById('userInput').value;
     if (userInput.trim() !== '') {
