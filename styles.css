@@ -342,7 +342,7 @@ header > :last-child, footer > :last-child {
     .header-logo {
         width: 100%;
         height: 60px; /* Hauteur fixe pour le header */
-        padding: env(safe-area-inset-top) 20px 0 20px; /* Ajuste le padding pour inclure la barre d'état */
+        padding: env(safe-area-inset-top) 20px; /* Ajuste le padding pour inclure la barre d'état */
         background-color: #164e45;
         color: white;
         position: fixed;
@@ -357,8 +357,8 @@ header > :last-child, footer > :last-child {
 
     .header-logo .logo {
         max-height: 40px; /* Ajuster la hauteur du logo selon vos besoins */
-        margin-left: 15px; /* Ajuster la marge à gauche */
-        margin-top: -15px; /* Ajuster la marge en haut */
+        margin-left: 0; /* Ajuster la marge à gauche */
+        margin-top: 0; /* Ajuster la marge en haut */
     }
 
     .header-logo .orderNowButton {
@@ -372,19 +372,20 @@ header > :last-child, footer > :last-child {
         cursor: pointer;
         text-decoration: none;
         font-weight: bold;
-        margin-right: 10px; /* Ajuster la marge à droite */
-        margin-top: -5px; /* Ajuster la marge en haut */
+        margin-right: 0; /* Ajuster la marge à droite */
+        margin-top: 0; /* Ajuster la marge en haut */
     }
 
     .header-content {
         flex-direction: row; /* Assurer que les éléments sont en ligne */
         align-items: center;
-        padding-top: 120px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 60px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .title-container {
         flex-direction: column;
         align-items: center;
+        padding-top: 160px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .orderNowButton {
