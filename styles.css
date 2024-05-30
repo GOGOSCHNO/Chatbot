@@ -327,16 +327,14 @@ header > :last-child, footer > :last-child {
 }
 
 @media (max-width: 768px) {
-    /* Empêcher le défilement horizontal */
     html, body {
         overflow-x: hidden;
     }
 
-    /* Ajuster le header */
     .header-logo {
         width: 100%;
-        height: 60px; /* Réduire la hauteur du header */
-        padding: 0 20px; /* Ajuster le padding selon vos besoins */
+        height: 60px;
+        padding: 0 20px;
         background-color: #164e45;
         color: white;
         position: fixed;
@@ -345,18 +343,18 @@ header > :last-child, footer > :last-child {
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         display: flex;
-        justify-content: space-between; /* Positionner les éléments à gauche et à droite */
+        justify-content: space-between;
         align-items: center;
     }
 
     .header-logo .logo {
-        max-height: 50px; /* Ajuster la hauteur du logo selon vos besoins */
+        max-height: 50px;
     }
 
     .header-logo .orderNowButton {
         background-color: #2c9181;
         color: white;
-        padding: 10px 20px; /* Ajuster le padding selon vos besoins */
+        padding: 10px 20px;
         border: none;
         border-radius: 5px;
         font-size: 16px;
@@ -369,7 +367,7 @@ header > :last-child, footer > :last-child {
     .header-content {
         flex-direction: column;
         align-items: center;
-        padding-top: 80px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 80px;
     }
 
     .title-container {
@@ -383,12 +381,12 @@ header > :last-child, footer > :last-child {
     }
 
     .header-title {
-        padding: 10px; /* Réduit pour un meilleur ajustement sur les écrans mobiles */
-        height: 50px; /* Hauteur réduite pour le header */
+        padding: 10px;
+        height: 50px;
     }
 
     .header-title h1 {
-        font-size: 20px; /* Ajuster la taille de la police pour correspondre à la nouvelle hauteur */
+        font-size: 20px;
     }
 
     .description {
@@ -396,12 +394,12 @@ header > :last-child, footer > :last-child {
     }
 
     #chatbot {
-        min-height: 100vh; /* Assurez-vous que le conteneur peut s'étendre sur toute la hauteur de l'écran */
-        height: 100vh; /* S'étend sur toute la hauteur de l'écran */
+        min-height: 100vh;
+        height: 100vh;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        overflow: auto; /* Permettre le défilement */
+        overflow: auto;
     }
 
     .input-container {
@@ -418,20 +416,20 @@ header > :last-child, footer > :last-child {
     }
 
     .image-link {
-        flex: 1 1 100%; /* Les éléments occupent la pleine largeur */
-        max-width: 100%; /* Ajuster pour une pleine largeur */
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     #main-container {
         flex-grow: 1;
-        overflow: auto; /* Permettre le défilement */
+        overflow: auto;
         display: flex;
         flex-direction: column;
     }
 
     html, body {
         height: 100%;
-        overflow-x: hidden; /* Empêche le défilement horizontal */
+        overflow-x: hidden;
     }
 
     body {
@@ -441,6 +439,6 @@ header > :last-child, footer > :last-child {
 
     #messages {
         flex-grow: 1;
-        overflow-y: auto; /* Permettre le défilement vertical */
+        overflow-y: auto;
     }
 }
