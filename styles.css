@@ -329,15 +329,20 @@ header > :last-child, footer > :last-child {
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
-        margin: 0; /* Assurez-vous qu'il n'y a pas de marge */
-        padding: 0; /* Assurez-vous qu'il n'y a pas de padding */
+        margin: 0;
+        padding: 0;
     }
 
-    /* Ajuster le header */
+    /* Ajouter un fond au-delà de la barre d'état */
+    body {
+        padding-top: env(safe-area-inset-top); /* Ajoute de l'espace pour la barre d'état sur les appareils avec encoche */
+        background-color: #164e45; /* Couleur de fond pour le corps */
+    }
+
     .header-logo {
         width: 100%;
         height: 60px; /* Hauteur fixe pour le header */
-        padding: 0 20px; /* Ajuster le padding selon vos besoins */
+        padding: env(safe-area-inset-top) 20px 0 20px; /* Ajuste le padding pour inclure la barre d'état */
         background-color: #164e45;
         color: white;
         position: fixed;
@@ -370,7 +375,7 @@ header > :last-child, footer > :last-child {
     .header-content {
         flex-direction: row; /* Assurer que les éléments sont en ligne */
         align-items: center;
-        padding-top: 80px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 60px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .title-container {
