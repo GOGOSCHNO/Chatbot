@@ -391,7 +391,7 @@ header > :last-child, footer > :last-child {
 
     html, body {
         height: 100%;
-        overflow: auto; /* Permettre le défilement */
+        overflow-x: hidden;
     }
 
     body {
