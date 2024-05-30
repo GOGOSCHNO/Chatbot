@@ -353,13 +353,13 @@ header > :last-child, footer > :last-child {
         display: flex;
         justify-content: space-between; /* Positionner les éléments à gauche et à droite */
         align-items: center; /* Aligner verticalement les éléments au centre */
-        margin-top: 50; /* Remettre la marge à zéro pour l'affichage côte à côte */
+        margin-top: 0; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
 
     .header-logo .logo {
         max-height: 40px; /* Ajuster la hauteur du logo selon vos besoins */
-        margin-left: 100; /* Ajuster la marge à gauche */
-        margin-top: 100; /* Ajuster la marge en haut */
+        margin-left: 10px; /* Ajuster la marge à gauche */
+        margin-top: 10px; /* Ajuster la marge en haut */
     }
 
     .header-logo .orderNowButton {
@@ -373,8 +373,8 @@ header > :last-child, footer > :last-child {
         cursor: pointer;
         text-decoration: none;
         font-weight: bold;
-        margin-right: 100; /* Ajuster la marge à droite */
-        margin-top: 100; /* Ajuster la marge en haut */
+        margin-right: 10px; /* Ajuster la marge à droite */
+        margin-top: 10px; /* Ajuster la marge en haut */
     }
 
     .header-content {
@@ -386,12 +386,12 @@ header > :last-child, footer > :last-child {
     .title-container {
         flex-direction: column;
         align-items: center;
-        padding-top: 100px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 80px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .orderNowButton {
         margin-right: 0;
-        margin-top: 50; /* Remettre la marge à zéro pour l'affichage côte à côte */
+        margin-top: 0; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
 
     .header-title {
