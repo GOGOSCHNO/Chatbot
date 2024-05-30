@@ -364,7 +364,7 @@ header > :last-child, footer > :last-child {
     .header-logo .orderNowButton {
         background-color: #2c9181;
         color: white;
-        padding: 10px 20px; /* Ajuster le padding selon vos besoins */
+        padding: 20px 40px; /* Ajuster le padding selon vos besoins */
         border: none;
         border-radius: 5px;
         font-size: 14px;
@@ -385,7 +385,7 @@ header > :last-child, footer > :last-child {
     .title-container {
         flex-direction: column;
         align-items: center;
-        padding-top: 160px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 100px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .orderNowButton {
