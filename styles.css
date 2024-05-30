@@ -353,6 +353,7 @@ header > :last-child, footer > :last-child {
         display: flex;
         justify-content: space-between; /* Positionner les éléments à gauche et à droite */
         align-items: center; /* Aligner verticalement les éléments au centre */
+        margin-top: 50; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
 
     .header-logo .logo {
@@ -390,7 +391,7 @@ header > :last-child, footer > :last-child {
 
     .orderNowButton {
         margin-right: 0;
-        margin-top: 0; /* Remettre la marge à zéro pour l'affichage côte à côte */
+        margin-top: 50; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
 
     .header-title {
