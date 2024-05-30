@@ -391,7 +391,7 @@ header > :last-child, footer > :last-child {
 
     html, body {
         height: 100%;
-        overflow: hidden; /* Empêche le défilement de la page principale */
+        overflow: auto; /* Permettre le défilement */
     }
 
     body {
