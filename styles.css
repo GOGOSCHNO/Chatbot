@@ -357,6 +357,7 @@ header > :last-child, footer > :last-child {
 
     #chatbot {
         min-height: 100vh; /* Assurez-vous que le conteneur peut s'étendre sur toute la hauteur de l'écran */
+        height: 100vh; /* S'étend sur toute la hauteur de l'écran */
         flex-grow: 1;
         display: flex;
         flex-direction: column;
@@ -390,7 +391,7 @@ header > :last-child, footer > :last-child {
 
     html, body {
         height: 100%;
-        overflow: auto; /* Permettre le défilement */
+        overflow: hidden; /* Empêche le défilement de la page principale */
     }
 
     body {
