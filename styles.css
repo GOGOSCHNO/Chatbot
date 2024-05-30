@@ -326,7 +326,6 @@ header > :last-child, footer > :last-child {
     margin-bottom: 0;
 }
 
-/* Ajout de media queries pour les petits écrans */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -344,15 +343,16 @@ header > :last-child, footer > :last-child {
     }
 
     .header-title {
-        padding: 80px 10px 10px;
+        padding: 10px; /* Réduit pour un meilleur ajustement sur les écrans mobiles */
+        height: 50px; /* Hauteur réduite pour le header */
     }
 
     .header-title h1 {
-        font-size: 24px;
+        font-size: 20px; /* Ajuster la taille de la police pour correspondre à la nouvelle hauteur */
     }
 
     .description {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #chatbot {
@@ -378,8 +378,8 @@ header > :last-child, footer > :last-child {
     }
 
     .image-link {
-        flex: 1 1 45%; /* Les éléments peuvent grandir et rétrécir, avec une base de 45% */
-        max-width: 45%; /* Prend presque la moitié de l'espace disponible */
+        flex: 1 1 100%; /* Les éléments occupent la pleine largeur */
+        max-width: 100%; /* Ajuster pour une pleine largeur */
     }
 
     #main-container {
@@ -391,7 +391,7 @@ header > :last-child, footer > :last-child {
 
     html, body {
         height: 100%;
-        overflow-x: hidden;
+        overflow-x: hidden; /* Empêche le défilement horizontal */
     }
 
     body {
