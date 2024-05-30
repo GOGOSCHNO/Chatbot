@@ -364,7 +364,7 @@ header > :last-child, footer > :last-child {
     .header-logo .orderNowButton {
         background-color: #2c9181;
         color: white;
-        padding: 20px 40px; /* Ajuster le padding selon vos besoins */
+        padding: 10px 20px; /* Ajuster le padding selon vos besoins */
         border: none;
         border-radius: 5px;
         font-size: 14px;
@@ -372,8 +372,8 @@ header > :last-child, footer > :last-child {
         cursor: pointer;
         text-decoration: none;
         font-weight: bold;
-        margin-right: 0; /* Ajuster la marge à droite */
-        margin-top: 0; /* Ajuster la marge en haut */
+        margin-right: 50; /* Ajuster la marge à droite */
+        margin-top: 50; /* Ajuster la marge en haut */
     }
 
     .header-content {
