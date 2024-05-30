@@ -379,7 +379,7 @@ header > :last-child, footer > :last-child {
     .header-content {
         flex-direction: row; /* Assurer que les éléments sont en ligne */
         align-items: center;
-        padding-top: 60px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 80px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .title-container {
