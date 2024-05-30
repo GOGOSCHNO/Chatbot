@@ -357,8 +357,8 @@ header > :last-child, footer > :last-child {
 
     .header-logo .logo {
         max-height: 40px; /* Ajuster la hauteur du logo selon vos besoins */
-        margin-left: 0; /* Ajuster la marge à gauche */
-        margin-top: 0; /* Ajuster la marge en haut */
+        margin-left: 50; /* Ajuster la marge à gauche */
+        margin-top: 50; /* Ajuster la marge en haut */
     }
 
     .header-logo .orderNowButton {
