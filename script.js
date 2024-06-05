@@ -65,6 +65,13 @@ document.getElementById('userInput').addEventListener('keydown', function(event)
     }
 });
 
+// Ajout de la fonction pour afficher le message d'accueil
+function displayWelcomeMessage() {
+    const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today? Whether you're curious about how our scientifically-backed formula works, need tips on integrating Puravive into your routine, or want to learn about our special offers, feel free to ask me anything. I'm here to guide and support you every step of the way!";
+    displayMessage(welcomeMessage, 'bot');
+}
+
+// Fonction pour afficher un message dans le conteneur de messages
 function displayMessage(message, sender) {
     var messagesContainer = document.getElementById('messages');
     var messageDiv = document.createElement('div');
@@ -73,6 +80,9 @@ function displayMessage(message, sender) {
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
 }
+
+// Appel de la fonction d'affichage du message d'accueil dès que la page est chargée
+window.addEventListener('load', displayWelcomeMessage);
 
 function scrollToBottom(container) {
     container.scrollTop = container.scrollHeight;
