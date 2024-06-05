@@ -125,7 +125,7 @@ function typeMessage(message, sender) {
     let tempDiv = document.createElement('div');
     tempDiv.innerHTML = formattedMessage;
     let i = 0;
-    const interval = 20; // Réduire l'intervalle à 20 millisecondes pour accélérer l'effet d'écriture
+    const interval = 5; // Réduire l'intervalle à 5 millisecondes pour accélérer l'effet d'écriture
 
     function typeLetter() {
         if (i < tempDiv.innerHTML.length) {
