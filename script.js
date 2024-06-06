@@ -81,7 +81,7 @@ function displayMessage(message, sender) {
     var messagesContainer = document.getElementById('messages');
     var messageDiv = document.createElement('div');
     messageDiv.className = sender;
-    messageDiv.innerHTML = message;  // Changé de textContent à innerHTML
+    messageDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
 }
@@ -92,6 +92,7 @@ window.addEventListener('load', displayWelcomeMessage);
 function scrollToBottom(container) {
     container.scrollTop = container.scrollHeight;
 }
+
 function formatMessage(text) {
     const lines = text.split('\n');
     let formattedMessage = '';
@@ -129,32 +130,6 @@ function formatMessage(text) {
     }
 
     return formattedMessage;
-}
-
-function typeMessage(message, sender) {
-    let formattedMessage = formatMessage(message);
-    const container = document.getElementById('messages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = sender;
-    container.appendChild(messageDiv);
-
-    let tempDiv = document.createElement('div');
-    tempDiv.innerHTML = formattedMessage;
-    let i = 0;
-    const interval = 50; // Intervalle de 50 millisecondes pour un effet de frappe réaliste
-
-    function typeLetter() {
-        if (i < tempDiv.innerHTML.length) {
-            messageDiv.innerHTML += tempDiv.innerHTML.charAt(i);
-            i++;
-            setTimeout(typeLetter, interval);
-        } else {
-            messageDiv.innerHTML = tempDiv.innerHTML; // Assurez-vous que le formatage est correct après l'effet d'écriture
-            scrollToBottom(container); // S'assurer que le défilement se fait jusqu'au bas à la fin
-        }
-    }
-
-    typeLetter();
 }
 
 function showTypingIndicator() {
