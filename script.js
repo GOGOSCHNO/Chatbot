@@ -131,6 +131,20 @@ function formatMessage(text) {
     return formattedMessage;
 }
 
+function typeLetter() {
+	if (i < tempDiv.innerHTML.length) {
+	messageDiv.innerHTML += tempDiv.innerHTML.charAt(i);
+	i++;
+	setTimeout(typeLetter, interval);
+	} else {
+	messageDiv.innerHTML = tempDiv.innerHTML; // Assurez-vous que le formatage est correct après l'effet d'écriture
+	scrollToBottom(container); // S'assurer que le défilement se fait jusqu'au bas à la fin
+	}
+	}
+	
+	typeLetter();
+	}
+
 function showTypingIndicator() {
     const container = document.getElementById('messages');
     const indicator = document.createElement('div');
