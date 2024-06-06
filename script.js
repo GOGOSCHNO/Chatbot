@@ -41,7 +41,7 @@ function sendUserInput() {
         .then(data => {
             hideTypingIndicator(typingIndicator);
             if (typeof data.reply === 'string') {
-                typeMessage(data.reply, 'bot');
+                displayMessage(data.reply, 'bot');
             } else {
                 displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
             }
@@ -72,7 +72,7 @@ function displayWelcomeMessage() {
     
     setTimeout(() => {
         hideTypingIndicator(typingIndicator);
-        typeMessage(welcomeMessage, 'bot');
+        displayMessage(welcomeMessage, 'bot');
     }, 2000); // Ajouter une latence de 2 secondes
 }
 
