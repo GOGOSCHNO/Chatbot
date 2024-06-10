@@ -17,41 +17,46 @@ window.addEventListener('resize', adjustChatbotHeight);
 window.addEventListener('load', adjustChatbotHeight);
 
 function sendUserInput() {
-    var userInput = document.getElementById('userInput').value;
-    if (userInput.trim() !== '') {
-        displayMessage(userInput, 'user');
-        document.getElementById('userInput').value = ''; // Effacer la zone de saisie après l'envoi
+  var userInput = document.getElementById('userInput').value;
+  if (userInput.trim() !== '') {
+    displayMessage(userInput, 'user');
+    document.getElementById('userInput').value = '';
 
-        const typingIndicator = showTypingIndicator();
+    const typingIndicator = showTypingIndicator();
 
-        fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include', // Important pour inclure les cookies
-            body: JSON.stringify({ message: userInput }),
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            hideTypingIndicator(typingIndicator);
-            if (typeof data.reply === 'string') {
-                displayMessage(data.reply, 'bot');
-            } else {
-                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-            }
-        })
-        .catch(error => {
-            hideTypingIndicator(typingIndicator);
-            console.error('Error:', error);
-            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+    fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ message: userInput }),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      hideTypingIndicator(typingIndicator);
+      if (typeof data.reply === 'string') {
+        typeMessage(data.reply, 'bot');
+        // Envoyer un événement personnalisé à Google Analytics
+        gtag('event', 'message_sent', {
+          'event_category': 'Chatbot',
+          'event_label': 'User Message Sent'
         });
-    }
+      } else {
+        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+      }
+    })
+    .catch(error => {
+      hideTypingIndicator(typingIndicator);
+      console.error('Error:', error);
+      displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+    });
+  }
 }
 
 // Événement pour le bouton "Envoyer"
