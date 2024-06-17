@@ -15,7 +15,7 @@
 
 /* Additional Image */
 .additional-image {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: center;
     padding: 20px 0; /* Espace autour de l'image */
@@ -36,7 +36,7 @@
     padding: 20px 0; /* Espace autour des images */
 }
 .new-images img {
-    max-height: 650px; /* Agrandir l'image */
+    max-height: 1000px; /* Agrandir l'image */
     height: auto;
     display: block;
     margin: 0 auto;
