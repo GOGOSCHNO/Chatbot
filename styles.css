@@ -16,13 +16,13 @@
 /* Additional Image */
 .additional-image {
     background: radial-gradient(ellipse, #2c9181, #164e45); /* Dégradé de vert */
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     padding: 20px 0; /* Espace autour de l'image */
 }
 .additional-image img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -196,7 +196,7 @@ body {
 #chatbot {
     width: 90%;
     max-width: 900px;
-    min-height: 400px;
+    min-height: 500px;
     background-color: #164e45;
     border: 2px solid #dedede;
     border-radius: 5px;
