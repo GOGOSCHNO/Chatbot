@@ -34,12 +34,15 @@
     justify-content: center;
     gap: 20px; /* Espace entre les deux images */
     padding: 20px 0; /* Espace autour des images */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si l'espace est insuffisant */
 }
 .new-images img {
-    max-height: 1000px; /* Agrandir l'image */
-    height: 1000;
+    width: 100%; /* Utiliser la largeur complète du conteneur parent */
+    max-width: 500px; /* Ajuster selon la taille désirée */
+    height: auto; /* Garder le ratio de l'image */
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* Centrer les images */
+    border-radius: 10px; /* Ajouter des coins arrondis aux images */
 }
 /* Dégradé de fond pour le conteneur principal */
 .main-content {
