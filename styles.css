@@ -37,7 +37,7 @@
     padding: 20px 0; /* Espace autour des images */
 }
 .new-images img {
-    max-width: 100%; /* Agrandir l'image */
+    max-width: 130%; /* Agrandir l'image */
     height: auto;
     display: block;
     margin: 0 auto;
