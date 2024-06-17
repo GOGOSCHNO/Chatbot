@@ -15,7 +15,6 @@
 
 /* Additional Image */
 .additional-image {
-    background: radial-gradient(ellipse, #2c9181, #164e45); /* Dégradé de vert */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,7 +36,7 @@
     padding: 20px 0; /* Espace autour des images */
 }
 .new-images img {
-    max-width: 130%; /* Agrandir l'image */
+    max-width: 180%; /* Agrandir l'image */
     height: auto;
     display: block;
     margin: 0 auto;
