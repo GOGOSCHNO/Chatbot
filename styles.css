@@ -22,7 +22,7 @@
     padding: 20px 0; /* Espace autour de l'image */
 }
 .additional-image img {
-    max-width: 90%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -37,7 +37,7 @@
     padding: 20px 0; /* Espace autour des images */
 }
 .new-images img {
-    max-width: 45%; /* Agrandir l'image */
+    max-width: 90%; /* Agrandir l'image */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -85,7 +85,7 @@
     color: #f5f5f5;
     width: 100%;
     text-align: center;
-    padding: 100px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
+    padding: 80px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     display: flex;
