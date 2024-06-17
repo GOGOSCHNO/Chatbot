@@ -29,7 +29,7 @@
 /* New Images */
 .new-images {
     background-color: white; /* Fond blanc pour cette section */
-    width: 150%;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px; /* Espace entre les deux images */
