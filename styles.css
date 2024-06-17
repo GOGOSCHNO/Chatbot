@@ -37,7 +37,7 @@
 }
 .new-images img {
     max-height: 1000px; /* Agrandir l'image */
-    height: auto;
+    height: 1000;
     display: block;
     margin: 0 auto;
 }
