@@ -21,7 +21,7 @@
     padding: 20px 0; /* Espace autour de l'image */
 }
 .additional-image img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -29,7 +29,7 @@
 /* New Images */
 .new-images {
     background-color: white; /* Fond blanc pour cette section */
-    width: 100%;
+    width: 150%;
     display: flex;
     justify-content: center;
     gap: 20px; /* Espace entre les deux images */
