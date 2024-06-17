@@ -38,7 +38,7 @@
 }
 .new-images img {
     width: 100%; /* Utiliser la largeur complète du conteneur parent */
-    max-width: 500px; /* Ajuster selon la taille désirée */
+    max-width: 1000px; /* Ajuster selon la taille désirée */
     height: auto; /* Garder le ratio de l'image */
     display: block;
     margin: 0 auto; /* Centrer les images */
