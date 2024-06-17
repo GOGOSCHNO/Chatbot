@@ -30,14 +30,14 @@
 /* New Images */
 .new-images {
     background-color: white; /* Fond blanc pour cette section */
-    width: 100%;
+    width: 130%;
     display: flex;
     justify-content: center;
     gap: 20px; /* Espace entre les deux images */
     padding: 20px 0; /* Espace autour des images */
 }
 .new-images img {
-    max-width: 90%; /* Agrandir l'image */
+    max-width: 100%; /* Agrandir l'image */
     height: auto;
     display: block;
     margin: 0 auto;
