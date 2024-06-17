@@ -16,7 +16,7 @@
 /* Additional Image */
 .additional-image {
     background: radial-gradient(ellipse, #2c9181, #164e45); /* Dégradé de vert */
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px 0; /* Espace autour de l'image */
