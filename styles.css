@@ -1,3 +1,47 @@
+/* Article Container */
+.article-container {
+    padding-top: 80px; /* Espace supérieur pour laisser un espace entre le header et l'image */
+    background-color: white; /* Fond blanc pour cette section */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.article-container img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Additional Image */
+.additional-image {
+    background: radial-gradient(ellipse, #2c9181, #164e45); /* Dégradé de vert */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; /* Espace autour de l'image */
+}
+.additional-image img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* New Images */
+.new-images {
+    background-color: white; /* Fond blanc pour cette section */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les deux images */
+    padding: 20px 0; /* Espace autour des images */
+}
+.new-images img {
+    max-width: 45%; /* Agrandir l'image */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 /* Dégradé de fond pour le conteneur principal */
 .main-content {
     padding: 20px;
@@ -151,8 +195,8 @@ body {
 
 #chatbot {
     width: 90%;
-    max-width: 1000px;
-    min-height: 600px;
+    max-width: 900px;
+    min-height: 400px;
     background-color: #164e45;
     border: 2px solid #dedede;
     border-radius: 5px;
