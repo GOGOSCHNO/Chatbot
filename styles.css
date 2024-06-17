@@ -84,7 +84,7 @@
     color: #f5f5f5;
     width: 100%;
     text-align: center;
-    padding: 80px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
+    padding: 60px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     display: flex;
