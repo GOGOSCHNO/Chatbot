@@ -1,3 +1,18 @@
+// Fonction pour le défilement fluide
+function smoothScroll(target) {
+    document.querySelector(target).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Ajout d'écouteurs d'événements pour les boutons de navigation
+document.querySelectorAll('.nav-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        smoothScroll(this.getAttribute('href'));
+    });
+});
+
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
