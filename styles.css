@@ -15,7 +15,7 @@
 
 /* Additional Image */
 .additional-image {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     padding: 20px 0; /* Espace autour de l'image */
