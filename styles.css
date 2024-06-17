@@ -74,6 +74,24 @@
     max-width: 1100px;
     padding: 0 20px;
 }
+.nav-button {
+    color: white;
+    padding: 10px 15px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.nav-button:hover {
+    background-color: #2c9181; /* Couleur de survol */
+    border-radius: 5px;
+}
+/* Styles pour les sections de contenu */
+#article-container, #new-images, #chatbot {
+    padding-top: 60px; /* Ajuster pour éviter que le contenu soit masqué par le header */
+}
 
 .logo {
     max-height: 70px;
