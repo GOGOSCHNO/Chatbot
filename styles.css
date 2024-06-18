@@ -568,4 +568,14 @@ header > :last-child, footer > :last-child {
         height: auto;
     }
 }
+@media (min-width: 769px) {
+    .header-content {
+        display: flex; /* Show the header content on desktop */
+    }
+    .dropdown-menu {
+        display: none; /* Ensure dropdown is hidden on desktop */
+    }
+    .hamburger-menu {
+        display: none; /* Hide the hamburger menu on desktop */
+    }
 }
