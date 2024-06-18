@@ -424,6 +424,15 @@ header > :last-child, footer > :last-child {
     background-color: #2c9181;
 }
 
+/* Par défaut, afficher les images de bureau et masquer les images mobiles */
+.article-container .article-image {
+    display: block;
+}
+
+.article-containermobile .article-imagemobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
@@ -556,6 +565,20 @@ header > :last-child, footer > :last-child {
         height: auto;
     }
     .new-images img {
+        width: 100%;
+        height: auto;
+    }
+        .article-container .article-image {
+        display: none;
+    }
+
+    .article-containermobile .article-imagemobile {
+        display: block;
+        width: 100%; /* Adapter la largeur à l'écran */
+        height: auto; /* Maintenir les proportions */
+    }
+
+    .additional-image img {
         width: 100%;
         height: auto;
     }
