@@ -389,6 +389,40 @@ header > :first-child, footer > :first-child {
 header > :last-child, footer > :last-child {
     margin-bottom: 0;
 }
+/* Styles pour le bouton hamburger et le menu déroulant */
+.hamburger-menu {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none; /* Masqué par défaut */
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #164e45;
+    border: 1px solid #2c9181;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: #2c9181;
+}
 
 @media (max-width: 768px) {
     html, body {
@@ -439,6 +473,9 @@ header > :last-child, footer > :last-child {
         font-weight: bold;
         margin-right: 35px; /* Ajuster la marge à droite */
         margin-top: -60px; /* Ajuster la marge en haut */
+    }
+     .hamburger-menu {
+        display: block; /* Afficher le bouton hamburger sur mobile */
     }
 
     .header-content {
@@ -519,4 +556,18 @@ header > :last-child, footer > :last-child {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
+     /* Agrandir les images dans les conteneurs */
+    #article-container img {
+        width: 100%;
+        height: auto;
+    }
+    #additional-image img {
+        width: 100%;
+        height: auto;
+    }
+    .new-images img {
+        width: 100%;
+        height: auto;
+    }
+}
 }
