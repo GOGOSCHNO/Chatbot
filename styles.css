@@ -433,6 +433,7 @@ header > :last-child, footer > :last-child {
     display: none;
 }
 
+/* Style mobile */
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
@@ -555,12 +556,17 @@ header > :last-child, footer > :last-child {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
+
     /* Agrandir les images dans les conteneurs */
     #article-container img {
         width: 100%;
         height: auto;
     }
-    #additional-image img {
+    #article-containermobile img {
+        width: 100%;
+        height: auto;
+    }
+    .additional-image img {
         width: 100%;
         height: auto;
     }
@@ -568,7 +574,7 @@ header > :last-child, footer > :last-child {
         width: 100%;
         height: auto;
     }
-        .article-container .article-image {
+    .article-container .article-image {
         display: none;
     }
 
@@ -582,7 +588,14 @@ header > :last-child, footer > :last-child {
         width: 100%;
         height: auto;
     }
+
+    .additional-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
 
 @media (min-width: 769px) {
     .header-content {
