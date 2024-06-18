@@ -456,30 +456,22 @@ header > :last-child, footer > :last-child {
 
     .header-logo .logo {
         max-height: 40px; /* Ajuster la hauteur du logo selon vos besoins */
-        margin-left: -10px; /* Ajuster la marge à gauche */
-        margin-top: -60px; /* Ajuster la marge en haut */
+        margin-left: 0;
+        margin-top: 0;
     }
 
-    .header-logo .orderNowButton {
-        background-color: #2c9181;
-        color: white;
-        padding: 10px 20px; /* Ajuster le padding selon vos besoins */
+    .header-logo .hamburger-menu {
+        font-size: 30px;
+        background: none;
         border: none;
-        border-radius: 5px;
-        font-size: 14px;
-        font-family: 'Roboto Condensed', sans-serif;
+        color: white;
         cursor: pointer;
-        text-decoration: none;
-        font-weight: bold;
-        margin-right: 35px; /* Ajuster la marge à droite */
-        margin-top: -60px; /* Ajuster la marge en haut */
-    }
-     .hamburger-menu {
         display: block; /* Afficher le bouton hamburger sur mobile */
+        margin-right: 20px; /* Ajuster la marge à droite */
     }
 
     .header-content {
-        display: none; /* Hide the original header content on mobile */
+        display: none; /* Masquer le contenu du header sur mobile */
     }
 
     .title-container {
@@ -554,7 +546,7 @@ header > :last-child, footer > :last-child {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
-     /* Agrandir les images dans les conteneurs */
+    /* Agrandir les images dans les conteneurs */
     #article-container img {
         width: 100%;
         height: auto;
@@ -568,14 +560,15 @@ header > :last-child, footer > :last-child {
         height: auto;
     }
 }
+
 @media (min-width: 769px) {
     .header-content {
-        display: flex; /* Show the header content on desktop */
+        display: flex; /* Afficher le contenu du header sur ordinateur */
     }
     .dropdown-menu {
-        display: none; /* Ensure dropdown is hidden on desktop */
+        display: none; /* S'assurer que le menu déroulant est masqué sur ordinateur */
     }
     .hamburger-menu {
-        display: none; /* Hide the hamburger menu on desktop */
+        display: none; /* Masquer le menu hamburger sur ordinateur */
     }
 }
