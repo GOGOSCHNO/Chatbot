@@ -6,11 +6,15 @@ function toggleDropdown() {
 // Smooth scrolling
 document.querySelectorAll('.dropdown-menu a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        if (this.classList.contains('orderNowButton')) {
+            // Laisser le lien s'ouvrir normalement pour les boutons Order Now
+            return;
+        }
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-        toggleDropdown(); // Close the menu after clicking
+        toggleDropdown(); // Fermer le menu après avoir cliqué
     });
 });
 
