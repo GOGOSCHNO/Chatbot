@@ -1,12 +1,19 @@
-// Script pour le bouton hamburger et le menu déroulant
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+function toggleDropdown() {
+    var dropdown = document.querySelector('.dropdown-menu');
+    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+}
 
-    hamburgerMenu.addEventListener('click', function () {
-        dropdownMenu.classList.toggle('show');
+// Smooth scrolling
+document.querySelectorAll('.dropdown-menu a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        toggleDropdown(); // Close the menu after clicking
     });
 });
+
 // Fonction pour le défilement fluide
 function smoothScroll(target) {
     document.querySelector(target).scrollIntoView({
