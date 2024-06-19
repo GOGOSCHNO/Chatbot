@@ -590,11 +590,6 @@ header > :last-child, footer > :last-child {
         height: auto;
     }
 
-    .additional-image img {
-        width: 100%;
-        height: auto;
-    }
-
     .new-images img {
         width: 100%;
         height: auto;
@@ -618,10 +613,13 @@ header > :last-child, footer > :last-child {
     }
 
     /* Ajout d'une classe pour agrandir l'image sur mobile */
-    .additional-image-img {
+    .additional-image img {
         width: 100%;
-        max-width: 100%;
         height: auto;
+        max-height: 200px; /* Ajustez cette valeur selon vos besoins */
+        object-fit: cover; /* Assurez-vous que l'image conserve sa proportion */
+        display: block;
+        margin: 0 auto; /* Centre l'image horizontalement */
     }
 
     /* Réduire la taille des images sous le chatbot et les rendre uniformes */
