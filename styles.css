@@ -556,24 +556,28 @@ header > :last-child, footer > :last-child {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
-
+    
     /* Agrandir les images dans les conteneurs */
     #article-container img {
         width: 100%;
         height: auto;
     }
+    
     #article-containermobile img {
         width: 100%;
         height: auto;
     }
+    
     .additional-image img {
         width: 100%;
         height: auto;
     }
+    
     .new-images img {
         width: 100%;
         height: auto;
     }
+    
     .article-container .article-image {
         display: none;
     }
@@ -595,8 +599,14 @@ header > :last-child, footer > :last-child {
         align-items: center;
         width: 100%;
     }
-}
 
+    /* Ajout d'une classe pour agrandir l'image sur mobile */
+    .additional-image-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
 
 @media (min-width: 769px) {
     .header-content {
