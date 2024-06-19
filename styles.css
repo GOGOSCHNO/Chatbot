@@ -548,12 +548,8 @@ header > :last-child, footer > :last-child {
     }
 
     .image-link {
-        flex: 1 1 30%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
-        max-width: 30%; /* Prend un tiers de l'espace disponible */
-        box-sizing: border-box; /* Inclut padding et border dans la largeur */
-        transition: transform 0.3s ease; /* Animation de la transformation */
-        display: flex;
-        justify-content: center; /* Centre l'image horizontalement */
+        flex: 1 1 100%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
+        max-width: 100%; /* Prend un tiers de l'espace disponible */
     }
 
     #main-container {
