@@ -633,6 +633,21 @@ header > :last-child, footer > :last-child {
         display: block; /* Supprime les espaces blancs autour des images */
         border-radius: 10px; /* Arrondit les bords des images */
     }
+    .avis {
+        display: block; /* Afficher les images pour mobile */
+        width: 100%;
+        height: auto;
+    }
+    .shipping {
+        display: block; /* Afficher les images pour mobile */
+        width: 100%;
+        height: auto;
+    }
+    .guarantee {
+        display: block; /* Afficher les images pour mobile */
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (min-width: 769px) {
@@ -652,6 +667,15 @@ header > :last-child, footer > :last-child {
         display: block; /* Afficher l'image pour ordinateur */
     }
     .new-imagesmobile {
+    display: none;
+    }
+    .avis {
+    display: none;
+    }
+    .shipping {
+    display: none;
+    }
+    .guarantee {
     display: none;
     }
     
