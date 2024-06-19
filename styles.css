@@ -565,7 +565,14 @@ header > :last-child, footer > :last-child {
     }
 
     .new-images {
-        margin-bottom: 0; /* Réduire l'espace en dessous de new-images */
+        display: none;
+    }
+    .new-imagesmobile {
+        display: block;
+    }
+    .new-imagesmobile img {
+        width: 100%;
+        height: auto;
     }
 
     html, body {
@@ -641,6 +648,9 @@ header > :last-child, footer > :last-child {
     }
     .additional-image {
         display: block; /* Afficher l'image pour ordinateur */
+    }
+    .new-imagesmobile {
+    display: none;
     }
     
 }
