@@ -562,6 +562,8 @@ header > :last-child, footer > :last-child {
         display: flex;
         flex-direction: column;
         padding-top: 20px; /* Ajout d'espace au-dessus du chatbot */
+        justify-content: center; /* Centrer les images horizontalement */
+        align-items: center; /* Centrer les images verticalement */
     }
 
     .new-images {
