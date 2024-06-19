@@ -606,22 +606,13 @@ header > :last-child, footer > :last-child {
     }
 
     .additional-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+        display: none; /* Masquer l'image pour ordinateur sur mobile */
     }
-
-    /* Ajout d'une classe pour agrandir l'image sur mobile */
-    .additional-image img {
+    .additional-imagemobile {
+        display: block; /* Afficher les images pour mobile */
         width: 100%;
         height: auto;
-        max-height: 200px; /* Ajustez cette valeur selon vos besoins */
-        object-fit: cover; /* Assurez-vous que l'image conserve sa proportion */
-        display: block;
-        margin: 0 auto; /* Centre l'image horizontalement */
     }
-
     /* Réduire la taille des images sous le chatbot et les rendre uniformes */
     .image-link img {
         max-width: 70%; /* Assure que l'image ne dépasse pas son conteneur */
@@ -641,4 +632,11 @@ header > :last-child, footer > :last-child {
     .hamburger-menu {
         display: none; /* Masquer le menu hamburger sur ordinateur */
     }
+    .additional-imagemobile {
+        display: none; /* Masquer les images pour mobile sur ordinateur */
+    }
+    .additional-image {
+        display: block; /* Afficher l'image pour ordinateur */
+    }
+    
 }
