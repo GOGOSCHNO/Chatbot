@@ -552,6 +552,8 @@ header > :last-child, footer > :last-child {
     .image-link {
         flex: 1 1 100%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
         max-width: 100%; /* Prend un tiers de l'espace disponible */
+        justify-content: center; /* Centrer les images horizontalement */
+        align-items: center; /* Centrer les images verticalement */
     }
 
     #main-container {
