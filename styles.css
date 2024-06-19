@@ -544,12 +544,25 @@ header > :last-child, footer > :last-child {
     }
 
     #extra-content {
-        width: 95%;
+        display: flex;
+        justify-content: center; /* Centre les images horizontalement */
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+        gap: 20px; /* Espace entre les images */
+        margin-bottom: 40px; /* Ajout d'espace en dessous des images */
+        width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
+        max-width: 1000px;
+        box-sizing: border-box;
+        margin-left: auto; /* Ajoute cette ligne pour centrer le conteneur */
+        margin-right: auto; /* Ajoute cette ligne pour centrer le conteneur */
     }
 
     .image-link {
-        flex: 1 1 100%; /* Les éléments occupent la pleine largeur */
-        max-width: 100%; /* Ajuster pour une pleine largeur */
+        flex: 1 1 30%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
+        max-width: 30%; /* Prend un tiers de l'espace disponible */
+        box-sizing: border-box; /* Inclut padding et border dans la largeur */
+        transition: transform 0.3s ease; /* Animation de la transformation */
+        display: flex;
+        justify-content: center; /* Centre l'image horizontalement */
     }
 
     #main-container {
@@ -624,9 +637,10 @@ header > :last-child, footer > :last-child {
 
     /* Réduire la taille des images sous le chatbot et les rendre uniformes */
     .image-link img {
-        width: 80%;
+        max-width: 70%; /* Assure que l'image ne dépasse pas son conteneur */
         height: auto;
-        object-fit: cover; /* Assurez-vous que les images conservent leur proportion */
+        display: block; /* Supprime les espaces blancs autour des images */
+        border-radius: 10px; /* Arrondit les bords des images */
     }
 }
 
