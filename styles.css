@@ -545,6 +545,8 @@ header > :last-child, footer > :last-child {
 
     #extra-content {
         width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
+        justify-content: center; /* Centrer les images horizontalement */
+        align-items: center; /* Centrer les images verticalement */
     }
 
     .image-link {
