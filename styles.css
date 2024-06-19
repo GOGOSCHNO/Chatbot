@@ -504,7 +504,7 @@ header > :last-child, footer > :last-child {
     .title-container {
         flex-direction: column;
         align-items: center;
-        padding-top: 80px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
+        padding-top: 30px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
 
     .orderNowButton {
@@ -628,7 +628,7 @@ header > :last-child, footer > :last-child {
     .image-link img {
         width: 100%;
         height: auto;
-        max-height: 150px; /* Ajustez la hauteur maximale selon vos besoins */
+        max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
         object-fit: cover; /* Assurez-vous que les images conservent leur proportion */
     }
 }
