@@ -477,11 +477,28 @@ header > :last-child, footer > :last-child {
         color: white;
         cursor: pointer;
         display: block; /* Afficher le bouton hamburger sur mobile */
-        margin-right: 20px; /* Ajuster la marge à droite */
+        margin-right: 10px; /* Ajuster la marge à droite */
     }
 
     .header-content {
         display: none; /* Masquer le contenu du header sur mobile */
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #164e45;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
     }
 
     .title-container {
@@ -540,6 +557,11 @@ header > :last-child, footer > :last-child {
         overflow: auto; /* Permettre le défilement */
         display: flex;
         flex-direction: column;
+        padding-top: 20px; /* Ajout d'espace au-dessus du chatbot */
+    }
+
+    .new-images {
+        margin-bottom: 0; /* Réduire l'espace en dessous de new-images */
     }
 
     html, body {
@@ -556,28 +578,28 @@ header > :last-child, footer > :last-child {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
-    
+
     /* Agrandir les images dans les conteneurs */
     #article-container img {
         width: 100%;
         height: auto;
     }
-    
+
     #article-containermobile img {
         width: 100%;
         height: auto;
     }
-    
+
     .additional-image img {
         width: 100%;
         height: auto;
     }
-    
+
     .new-images img {
         width: 100%;
         height: auto;
     }
-    
+
     .article-container .article-image {
         display: none;
     }
@@ -586,11 +608,6 @@ header > :last-child, footer > :last-child {
         display: block;
         width: 100%; /* Adapter la largeur à l'écran */
         height: auto; /* Maintenir les proportions */
-    }
-
-    .additional-image img {
-        width: 100%;
-        height: auto;
     }
 
     .additional-image {
@@ -605,6 +622,14 @@ header > :last-child, footer > :last-child {
         width: 100%;
         max-width: 100%;
         height: auto;
+    }
+
+    /* Réduire la taille des images sous le chatbot et les rendre uniformes */
+    .image-link img {
+        width: 100%;
+        height: auto;
+        max-height: 150px; /* Ajustez la hauteur maximale selon vos besoins */
+        object-fit: cover; /* Assurez-vous que les images conservent leur proportion */
     }
 }
 
