@@ -544,16 +544,7 @@ header > :last-child, footer > :last-child {
     }
 
     #extra-content {
-        display: flex;
-        justify-content: center; /* Centre les images horizontalement */
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-        gap: 20px; /* Espace entre les images */
-        margin-bottom: 40px; /* Ajout d'espace en dessous des images */
         width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
-        max-width: 1000px;
-        box-sizing: border-box;
-        margin-left: auto; /* Ajoute cette ligne pour centrer le conteneur */
-        margin-right: auto; /* Ajoute cette ligne pour centrer le conteneur */
     }
 
     .image-link {
