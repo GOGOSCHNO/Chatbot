@@ -626,9 +626,8 @@ header > :last-child, footer > :last-child {
 
     /* Réduire la taille des images sous le chatbot et les rendre uniformes */
     .image-link img {
-        width: 100%;
+        width: 80%;
         height: auto;
-        max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
         object-fit: cover; /* Assurez-vous que les images conservent leur proportion */
     }
 }
