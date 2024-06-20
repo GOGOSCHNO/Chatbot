@@ -96,6 +96,7 @@
 
 .logo {
     max-height: 70px;
+    margin-right: auto; /* Ajoute de l'espace à droite du logo */
 }
 
 .header-title {
@@ -138,7 +139,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 0px; /* Décale le bouton 'Order Now' vers la gauche */
+    margin-left: auto; /* Ajoute de l'espace à gauche du bouton 'Order Now' */
 }
 
 .orderNowButton:hover {
