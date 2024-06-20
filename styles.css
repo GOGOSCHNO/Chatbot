@@ -642,6 +642,7 @@ header > :last-child, footer > :last-child {
         display: block; /* Afficher les images pour mobile */
         width: 100%;
         height: auto;
+        padding-bottom: 40px;
     }
     .guarantee {
         display: block; /* Afficher les images pour mobile */
