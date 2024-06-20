@@ -73,6 +73,7 @@
     display: flex;
     gap: 20px; /* Espacement entre les boutons */
     align-items: center;
+    margin-left: auto; /* Déplace les boutons vers la droite */
 }
 .nav-button {
     color: white;
@@ -137,7 +138,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 70px; /* Décale le bouton 'Order Now' vers la gauche */
+    margin-right: 0px; /* Décale le bouton 'Order Now' vers la gauche */
 }
 
 .orderNowButton:hover {
