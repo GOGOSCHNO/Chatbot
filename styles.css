@@ -65,17 +65,13 @@
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
-    margin-left: auto; /* Déplacer le groupe de boutons vers la droite */
-    width: 90%; /* Ajuster pour centrer le contenu */
-    max-width: 1100px;
-    padding: 0 20px;
+    gap: 20px; /* Espacement entre les boutons */
     align-items: center;
 }
 .nav-button {
