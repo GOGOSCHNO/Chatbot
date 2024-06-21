@@ -97,7 +97,7 @@
 
 .logo {
     max-height: 70px;
-    margin-left: 250px; /* Ajustez la marge gauche pour le logo */
+    margin-left: 400px; /* Ajustez la marge gauche pour le logo */
 }
 
 .header-title {
@@ -140,7 +140,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 20px; /* Ajustez la marge droite pour le bouton */
+    margin-right: 40px; /* Ajustez la marge droite pour le bouton */
 }
 
 .orderNowButton:hover {
