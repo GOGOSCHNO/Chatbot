@@ -73,7 +73,8 @@
     display: flex;
     gap: 20px; /* Espacement entre les boutons */
     align-items: center;
-    margin-left: auto; /* Déplace les boutons vers la droite */
+    margin-right: auto;
+    margin-left: auto;
 }
 .nav-button {
     color: white;
@@ -96,7 +97,7 @@
 
 .logo {
     max-height: 70px;
-    margin-right: auto; /* Ajoute de l'espace à droite du logo */
+    margin-left: 20px; /* Ajustez la marge gauche pour le logo */
 }
 
 .header-title {
@@ -139,7 +140,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    margin-left: auto; /* Ajoute de l'espace à gauche du bouton 'Order Now' */
+    margin-right: 20px; /* Ajustez la marge droite pour le bouton */
 }
 
 .orderNowButton:hover {
