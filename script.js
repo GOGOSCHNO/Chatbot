@@ -207,3 +207,18 @@ function typeMessage(message, sender) {
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
 }
+// Fonction pour enregistrer les clics sur les boutons de promotion
+function trackPromoClick(event) {
+    const targetId = event.target.id;
+    gtag('event', 'promo_click', {
+        'event_category': 'Promotion',
+        'event_label': targetId,
+        'value': 1
+    });
+}
+
+// Ajout d'écouteurs d'événements pour les boutons de promotion
+document.getElementById('orderNowButton').addEventListener('click', trackPromoClick);
+document.getElementById('promoImage1').addEventListener('click', trackPromoClick);
+document.getElementById('promoImage2').addEventListener('click', trackPromoClick);
+document.getElementById('promoImage3').addEventListener('click', trackPromoClick);
