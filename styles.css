@@ -260,6 +260,7 @@ body {
     background: white;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative; /* Pour positionner les éléments en absolu à l'intérieur */
 }
 
 #userInput, #sendButton {
