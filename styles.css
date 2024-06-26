@@ -229,7 +229,29 @@ body {
     margin-bottom: 40px; /* Espacement entre le chatbot et les images */
     transition: height 0.3s ease; /* Transition douce pour le changement de hauteur */
 }
-
+.question-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 10px; /* Espace autour des boutons */
+    justify-content: flex-end; /* Alignement à droite */
+    position: absolute;
+    bottom: 20px; /* Distance depuis le bas */
+    right: 20px; /* Distance depuis la droite */
+}
+.question-button {
+    background-color: #2c9181;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.question-button:hover {
+    background-color: #247165;
+}
 #messages {
     flex: 8; /* Cela permet à #messages d'occuper 80% de l'espace disponible */
     overflow-y: auto; /* Permet le défilement vertical si nécessaire */
