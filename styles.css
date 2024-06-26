@@ -250,7 +250,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    width: 150px; /* Ajuster la largeur selon vos besoins */
+    width: 300px; /* Ajuster la largeur selon vos besoins */
 }
 
 .question-button:hover {
