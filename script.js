@@ -52,58 +52,47 @@ window.addEventListener('resize', adjustChatbotHeight);
 window.addEventListener('load', adjustChatbotHeight);
 
 function sendUserInput() {
-  var userInput = document.getElementById('userInput').value;
-  if (userInput.trim() !== '') {
-    displayMessage(userInput, 'user');
-    document.getElementById('userInput').value = '';
+    var userInput = document.getElementById('userInput').value;
+    if (userInput.trim() !== '') {
+        displayMessage(userInput, 'user');
+        document.getElementById('userInput').value = '';
 
-    const typingIndicator = showTypingIndicator();
+        const typingIndicator = showTypingIndicator();
 
-    fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({ message: userInput }),
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      hideTypingIndicator(typingIndicator);
-      if (typeof data.reply === 'string') {
-        typeMessage(data.reply, 'bot');
-        // Envoyer un événement personnalisé à Google Analytics
-        gtag('event', 'message_sent', {
-          'event_category': 'Chatbot',
-          'event_label': 'User Message Sent'
+        fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({ message: userInput }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            hideTypingIndicator(typingIndicator);
+            if (typeof data.reply === 'string') {
+                typeMessage(data.reply, 'bot');
+                // Envoyer un événement personnalisé à Google Analytics
+                gtag('event', 'message_sent', {
+                    'event_category': 'Chatbot',
+                    'event_label': 'User Message Sent'
+                });
+            } else {
+                displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+            }
+        })
+        .catch(error => {
+            hideTypingIndicator(typingIndicator);
+            console.error('Error:', error);
+            displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
         });
-      } else {
-        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
-      }
-    })
-    .catch(error => {
-      hideTypingIndicator(typingIndicator);
-      console.error('Error:', error);
-      displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
-    });
-  }
-}
-
-// Événement pour le bouton "Envoyer"
-document.getElementById('sendButton').addEventListener('click', sendUserInput);
-
-// Événement pour la touche "Entrée"
-document.getElementById('userInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        sendUserInput();
     }
-});
+}
 
 // Événement pour le bouton "Envoyer"
 document.getElementById('sendButton').addEventListener('click', sendUserInput);
@@ -198,6 +187,7 @@ function hideTypingIndicator(indicator) {
         indicator.remove();
     }
 }
+
 // Ajout de la fonction typeMessage pour afficher les réponses du bot
 function typeMessage(message, sender) {
     const messagesContainer = document.getElementById('messages');
@@ -207,6 +197,49 @@ function typeMessage(message, sender) {
     messagesContainer.appendChild(messageDiv);
     scrollToBottom(messagesContainer);
 }
+
+// Fonction pour envoyer une question prédéfinie et masquer les boutons de questions
+function sendQuestion(question) {
+    displayMessage(question, 'user');
+    const typingIndicator = showTypingIndicator();
+
+    fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ message: question }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        hideTypingIndicator(typingIndicator);
+        if (typeof data.reply === 'string') {
+            typeMessage(data.reply, 'bot');
+            // Envoyer un événement personnalisé à Google Analytics
+            gtag('event', 'message_sent', {
+                'event_category': 'Chatbot',
+                'event_label': 'User Question Sent'
+            });
+        } else {
+            displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+        }
+    })
+    .catch(error => {
+        hideTypingIndicator(typingIndicator);
+        console.error('Error:', error);
+        displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+    });
+
+    // Masquer les boutons de questions après l'envoi
+    document.querySelector('.question-buttons').style.display = 'none';
+}
+
 // Fonction pour enregistrer les clics sur les boutons de promotion
 function trackPromoClick(event) {
     const targetId = event.target.id;
