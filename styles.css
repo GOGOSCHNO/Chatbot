@@ -337,6 +337,16 @@ body {
 .title-photo {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.title-photo h1, .title-photo p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700; /* Assure une police en gras */
+    color: white;
+    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
 }
 
 .photo-container {
@@ -363,6 +373,17 @@ body {
 .title-photo1, .title-photo2, .title-photo3, .title-photo4 {
     text-align: center;
     margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.title-photo1 h1, .title-photo2 h1, .title-photo3 h1, .title-photo4 h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700; /* Assure une police en gras */
+    color: white;
+    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+    font-size: 24px; /* Ajustez cette valeur selon vos besoins */
 }
 
 @keyframes blink {
