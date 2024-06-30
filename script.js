@@ -91,6 +91,9 @@ function sendUserInput() {
             console.error('Error:', error);
             displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
         });
+
+        // Masquer les boutons de questions après l'envoi
+        document.querySelector('.question-buttons').style.display = 'none';
     }
 }
 
