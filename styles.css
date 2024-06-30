@@ -347,6 +347,7 @@ body {
     font-weight: 700; /* Assure une police en gras */
     color: white;
     margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+     padding-top: 10px
 }
 
 .photo-container {
