@@ -334,6 +334,36 @@ body {
 .typing-indicator span:nth-child(3) {
     animation-delay: 0.4s;
 }
+.title-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.photo-item img {
+    width: 100%;
+    max-width: 400px; /* Ajustez cette valeur selon vos besoins */
+    height: auto;
+}
+
+.title-photo1, .title-photo2, .title-photo3, .title-photo4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
 
 @keyframes blink {
     0%, 80%, 100% {
@@ -676,6 +706,9 @@ header > :last-child, footer > :last-child {
         width: 100%;
         height: auto;
     }
+    .photo-item {
+        flex: 1 1 100%; /* Un seul élément par ligne sur mobile */
+    }
 }
 
 @media (min-width: 769px) {
@@ -705,6 +738,10 @@ header > :last-child, footer > :last-child {
     }
     .guarantee {
     display: none;
+    }
+    .photo-item {
+        flex: 1 1 calc(50% - 40px); /* Deux éléments par ligne avec un espace de 20px de chaque côté */
+        max-width: calc(50% - 40px);
     }
     
 }
