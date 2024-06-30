@@ -362,12 +362,16 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    padding: 10px; /* Ajoute de l'espace autour de l'image pour le cadre */
+    border: 2px solid #ccc; /* Bordure du cadre */
+    border-radius: 10px; /* Coins arrondis */
 }
 
 .photo-item img {
     width: 100%;
     max-width: 400px; /* Ajustez cette valeur selon vos besoins */
     height: auto;
+    border-radius: 10px; /* Coins arrondis pour l'image */
 }
 
 .title-photo1, .title-photo2, .title-photo3, .title-photo4 {
@@ -384,6 +388,15 @@ body {
     color: white;
     margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
     font-size: 24px; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #FFD700; /* Couleur des étoiles */
 }
 
 @keyframes blink {
