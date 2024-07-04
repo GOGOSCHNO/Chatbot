@@ -14,8 +14,8 @@
 }
 /* Divider style */
 .section-divider {
-    height: 4px; /* Adjust the thickness of the divider */
-    background-color: #164e45; /* Match the theme color */
+    height: 10px; /* Adjust the thickness of the divider */
+    background-color: #2c9181; /* Match the theme color */
     margin: 20px 0; /* Space around the divider */
     border-radius: 2px; /* Rounded corners for the divider */
 }
