@@ -25,11 +25,11 @@
     width: 95%;
     display: flex;
     justify-content: center;
-    padding: 20px 0; /* Espace autour de l'image */
+    padding: 0px 0; /* Espace autour de l'image */
     border-radius: 10px;
 }
 .additional-image img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
