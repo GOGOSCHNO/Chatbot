@@ -15,7 +15,7 @@
 /* Divider style */
 .section-divider {
     height: 10px; /* Adjust the thickness of the divider */
-    background-color: #2c9181; /* Match the theme color */
+    background-color: #e0ff47; /* Match the theme color */
     margin: 20px 0; /* Space around the divider */
     border-radius: 2px; /* Rounded corners for the divider */
 }
