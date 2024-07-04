@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     padding: 20px 0; /* Espace autour de l'image */
+    border-radius: 10px;
 }
 .additional-image img {
     max-width: 50%;
@@ -93,6 +94,13 @@
 /* Styles pour les sections de contenu */
 #article-container, #new-images, #chatbot {
     padding-top: 60px; /* Ajuster pour éviter que le contenu soit masqué par le header */
+}
+#article-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .logo {
@@ -524,6 +532,10 @@ header > :last-child, footer > :last-child {
 .article-containermobile .article-imagemobile {
     display: none;
 }
+.article-image {
+    width: 100%;
+    border-radius: 10px;
+}
 
 /* Style mobile */
 @media (max-width: 768px) {
@@ -708,6 +720,14 @@ header > :last-child, footer > :last-child {
         display: block;
         width: 100%; /* Adapter la largeur à l'écran */
         height: auto; /* Maintenir les proportions */
+    }
+        #article-containermobile {
+        display: block;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
     }
 
     .additional-image {
