@@ -12,6 +12,13 @@
     display: block;
     margin: 0 auto;
 }
+/* Divider style */
+.section-divider {
+    height: 4px; /* Adjust the thickness of the divider */
+    background-color: #164e45; /* Match the theme color */
+    margin: 20px 0; /* Space around the divider */
+    border-radius: 2px; /* Rounded corners for the divider */
+}
 
 /* Additional Image */
 .additional-image {
@@ -627,6 +634,12 @@ header > :last-child, footer > :last-child {
 
     .description {
         font-size: 16px;
+    }
+    .section-divider {
+        height: 4px;
+        background-color: #164e45;
+        margin: 20px 0;
+        border-radius: 2px;
     }
 
     #chatbot {
