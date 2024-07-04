@@ -1,13 +1,13 @@
 /* Article Container */
 .article-container {
-    padding-top: 80px; /* Espace supérieur pour laisser un espace entre le header et l'image */
+    padding-top: 100px; /* Espace supérieur pour laisser un espace entre le header et l'image */
     background-color: white; /* Fond blanc pour cette section */
     width: 100%;
     display: flex;
     justify-content: center;
 }
 .article-container img {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto;
