@@ -252,6 +252,23 @@ function trackPromoClick(event) {
         'value': 1
     });
 }
+document.getElementById('chat-icon').addEventListener('click', function() {
+    var chatPopup = document.getElementById('chat-popup');
+    if (chatPopup.style.display === 'none' || chatPopup.style.display === '') {
+        chatPopup.style.display = 'block';
+    } else {
+        chatPopup.style.display = 'none';
+    }
+});
+
+window.addEventListener('click', function(event) {
+    var chatPopup = document.getElementById('chat-popup');
+    var chatIcon = document.getElementById('chat-icon');
+    if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target)) {
+        chatPopup.style.display = 'none';
+    }
+});
+
 
 // Ajout d'écouteurs d'événements pour les boutons de promotion
 document.getElementById('orderNowButton').addEventListener('click', trackPromoClick);
