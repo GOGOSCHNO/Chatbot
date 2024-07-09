@@ -561,7 +561,7 @@ header > :last-child, footer > :last-child {
 
 #chat-popup {
     position: fixed;
-    bottom: 80px;
+    bottom: 20px; /* Ajusté à 20px du bas de la page */
     right: 20px;
     width: 300px;
     height: 400px;
@@ -595,6 +595,10 @@ header > :last-child, footer > :last-child {
     background: none;
     cursor: pointer;
     font-size: 16px;
+}
+#chat-popup.expanded {
+    width: 600px;
+    height: 800px;
 }
 
 
