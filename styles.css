@@ -548,29 +548,38 @@ header > :last-child, footer > :last-child {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: auto; /* Ajusté pour auto */
-    height: 50px;
-    background-color: #164e45; /* Fond noir pour ressembler à l'exemple */
-    border-radius: 25px; /* Bords arrondis pour ressembler à l'exemple */
-    padding: 0 10px; /* Padding pour ajouter de l'espace autour du texte et de l'icône */
-    display: flex; /* Utilisation de flex pour aligner l'icône et le texte */
-    align-items: center; /* Aligner verticalement au centre */
+    display: flex;
+    align-items: center;
     cursor: pointer;
     z-index: 1000;
-    color: white; /* Couleur du texte blanc */
-    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
 }
 
-#chat-icon img {
-    width: 30px; /* Taille de l'icône */
-    height: 30px; /* Taille de l'icône */
+#chat-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #2c9181; /* Couleur de la couche supérieure */
+    border-radius: 50%; /* Rond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px; /* Espace entre l'icône et le texte */
 }
 
-#chat-icon span {
-    font-size: 16px; /* Taille de la police */
-    color: white; /* Couleur du texte */
+#chat-icon-circle img {
+    width: 30px; /* Taille de l'icône */
+    height: 30px; /* Taille de l'icône */
+}
+
+#chat-icon-text {
+    background-color: #164e45; /* Couleur de la couche inférieure */
+    border-radius: 25px; /* Bords arrondis */
+    padding: 0 15px; /* Padding pour ajouter de l'espace autour du texte */
+    display: flex;
+    align-items: center;
+    color: white; /* Couleur du texte blanc */
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
     font-weight: 700; /* Mettre le texte en gras */
+    height: 50px; /* Hauteur pour aligner avec l'icône */
 }
 
 #chat-popup {
