@@ -255,14 +255,15 @@ function trackPromoClick(event) {
 document.getElementById('chat-icon').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
-    if (chatPopup.classList.contains('hidden')) {
-        chatPopup.classList.remove('hidden');
-        chatIcon.classList.add('hidden'); // Masquer l'icône du chat
+    if (chatPopup.style.display === 'none' || chatPopup.style.display === '') {
+        chatPopup.style.display = 'block';
+        chatIcon.style.display = 'none'; // Masquer l'icône du chat
     } else {
-        chatPopup.classList.add('hidden');
-        chatIcon.classList.remove('hidden'); // Afficher l'icône du chat
+        chatPopup.style.display = 'none';
+        chatIcon.style.display = 'block'; // Afficher l'icône du chat
     }
 });
+
 window.addEventListener('click', function(event) {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
@@ -278,8 +279,12 @@ document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     if (chatPopup.classList.contains('expanded')) {
         chatPopup.classList.remove('expanded');
+        chatPopup.style.width = '400px';
+        chatPopup.style.height = '500px';
     } else {
         chatPopup.classList.add('expanded');
+        chatPopup.style.width = '650px';
+        chatPopup.style.height = '800px';
     }
 });
 
@@ -295,10 +300,11 @@ document.getElementById('menu-button').addEventListener('click', function(event)
 
 document.getElementById('minimize-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
-    chatPopup.classList.add('hidden');
+    chatPopup.style.display = 'none';
     var chatIcon = document.getElementById('chat-icon');
-    chatIcon.classList.remove('hidden'); // Afficher l'icône du chat
+    chatIcon.style.display = 'block'; // Afficher l'icône du chat
 });
+
 
 // Ajout d'écouteurs d'événements pour les boutons de promotion
 document.getElementById('orderNowButton').addEventListener('click', trackPromoClick);
