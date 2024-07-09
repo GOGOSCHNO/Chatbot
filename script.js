@@ -254,10 +254,13 @@ function trackPromoClick(event) {
 }
 document.getElementById('chat-icon').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
+    var chatIcon = document.getElementById('chat-icon');
     if (chatPopup.style.display === 'none' || chatPopup.style.display === '') {
         chatPopup.style.display = 'block';
+        chatIcon.style.display = 'none'; // Masquer l'icône du chat
     } else {
         chatPopup.style.display = 'none';
+        chatIcon.style.display = 'block'; // Afficher l'icône du chat
     }
 });
 
@@ -266,8 +269,10 @@ window.addEventListener('click', function(event) {
     var chatIcon = document.getElementById('chat-icon');
     if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target)) {
         chatPopup.style.display = 'none';
+        chatIcon.style.display = 'block'; // Afficher l'icône du chat
     }
 });
+
 document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     if (chatPopup.classList.contains('expanded')) {
