@@ -268,7 +268,18 @@ window.addEventListener('click', function(event) {
         chatPopup.style.display = 'none';
     }
 });
-
+document.getElementById('expand-button').addEventListener('click', function() {
+    var chatPopup = document.getElementById('chat-popup');
+    if (chatPopup.classList.contains('expanded')) {
+        chatPopup.classList.remove('expanded');
+        chatPopup.style.width = '300px';
+        chatPopup.style.height = '400px';
+    } else {
+        chatPopup.classList.add('expanded');
+        chatPopup.style.width = '600px';
+        chatPopup.style.height = '800px';
+    }
+});
 
 // Ajout d'écouteurs d'événements pour les boutons de promotion
 document.getElementById('orderNowButton').addEventListener('click', trackPromoClick);
