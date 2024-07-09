@@ -283,8 +283,8 @@ document.getElementById('expand-button').addEventListener('click', function() {
         chatPopup.style.height = '500px';
     } else {
         chatPopup.classList.add('expanded');
-        chatPopup.style.width = '700px';
-        chatPopup.style.height = '900px';
+        chatPopup.style.width = '650px';
+        chatPopup.style.height = '800px';
     }
 });
 
