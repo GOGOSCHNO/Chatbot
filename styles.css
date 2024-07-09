@@ -548,15 +548,29 @@ header > :last-child, footer > :last-child {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 50px;
+    width: auto; /* Ajusté pour auto */
     height: 50px;
+    background-color: black; /* Fond noir pour ressembler à l'exemple */
+    border-radius: 25px; /* Bords arrondis pour ressembler à l'exemple */
+    padding: 0 10px; /* Padding pour ajouter de l'espace autour du texte et de l'icône */
+    display: flex; /* Utilisation de flex pour aligner l'icône et le texte */
+    align-items: center; /* Aligner verticalement au centre */
     cursor: pointer;
     z-index: 1000;
+    color: white; /* Couleur du texte blanc */
+    font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
 }
 
 #chat-icon img {
-    width: 100%;
-    height: 100%;
+    width: 30px; /* Taille de l'icône */
+    height: 30px; /* Taille de l'icône */
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+}
+
+#chat-icon span {
+    font-size: 16px; /* Taille de la police */
+    color: white; /* Couleur du texte */
+    font-weight: 700; /* Mettre le texte en gras */
 }
 
 #chat-popup {
