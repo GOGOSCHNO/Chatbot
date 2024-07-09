@@ -588,6 +588,7 @@ header > :last-child, footer > :last-child {
     display: none;
     z-index: 1000;
     overflow: hidden;
+    transition: width 0.3s ease, height 0.3s ease; /* Ajoutez cette ligne *
 }
 
 #chat-popup iframe {
