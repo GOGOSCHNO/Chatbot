@@ -263,6 +263,16 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatIcon.classList.remove('hidden'); // Afficher l'icône du chat
     }
 });
+window.addEventListener('click', function(event) {
+    var chatPopup = document.getElementById('chat-popup');
+    var chatIcon = document.getElementById('chat-icon');
+    var dropdownMenu = document.getElementById('dropdown-menu');
+    if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target) && event.target !== dropdownMenu && !dropdownMenu.contains(event.target)) {
+        chatPopup.style.display = 'none';
+        chatIcon.style.display = 'block'; // Afficher l'icône du chat
+        dropdownMenu.style.display = 'none'; // Masquer le menu déroulant
+    }
+});
 
 document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
