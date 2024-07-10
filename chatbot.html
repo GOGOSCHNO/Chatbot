@@ -37,13 +37,17 @@
         }
 
         .input-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Assurez-vous que la barre de saisie prend toute la largeur */
             display: flex;
             align-items: center;
             padding: 10px;
             background-color: white;
             border-top: 1px solid #ccc;
             border-radius: 0 0 5px 5px;
-            margin-top: 95%; /* Assurez-vous que la barre de saisie est en bas */
+            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
         }
 
         #userInput {
@@ -117,8 +121,8 @@
             flex-direction: column;
             gap: 10px;
             font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
-            margin-top: 65%; /* Assurez-vous que la barre de saisie est en bas */
-            margin-right: 14px;
+            max-width: calc(100% - 20px); /* Empêcher les boutons de dépasser horizontalement */
+            overflow: hidden; /* Masquer le dépassement si nécessaire */
         }
     
         .question-button {
@@ -129,6 +133,8 @@
             padding: 10px 20px; /* Espacement interne */
             cursor: pointer; /* Curseur pointeur */
             font-size: 14px; /* Taille de la police */
+            width: 100%; /* Assurer que les boutons prennent toute la largeur disponible */
+            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
         }
 
         .question-button:hover {
