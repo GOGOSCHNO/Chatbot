@@ -279,11 +279,11 @@ document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     if (chatPopup.classList.contains('expanded')) {
         chatPopup.classList.remove('expanded');
-        chatPopup.style.width = '300px';
+        chatPopup.style.width = '20%';
         chatPopup.style.height = '60%';
     } else {
         chatPopup.classList.add('expanded');
-        chatPopup.style.width = '650px';
+        chatPopup.style.width = '40%';
         chatPopup.style.height = '80%';
     }
 });
