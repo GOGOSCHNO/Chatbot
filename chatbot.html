@@ -16,79 +16,49 @@
             align-items: center;
             background-color: #f9f9f9;
         }
+
         #chatbot-container {
-            background: none; /* Dégradé de vert */
             display: flex;
             flex-direction: column;
-            align-items: center;
             width: 100%;
-            padding-top: 20px; /* Ajout d'un peu d'espace au-dessus du chatbot */
-            box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
+            height: 100%; /* Prenez toute la hauteur disponible */
+            box-sizing: border-box;
             background-color: #164e45;
-            border: 2px solid #dedede;
-            border-radius: 5px;
             padding: 20px;
-            justify-content: flex-end;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 5px; /* Espace entre le header et le chatbot */
-            margin-bottom: 40px; /* Espacement entre le chatbot et les images */
-            transition: height 0.3s ease; /* Transition douce pour le changement de hauteur */
         }
+
         #messages {
-            flex: 8; /* Cela permet à #messages d'occuper 80% de l'espace disponible */
-            overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+            flex-grow: 1; /* Utilisez tout l'espace disponible */
+            overflow-y: auto;
             margin-bottom: 20px;
             padding: 10px;
             background: white;
             border: 1px solid #ccc;
             border-radius: 5px;
-            position: relative; /* Pour positionner les éléments en absolu à l'intérieur */
-        }
-        .question-buttons {
-            display: flex;
-            flex-direction: column; /* Aligner les boutons verticalement */
-            gap: 10px;
-            margin: 10px; /* Espace autour des boutons */
-            justify-content: flex-end; /* Alignement à droite */
-            position: absolute;
-            bottom: 20px; /* Distance depuis le bas */
-            right: 20px; /* Distance depuis la droite */
         }
 
-        .question-button {
-            background-color: #2c9181;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-family: 'Roboto Condensed', sans-serif;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            width: 300px; /* Ajuster la largeur selon vos besoins */
-        }
         .input-container {
             display: flex;
-            justify-content: space-between; /* Cela sépare le champ de texte et le bouton */
+            justify-content: space-between;
             align-items: center;
-            width: 100%; /* Cela prend la pleine largeur de #chatbot */
+            width: 100%;
         }
+
         #userInput, #sendButton {
-            flex-grow: 0;
             padding: 10px;
             margin: 0 5px;
             border-radius: 4px;
         }
 
         #userInput {
-            flex: 2; /* Cela permet à l'input de prendre 10% de l'espace restant */
+            flex-grow: 1; /* Utilisez tout l'espace restant */
             border: 1px solid #ccc;
             padding: 10px;
             border-radius: 4px;
-            margin-right: 10px;
         }
+
         #sendButton {
-            flex: 0,5; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
+            flex-shrink: 0; /* Empêchez le bouton de rétrécir */
             padding: 10px 20px;
             background-color: #2c9181;
             color: white;
@@ -96,6 +66,7 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
         #sendButton:hover {
             background-color: #0056b3; /* Assombrir le bouton au survol */
         }
