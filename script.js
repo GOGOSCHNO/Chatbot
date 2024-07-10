@@ -255,12 +255,18 @@ function trackPromoClick(event) {
 document.getElementById('chat-icon').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
-    if (chatPopup.style.display === 'none' || chatPopup.style.display === '') {
-        chatPopup.style.display = 'block';
-        chatIcon.style.display = 'none'; // Masquer l'icône du chat
+    if (chatPopup.classList.contains('show')) {
+        chatPopup.classList.remove('show');
+        setTimeout(function() {
+            chatPopup.style.display = 'none';
+        }, 300); // Délai pour laisser le temps à l'animation de se terminer
+        chatIcon.style.display = 'block';
     } else {
-        chatPopup.style.display = 'none';
-        chatIcon.style.display = 'block'; // Afficher l'icône du chat
+        chatPopup.style.display = 'block';
+        setTimeout(function() {
+            chatPopup.classList.add('show');
+        }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
+        chatIcon.style.display = 'none';
     }
 });
 
@@ -269,21 +275,22 @@ window.addEventListener('click', function(event) {
     var chatIcon = document.getElementById('chat-icon');
     var dropdownMenu = document.getElementById('dropdown-menu');
     if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target) && event.target !== dropdownMenu && !dropdownMenu.contains(event.target)) {
-        chatPopup.style.display = 'none';
-        chatIcon.style.display = 'block'; // Afficher l'icône du chat
-        dropdownMenu.style.display = 'none'; // Masquer le menu déroulant
+        chatPopup.classList.remove('show');
+        setTimeout(function() {
+            chatPopup.style.display = 'none';
+        }, 300); // Délai pour laisser le temps à l'animation de se terminer
+        chatIcon.style.display = 'block';
+        dropdownMenu.style.display = 'none';
     }
 });
 
 document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
-    if (chatPopup.classList.contains('expanded')) {
-        chatPopup.classList.remove('expanded');
-        chatPopup.style.width = '20%';
+    if (chatPopup.style.width === '650px') {
+        chatPopup.style.width = '400px';
         chatPopup.style.height = '60%';
     } else {
-        chatPopup.classList.add('expanded');
-        chatPopup.style.width = '40%';
+        chatPopup.style.width = '650px';
         chatPopup.style.height = '80%';
     }
 });
@@ -295,15 +302,19 @@ document.getElementById('menu-button').addEventListener('click', function(event)
     } else {
         dropdownMenu.style.display = 'none';
     }
-    event.stopPropagation(); // Empêcher la propagation de l'événement pour que le menu ne se ferme pas immédiatement
+    event.stopPropagation();
 });
 
 document.getElementById('minimize-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
-    chatPopup.style.display = 'none';
+    chatPopup.classList.remove('show');
+    setTimeout(function() {
+        chatPopup.style.display = 'none';
+    }, 300); // Délai pour laisser le temps à l'animation de se terminer
     var chatIcon = document.getElementById('chat-icon');
-    chatIcon.style.display = 'block'; // Afficher l'icône du chat
+    chatIcon.style.display = 'block';
 });
+
 
 
 // Ajout d'écouteurs d'événements pour les boutons de promotion
