@@ -587,10 +587,15 @@ header > :last-child, footer > :last-child {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 1000;
-    overflow: hidden;
-    transition: width 0.3s ease, height 0.3s ease; /* Ajoutez cette ligne */
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease; /* Ajoutez cette ligne */
 }
-    
+
+#chat-popup.show {
+    display: block;
+    opacity: 1; /* Ajoutez cette ligne */
+}
+
 #chat-popup iframe {
     width: 100%;
     height: calc(100% - 100px); /* Ajusté pour tenir compte de l'en-tête et du logo */
