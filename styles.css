@@ -588,20 +588,9 @@ header > :last-child, footer > :last-child {
     display: none;
     z-index: 1000;
     overflow: hidden;
-    transition: width 0.3s ease, height 0.3s ease; /* Ajoutez cette ligne *
+    transition: width 0.3s ease, height 0.3s ease; /* Ajoutez cette ligne */
 }
     
-#chat-popup.hidden {
-    display: none;
-}
-
-#chat-popup.expanded {
-    width: 650px; /* Largeur agrandie */
-    height: 800px; /* Hauteur agrandie */
-}
-.hidden {
-    display: none;
-}
 #chat-popup iframe {
     width: 100%;
     height: calc(100% - 100px); /* Ajusté pour tenir compte de l'en-tête et du logo */
