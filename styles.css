@@ -611,6 +611,8 @@ header > :last-child, footer > :last-child {
     align-items: center;
     padding: 5px;
     box-sizing: border-box;
+    border-top-left-radius: 10px; /* Ajouter un rayon de bordure pour le coin supérieur gauche */
+    border-top-right-radius: 10px; /* Ajouter un rayon de bordure pour le coin supérieur droit */
 }
 
 #expand-button {
