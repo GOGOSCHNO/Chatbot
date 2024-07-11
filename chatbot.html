@@ -140,9 +140,8 @@
         .message .time {
             font-size: 10px;
             color: gray;
-            position: absolute;
-            top: -20px; /* Ajuster pour la position désirée */
-            left: 0; /* Aligner à gauche */
+            margin-top: 5px;
+            align-self: flex-end;
         }
         
         .typing-indicator {
@@ -241,27 +240,27 @@
                 .then(data => {
                     hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
                     if (typeof data.reply === 'string') {
-                        typeMessage(data.reply, 'bot'); // Afficher la réponse du bot
+                        typeMessage(data.reply, 'assistant'); // Afficher la réponse du bot
                         // Envoyer un événement personnalisé à Google Analytics
                         gtag('event', 'message_sent', {
                             'event_category': 'Chatbot',
                             'event_label': 'User Message Sent'
                         });
                     } else {
-                        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'bot');
+                        displayMessage("Je suis désolé, je n'ai pas pu comprendre la réponse.", 'assistant');
                     }
                 })
                 .catch(error => {
                     hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
                     console.error('Error:', error);
-                    displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'bot');
+                    displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'assistant');
                 });
-        
+
                 // Masquer les boutons de questions après l'envoi
                 document.querySelector('.question-buttons').style.display = 'none';
             }
         }
-        
+
         // Fonction pour afficher le message d'accueil
         function displayWelcomeMessage() {
             const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
@@ -272,60 +271,60 @@
                 displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
             }, 2000); // Ajouter une latence de 2 secondes
         }
-        
+
         // Fonction pour afficher un message dans le conteneur de messages
         function displayMessage(message, sender) {
             var messagesContainer = document.getElementById('messages');
             var messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
-        
+
             if (sender === 'assistant') {
                 var iconDiv = document.createElement('div');
                 iconDiv.className = 'icon';
                 messageDiv.appendChild(iconDiv);
             }
-        
+
             var contentDiv = document.createElement('div');
             contentDiv.className = 'content';
             contentDiv.innerHTML = formatMessage(message);
-        
+
             var timeDiv = document.createElement('div');
             timeDiv.className = 'time';
             var now = new Date();
             timeDiv.innerText = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
-        
+
             messageDiv.appendChild(contentDiv);
             if (sender === 'assistant') {
                 messageDiv.appendChild(timeDiv);
             }
-        
+
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer);
         }
-        
+
         // Fonction pour faire défiler vers le bas du conteneur de messages
         function scrollToBottom(container) {
             container.scrollTop = container.scrollHeight;
         }
-        
+
         // Fonction pour formater un message en HTML
         function formatMessage(text) {
             const lines = text.split('\n');
             let formattedMessage = '';
             let inList = false;
-        
+
             lines.forEach(line => {
                 let trimmedLine = line.trim();
-        
+
                 // Convertir les motifs Markdown pour le gras (**texte**) en HTML <strong>
                 trimmedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        
+
                 // Convertir les titres Markdown ### en HTML <h3>
                 if (trimmedLine.startsWith('###')) {
                     formattedMessage += `<h3>${trimmedLine.substring(3).trim()}</h3>`;
                     return;
                 }
-        
+
                 if (trimmedLine.startsWith('-')) {
                     if (!inList) {
                         formattedMessage += '<ul>'; // Commencer une nouvelle liste
@@ -340,14 +339,14 @@
                     formattedMessage += `<p>${trimmedLine}</p>`; // Ajouter comme paragraphe
                 }
             });
-        
+
             if (inList) {
                 formattedMessage += '</ul>'; // S'assurer que la liste est fermée à la fin
             }
-        
+
             return formattedMessage;
         }
-        
+
         // Fonction pour afficher l'indicateur de saisie
         function showTypingIndicator() {
             const container = document.getElementById('messages');
@@ -358,49 +357,49 @@
             scrollToBottom(container);
             return indicator;
         }
-        
+
         // Fonction pour cacher l'indicateur de saisie
         function hideTypingIndicator(indicator) {
             if (indicator) {
                 indicator.remove();
             }
         }
-        
-        / Fonction pour afficher les réponses du bot
+
+        // Fonction pour afficher les réponses du bot
         function typeMessage(message, sender) {
             var messagesContainer = document.getElementById('messages');
             var messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
-        
+
             if (sender === 'assistant') {
                 var iconDiv = document.createElement('div');
                 iconDiv.className = 'icon';
                 messageDiv.appendChild(iconDiv);
             }
-        
+
             var contentDiv = document.createElement('div');
             contentDiv.className = 'content';
             contentDiv.innerHTML = formatMessage(message);
-        
+
             var timeDiv = document.createElement('div');
             timeDiv.className = 'time';
             var now = new Date();
             timeDiv.innerText = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
-        
+
             messageDiv.appendChild(contentDiv);
             if (sender === 'assistant') {
                 messageDiv.appendChild(timeDiv);
             }
-        
+
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer);
         }
-        
+
         // Fonction pour envoyer une question prédéfinie et masquer les boutons de questions
         function sendQuestion(question) {
             displayMessage(question, 'user'); // Afficher la question de l'utilisateur
             const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
-        
+
             // Envoyer la question à l'API du chatbot
             fetch('https://ancient-island-80614-679de07529b5.herokuapp.com/send_message', {
                 method: 'POST',
@@ -434,14 +433,14 @@
                 console.error('Error:', error);
                 displayMessage("Une erreur est survenue lors de la connexion au serveur.", 'assistant');
             });
-        
+
             // Masquer les boutons de questions après l'envoi
             document.querySelector('.question-buttons').style.display = 'none';
         }
-        
+
         // Événement pour le bouton "Envoyer"
         document.getElementById('sendButton').addEventListener('click', sendUserInput);
-        
+
         // Événement pour la touche "Entrée"
         document.getElementById('userInput').addEventListener('keydown', function(event) {
             if (event.key === 'Enter' && !event.shiftKey) {
@@ -449,7 +448,7 @@
                 sendUserInput();
             }
         });
-        
+
         // Appel de la fonction d'affichage du message d'accueil dès que la page est chargée
         window.addEventListener('load', displayWelcomeMessage);
     </script>
