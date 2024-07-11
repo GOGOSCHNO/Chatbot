@@ -259,8 +259,11 @@
         function displayMessage(message, sender) {
             var messagesContainer = document.getElementById('messages');
             var messageDiv = document.createElement('div');
-            messageDiv.className = sender;
-            messageDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+            messageDiv.className = `message ${sender}`;
+            var contentDiv = document.createElement('div');
+            contentDiv.className = 'content';
+            contentDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+            messageDiv.appendChild(contentDiv);
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer); // Faire défiler vers le bas
         }
@@ -330,10 +333,13 @@
 
         // Fonction pour afficher les réponses du bot
         function typeMessage(message, sender) {
-            const messagesContainer = document.getElementById('messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = sender;
-            messageDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+            var messagesContainer = document.getElementById('messages');
+            var messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            var contentDiv = document.createElement('div');
+            contentDiv.className = 'content';
+            contentDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+            messageDiv.appendChild(contentDiv);
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer);
         }
