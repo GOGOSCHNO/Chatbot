@@ -112,6 +112,20 @@
             height: 30px;
             margin-right: 10px;
         }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #2c9181;
+            border-radius: 50%;
+            display: inline-block;
+        }
 
         .question-buttons {
             position: absolute;
@@ -287,7 +301,7 @@
             const container = document.getElementById('messages');
             const indicator = document.createElement('div');
             indicator.className = 'typing-indicator';
-            indicator.innerHTML = '<span>.</span><span>.</span><span>.</span>';
+            indicator.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
             container.appendChild(indicator);
             scrollToBottom(container);
             return indicator;
