@@ -114,8 +114,14 @@
         .message.user .content {
             background-color: #2c9181;
             color: white;
+            display: flex; /* Ajouté pour aligner l'icône et le texte */
+            align-items: center; /* Alignement centré verticalement */
         }
-
+        .message.assistant .content img {
+            margin-right: 10px;
+            width: 30px; /* Largeur de l'icône */
+            height: 30px; /* Hauteur de l'icône */
+        }
         .message.assistant .content {
             background-color: #f8f8f8;
             color: black;
