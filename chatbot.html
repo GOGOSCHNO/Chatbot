@@ -37,7 +37,7 @@
         }
 
         .input-container {
-            position: absolute;
+            position: fixed; /* Changer de absolute à fixed */
             bottom: 0;
             left: 0;
             width: 100%; /* Assurez-vous que la barre de saisie prend toute la largeur */
@@ -47,6 +47,7 @@
             background-color: white;
             border-top: 1px solid #ccc;
             box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+            z-index: 10; /* Assurer que la zone de saisie est au-dessus des messages */
         }
 
         #userInput {
@@ -83,6 +84,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: slide-up 0.5s forwards;
+            position: relative; /* Nécessaire pour positionner l'heure */
         }
 
         @keyframes slide-up {
@@ -117,6 +119,13 @@
         .message.assistant .content {
             background-color: #f8f8f8;
             color: black;
+            display: flex; /* Ajouté pour aligner l'icône et le texte */
+            align-items: center; /* Alignement centré verticalement */
+        }
+        .message.assistant .content img {
+            margin-right: 10px;
+            width: 30px; /* Largeur de l'icône */
+            height: 30px; /* Hauteur de l'icône */
         }
 
         .message.assistant .content::before {
@@ -125,6 +134,13 @@
             width: 30px;
             height: 30px;
             margin-right: 10px;
+        }
+        .message .time {
+            font-size: 10px;
+            color: gray;
+            position: absolute;
+            top: -20px; /* Ajuster pour la position désirée */
+            left: 0; /* Aligner à gauche */
         }
         
         .typing-indicator {
@@ -260,9 +276,24 @@
             var messagesContainer = document.getElementById('messages');
             var messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
+
+            var timeDiv = document.createElement('div');
+            timeDiv.className = 'time';
+            var now = new Date();
+            timeDiv.innerText = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
+
             var contentDiv = document.createElement('div');
             contentDiv.className = 'content';
-            contentDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+
+            if (sender === 'assistant') {
+                var img = document.createElement('img');
+                img.src = 'https://raw.githubusercontent.com/GOGOSCHNO/Chatbot/master/coach.png';
+                img.alt = 'Assistant Icon';
+                contentDiv.appendChild(img);
+            }
+
+            contentDiv.innerHTML += formatMessage(message);  // Appliquer le formatage du message
+            messageDiv.appendChild(timeDiv);
             messageDiv.appendChild(contentDiv);
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer); // Faire défiler vers le bas
@@ -336,9 +367,24 @@
             var messagesContainer = document.getElementById('messages');
             var messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
+
+            var timeDiv = document.createElement('div');
+            timeDiv.className = 'time';
+            var now = new Date();
+            timeDiv.innerText = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2);
+
             var contentDiv = document.createElement('div');
             contentDiv.className = 'content';
-            contentDiv.innerHTML = formatMessage(message);  // Appliquer le formatage du message
+
+            if (sender === 'assistant') {
+                var img = document.createElement('img');
+                img.src = 'https://raw.githubusercontent.com/GOGOSCHNO/Chatbot/master/coach.png';
+                img.alt = 'Assistant Icon';
+                contentDiv.appendChild(img);
+            }
+
+            contentDiv.innerHTML += formatMessage(message);  // Appliquer le formatage du message
+            messageDiv.appendChild(timeDiv);
             messageDiv.appendChild(contentDiv);
             messagesContainer.appendChild(messageDiv);
             scrollToBottom(messagesContainer);
