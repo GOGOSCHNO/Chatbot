@@ -419,20 +419,28 @@ body {
     right: 30px; /* Adjusted to center the buttons more */
 }
 
-/* Shiny text effect */
+/* Ajouter un espace entre le nom et les étoiles */
+.rating {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #FFD700; /* Couleur des étoiles */
+}
+
+/* Effet de brillance léger pour les étoiles */
 .shiny-stars {
     position: relative;
     display: inline-block;
     animation: shine 2s infinite;
 }
+
 @keyframes shine {
     0% {
-        color: #fff;
-        text-shadow: 0 0 2px #ffff00, 0 0 4px #ffff00, 0 0 2px #ffff00, 0 0 20px #ffff00;
+        color: #FFD700;
+        text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 2px #FFD700, 0 0 8px #FFD700;
     }
     100% {
-        color: #fff;
-        text-shadow: 0 0 2px #ffff00, 0 0 4px #ffff00, 0 0 2px #ffff00, 0 0 20px #ffff00;
+        color: #FFD700;
+        text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 2px #FFD700, 0 0 8px #FFD700;
     }
 }
 .photo-item img {
@@ -460,13 +468,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.rating {
-    font-size: 16px;
-    margin-left: 10px;
-    color: #FFD700; /* Couleur des étoiles */
-}
-
 
 @keyframes blink {
     0%, 80%, 100% {
