@@ -57,17 +57,19 @@ function updateCarousel() {
 }
 
 prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
+    const items = document.querySelectorAll('.photo-item').length;
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : items - 1;
     updateCarousel();
 });
 
 nextButton.addEventListener('click', () => {
     const items = document.querySelectorAll('.photo-item').length;
-    currentIndex = (currentIndex < items - 1) ? currentIndex + 1 : items - 1;
+    currentIndex = (currentIndex < items - 1) ? currentIndex + 1 : 0;
     updateCarousel();
 });
 
 window.addEventListener('resize', updateCarousel);
+
 // Fonction pour afficher le message d'accueil
 //function displayWelcomeMessage() {
     //const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
