@@ -382,6 +382,7 @@ body {
 .photo-item {
     min-width: 100%;
     box-sizing: border-box;
+    margin: auto
 }
 
 .photo {
