@@ -437,11 +437,11 @@ body {
 @keyframes shine {
     0% {
         color: #FFD700;
-        text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 2px #FFD700, 0 0 8px #FFD700;
+        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
     }
     100% {
         color: #FFD700;
-        text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700, 0 0 2px #FFD700, 0 0 8px #FFD700;
+        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
     }
 }
 .photo-item img {
