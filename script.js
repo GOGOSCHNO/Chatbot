@@ -246,6 +246,7 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatPopup.style.display = 'block';
         setTimeout(function() {
             chatPopup.classList.add('show');
+            setTimeout(displayWelcomeMessage, 2000); // Appel du message d'accueil après 2 secondes
         }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
         chatIcon.style.display = 'none';
     }
@@ -304,9 +305,6 @@ window.addEventListener('resize', adjustChatbotHeight);
 
 // Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
 window.addEventListener('load', adjustChatbotHeight);
-
-// Appel de la fonction d'affichage du message d'accueil dès que la page est chargée
-window.addEventListener('load', displayWelcomeMessage);
 
 // Événement pour le bouton "Envoyer"
 document.getElementById('sendButton').addEventListener('click', sendUserInput);
