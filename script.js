@@ -47,15 +47,15 @@ function sendUserInput() {
 }
 
 // Fonction pour afficher le message d'accueil
-function displayWelcomeMessage() {
-    const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
-    const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
+//function displayWelcomeMessage() {
+    //const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
+    //const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
     
-    setTimeout(() => {
-        hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
-        displayMessage(welcomeMessage, 'bot'); // Afficher le message d'accueil
-    }, 2000); // Ajouter une latence de 2 secondes
-}
+    //setTimeout(() => {
+        //hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
+        //displayMessage(welcomeMessage, 'bot'); // Afficher le message d'accueil
+    //}, 2000); // Ajouter une latence de 2 secondes
+//}
 
 // Fonction pour afficher un message dans le conteneur de messages
 function displayMessage(message, sender) {
@@ -253,6 +253,9 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatIcon.style.display = 'none';
     }
 });
+
+// Assurez-vous que displayWelcomeMessage est accessible globalement
+window.displayWelcomeMessage = displayWelcomeMessage;
 
 // Événement pour fermer le pop-up du chatbot lorsque l'utilisateur clique en dehors
 window.addEventListener('click', function(event) {
