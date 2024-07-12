@@ -248,10 +248,7 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatPopup.style.display = 'block';
         setTimeout(function() {
             chatPopup.classList.add('show');
-            if (!welcomeMessageDisplayed) {
-                setTimeout(displayWelcomeMessage, 2000); // Appel du message d'accueil après 2 secondes
-                welcomeMessageDisplayed = true; // Marquer le message d'accueil comme affiché
-            }
+            displayWelcomeMessage(); // Appeler la fonction pour afficher le message d'accueil
         }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
         chatIcon.style.display = 'none';
     }
