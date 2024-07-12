@@ -45,7 +45,29 @@ function sendUserInput() {
         document.querySelector('.question-buttons').style.display = 'none';
     }
 }
+//Fonction du carrousel
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
+let currentIndex = 0;
 
+function updateCarousel() {
+    const width = carousel.offsetWidth;
+    carousel.style.transform = `translateX(${-width * currentIndex}px)`;
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
+    updateCarousel();
+});
+
+nextButton.addEventListener('click', () => {
+    const items = document.querySelectorAll('.photo-item').length;
+    currentIndex = (currentIndex < items - 1) ? currentIndex + 1 : items - 1;
+    updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
 // Fonction pour afficher le message d'accueil
 //function displayWelcomeMessage() {
     //const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
