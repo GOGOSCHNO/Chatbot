@@ -298,15 +298,17 @@
         }
 
         // Fonction pour afficher le message d'accueil
-        function displayWelcomeMessage() {
-            const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
-            const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
-    
+        document.addEventListener('chatPopupOpened', function() {
             setTimeout(() => {
-                hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
-                displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
-            }, 2000); // Ajouter une latence de 2 secondes
-        }     
+                const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
+                const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
+                
+                setTimeout(() => {
+                    hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
+                    displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
+                }, 2000); // Ajouter une latence de 2 secondes
+            }, 0); // Délai pour laisser le temps à l'élément de passer en display:block
+        });   
 
         // Fonction pour afficher un message dans le conteneur de messages
         function displayMessage(message, sender) {
