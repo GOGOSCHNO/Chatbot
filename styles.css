@@ -372,6 +372,9 @@ body {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    background-color: #00694e;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .carousel {
@@ -382,12 +385,18 @@ body {
 .photo-item {
     min-width: 100%;
     box-sizing: border-box;
-    margin: auto
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
-
 .photo {
     width: 100%;
+    max-width: 600px; /* Ajustez cette valeur en fonction de la taille souhaitée */
     display: block;
+    margin: auto;
+    border-radius: 10px;
 }
 
 .carousel-button {
@@ -399,14 +408,33 @@ body {
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 24px; /* Adjust the size of the arrows */
 }
 
 .prev {
-    left: 10px;
+    left: 30px; /* Adjusted to center the buttons more */
 }
 
 .next {
-    right: 10px;
+    right: 30px; /* Adjusted to center the buttons more */
+}
+
+/* Shiny text effect */
+.shiny-text {
+    position: relative;
+    display: inline-block;
+    animation: shine 2s infinite;
+}
+@keyframes shine {
+    0% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff, 0 0 160px #ff00ff;
+    }
+    100% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff, 0 0 160px #ff00ff;
+    }
 }
 
 .photo-item img {
