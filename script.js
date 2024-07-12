@@ -223,104 +223,100 @@ function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
 
-// Fonction pour ajuster la hauteur du chatbot sur les appareils mobiles
-function adjustChatbotHeight() {
-    if (isMobileDevice()) {
-        const chatbotContainer = document.getElementById('chatbot');
-        const viewportHeight = window.innerHeight;
-        chatbotContainer.style.height = `${viewportHeight}px`;
-    }
-}
-
-// Fonction pour afficher ou masquer le pop-up du chatbot
-var welcomeMessageDisplayed = false; // Variable pour suivre si le message d'accueil a été affiché
-
-document.getElementById('chat-icon').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
-    var chatIframe = document.getElementById('chat-iframe'); // Ajoutez l'ID de votre iframe
-    if (chatPopup.classList.contains('show')) {
+    var chatIframe = document.getElementById('chat-iframe');
+
+    // Fonction pour afficher ou masquer le pop-up du chatbot
+    document.getElementById('chat-icon').addEventListener('click', function() {
+        if (chatPopup.classList.contains('show')) {
+            chatPopup.classList.remove('show');
+            setTimeout(function() {
+                chatPopup.style.display = 'none';
+            }, 300); // Délai pour laisser le temps à l'animation de se terminer
+            chatIcon.style.display = 'block';
+        } else {
+            chatPopup.style.display = 'block';
+            setTimeout(function() {
+                chatPopup.classList.add('show');
+                chatIframe.src = chatIframe.src; // Recharge l'iframe pour déclencher l'affichage du message d'accueil
+            }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
+            chatIcon.style.display = 'none';
+        }
+    });
+
+    // Événement pour fermer le pop-up du chatbot lorsque l'utilisateur clique en dehors
+    window.addEventListener('click', function(event) {
+        var dropdownMenu = document.getElementById('dropdown-menu');
+        if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target) && event.target !== dropdownMenu && !dropdownMenu.contains(event.target)) {
+            chatPopup.classList.remove('show');
+            setTimeout(function() {
+                chatPopup.style.display = 'none';
+            }, 300); // Délai pour laisser le temps à l'animation de se terminer
+            chatIcon.style.display = 'block';
+            dropdownMenu.style.display = 'none';
+        }
+    });
+
+    // Fonction pour agrandir ou réduire le pop-up du chatbot
+    document.getElementById('expand-button').addEventListener('click', function() {
+        if (chatPopup.style.width === '650px') {
+            chatPopup.style.width = '400px';
+            chatPopup.style.height = '600px';
+        } else {
+            chatPopup.style.width = '650px';
+            chatPopup.style.height = '87%';
+        }
+    });
+
+    // Fonction pour afficher ou masquer le menu déroulant
+    document.getElementById('menu-button').addEventListener('click', function(event) {
+        var dropdownMenu = document.getElementById('dropdown-menu');
+        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+            dropdownMenu.style.display = 'block';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
+        event.stopPropagation();
+    });
+
+    // Fonction pour minimiser le pop-up du chatbot
+    document.getElementById('minimize-button').addEventListener('click', function() {
         chatPopup.classList.remove('show');
         setTimeout(function() {
             chatPopup.style.display = 'none';
         }, 300); // Délai pour laisser le temps à l'animation de se terminer
         chatIcon.style.display = 'block';
-    } else {
-        chatPopup.style.display = 'block';
-        setTimeout(function() {
-            chatPopup.classList.add('show');
-            chatIframe.src = chatIframe.src; // Recharge l'iframe pour déclencher l'affichage du message d'accueil
-        }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
-        chatIcon.style.display = 'none';
+    });
+
+    // Assurez-vous que displayWelcomeMessage est accessible globalement
+    window.displayWelcomeMessage = displayWelcomeMessage;
+
+    // Ajuster la hauteur du chatbot
+    function adjustChatbotHeight() {
+        if (isMobileDevice()) {
+            const viewportHeight = window.innerHeight;
+            chatPopup.style.height = `${viewportHeight}px`;
+        }
     }
-});
 
-// Assurez-vous que displayWelcomeMessage est accessible globalement
-window.displayWelcomeMessage = displayWelcomeMessage;
+    // Appeler cette fonction lors du redimensionnement de la fenêtre
+    window.addEventListener('resize', adjustChatbotHeight);
 
-// Événement pour fermer le pop-up du chatbot lorsque l'utilisateur clique en dehors
-window.addEventListener('click', function(event) {
-    var chatPopup = document.getElementById('chat-popup');
-    var chatIcon = document.getElementById('chat-icon');
-    var dropdownMenu = document.getElementById('dropdown-menu');
-    if (event.target !== chatPopup && !chatPopup.contains(event.target) && event.target !== chatIcon && !chatIcon.contains(event.target) && event.target !== dropdownMenu && !dropdownMenu.contains(event.target)) {
-        chatPopup.classList.remove('show');
-        setTimeout(function() {
-            chatPopup.style.display = 'none';
-        }, 300); // Délai pour laisser le temps à l'animation de se terminer
-        chatIcon.style.display = 'block';
-        dropdownMenu.style.display = 'none';
-    }
-});
+    // Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
+    window.addEventListener('load', adjustChatbotHeight);
 
-// Fonction pour agrandir ou réduire le pop-up du chatbot
-document.getElementById('expand-button').addEventListener('click', function() {
-    var chatPopup = document.getElementById('chat-popup');
-    if (chatPopup.style.width === '650px') {
-        chatPopup.style.width = '400px';
-        chatPopup.style.height = '600px';
-    } else {
-        chatPopup.style.width = '650px';
-        chatPopup.style.height = '87%';
-    }
-});
+    // Événement pour le bouton "Envoyer"
+    document.getElementById('sendButton').addEventListener('click', sendUserInput);
 
-// Fonction pour afficher ou masquer le menu déroulant
-document.getElementById('menu-button').addEventListener('click', function(event) {
-    var dropdownMenu = document.getElementById('dropdown-menu');
-    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-        dropdownMenu.style.display = 'block';
-    } else {
-        dropdownMenu.style.display = 'none';
-    }
-    event.stopPropagation();
-});
-
-// Fonction pour minimiser le pop-up du chatbot
-document.getElementById('minimize-button').addEventListener('click', function() {
-    var chatPopup = document.getElementById('chat-popup');
-    chatPopup.classList.remove('show');
-    setTimeout(function() {
-        chatPopup.style.display = 'none';
-    }, 300); // Délai pour laisser le temps à l'animation de se terminer
-    var chatIcon = document.getElementById('chat-icon');
-    chatIcon.style.display = 'block';
-});
-// Appeler cette fonction lors du redimensionnement de la fenêtre
-window.addEventListener('resize', adjustChatbotHeight);
-
-// Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
-window.addEventListener('load', adjustChatbotHeight);
-
-// Événement pour le bouton "Envoyer"
-document.getElementById('sendButton').addEventListener('click', sendUserInput);
-
-// Événement pour la touche "Entrée"
-document.getElementById('userInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        sendUserInput();
-    }
+    // Événement pour la touche "Entrée"
+    document.getElementById('userInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            sendUserInput();
+        }
+    });
 });
 
 // Fonction pour enregistrer les clics sur les boutons de promotion
