@@ -619,16 +619,37 @@ header > :last-child, footer > :last-child {
     font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
     font-weight: 700; /* Mettre le texte en gras */
 }
+/* Effet de respiration pour l'image de l'icône */
+@keyframes breath {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
 
 #chat-icon-content img {
     width: 30px; /* Taille de l'icône */
     height: 30px; /* Taille de l'icône */
     margin-left: 10px; /* Espace entre le texte et l'icône */
+    animation: breath 2s infinite;
 }
 
 #chat-icon-content span {
     font-size: 16px; /* Taille de la police */
     color: white; /* Couleur du texte */
+}
+/* Agrandir le pop-up (image + texte) au survol */
+#chat-icon-content:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+/* Agrandir le pop-up grandement au clic sur "Assistant" du header */
+#chat-icon-content.expanded {
+    width: 300px;
+    height: 400px;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 #chat-popup {
     position: fixed;
