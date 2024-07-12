@@ -240,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
             chatPopup.style.display = 'block';
             setTimeout(function() {
                 chatPopup.classList.add('show');
-                chatIframe.src = chatIframe.src; // Recharge l'iframe pour déclencher l'affichage du message d'accueil
             }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
             chatIcon.style.display = 'none';
         }
@@ -290,9 +289,6 @@ document.addEventListener('DOMContentLoaded', function() {
         chatIcon.style.display = 'block';
     });
 
-    // Assurez-vous que displayWelcomeMessage est accessible globalement
-    window.displayWelcomeMessage = displayWelcomeMessage;
-
     // Ajuster la hauteur du chatbot
     function adjustChatbotHeight() {
         if (isMobileDevice()) {
@@ -307,16 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
     window.addEventListener('load', adjustChatbotHeight);
 
-    // Événement pour le bouton "Envoyer"
-    document.getElementById('sendButton').addEventListener('click', sendUserInput);
-
-    // Événement pour la touche "Entrée"
-    document.getElementById('userInput').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
-            sendUserInput();
-        }
-    });
+    // Assurez-vous que displayWelcomeMessage est accessible globalement
+    window.displayWelcomeMessage = displayWelcomeMessage;
 });
 
 // Fonction pour enregistrer les clics sur les boutons de promotion
