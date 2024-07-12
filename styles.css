@@ -630,8 +630,8 @@ header > :last-child, footer > :last-child {
 }
 
 #chat-icon-content img {
-    width: 30px; /* Taille de l'icône */
-    height: 30px; /* Taille de l'icône */
+    width: 40px; /* Taille de l'icône */
+    height: 40px; /* Taille de l'icône */
     margin-left: 10px; /* Espace entre le texte et l'icône */
     animation: breath 2s infinite;
 }
