@@ -155,6 +155,7 @@
         .typing-indicator img {
             width: 30px;
             height: 30px;
+            border-radius: 50%;
         }
         .dot {
             width: 10px;
@@ -395,7 +396,7 @@
             const container = document.getElementById('messages');
             const indicator = document.createElement('div');
             indicator.className = 'typing-indicator';
-            indicator.innerHTML = '<img src="https://raw.githubusercontent.com/GOGOSCHNO/Chatbot/master/coach.png" alt="Assistant Icon"><span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+            indicator.innerHTML = '<img src="https://raw.githubusercontent.com/GOGOSCHNO/Chatbot/master/coachy.png" alt="Assistant Icon"><span class="dot"></span><span class="dot"></span><span class="dot"></span>';
             container.appendChild(indicator);
             scrollToBottom(container);
             return indicator;
