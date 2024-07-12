@@ -420,19 +420,20 @@ body {
 }
 
 /* Shiny text effect */
-.shiny-text {
+.shiny-stars {
     position: relative;
     display: inline-block;
     animation: shine 2s infinite;
 }
 @keyframes shine {
     0% {
-        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 160px #ff0;
+        color: #fff;
+        text-shadow: 0 0 2px #ffff00, 0 0 4px #ffff00, 0 0 2px #ffff00, 0 0 20px #ffff00;
     }
     100% {
-        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 160px #ff0;
+        color: #fff;
+        text-shadow: 0 0 2px #ffff00, 0 0 4px #ffff00, 0 0 2px #ffff00, 0 0 20px #ffff00;
     }
-}
 
 .photo-item img {
     width: 100%;
