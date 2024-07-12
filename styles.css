@@ -434,7 +434,7 @@ body {
         color: #fff;
         text-shadow: 0 0 2px #ffff00, 0 0 4px #ffff00, 0 0 2px #ffff00, 0 0 20px #ffff00;
     }
-
+}
 .photo-item img {
     width: 100%;
     max-width: 400px; /* Ajustez cette valeur selon vos besoins */
