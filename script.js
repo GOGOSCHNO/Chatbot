@@ -233,8 +233,6 @@ function adjustChatbotHeight() {
 }
 
 // Fonction pour afficher ou masquer le pop-up du chatbot
-var welcomeMessageDisplayed = false; // Variable pour suivre si le message d'accueil a été affiché
-
 document.getElementById('chat-icon').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
@@ -248,9 +246,9 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatPopup.style.display = 'block';
         setTimeout(function() {
             chatPopup.classList.add('show');
-            if (!welcomeMessageDisplayed) {
+            if (!chatPopup.classList.contains('welcome-displayed')) {
                 setTimeout(displayWelcomeMessage, 2000); // Appel du message d'accueil après 2 secondes
-                welcomeMessageDisplayed = true; // Marquer le message d'accueil comme affiché
+                chatPopup.classList.add('welcome-displayed'); // Marquer le message d'accueil comme affiché
             }
         }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
         chatIcon.style.display = 'none';
