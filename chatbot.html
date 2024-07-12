@@ -306,7 +306,10 @@
                 hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
                 displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
             }, 2000); // Ajouter une latence de 2 secondes
-        }  
+        }
+
+        // Appeler displayWelcomeMessage lorsque la page est chargée
+        window.addEventListener('load', displayWelcomeMessage); 
 
         // Fonction pour afficher un message dans le conteneur de messages
         function displayMessage(message, sender) {
