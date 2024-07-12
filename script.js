@@ -271,10 +271,10 @@ document.getElementById('expand-button').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     if (chatPopup.style.width === '650px') {
         chatPopup.style.width = '400px';
-        chatPopup.style.height = '60%';
+        chatPopup.style.height = '600px';
     } else {
         chatPopup.style.width = '650px';
-        chatPopup.style.height = '80%';
+        chatPopup.style.height = '87%';
     }
 });
 
