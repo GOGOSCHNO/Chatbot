@@ -247,6 +247,10 @@ function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
 
+document.querySelector('.nav-button[href="#chatbot"]').addEventListener('click', function() {
+    document.getElementById('chat-popup').classList.add('expanded');
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
