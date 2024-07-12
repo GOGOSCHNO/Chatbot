@@ -238,6 +238,7 @@ var welcomeMessageDisplayed = false; // Variable pour suivre si le message d'acc
 document.getElementById('chat-icon').addEventListener('click', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
+    var chatIframe = document.getElementById('chat-iframe'); // Ajoutez l'ID de votre iframe
     if (chatPopup.classList.contains('show')) {
         chatPopup.classList.remove('show');
         setTimeout(function() {
@@ -248,7 +249,7 @@ document.getElementById('chat-icon').addEventListener('click', function() {
         chatPopup.style.display = 'block';
         setTimeout(function() {
             chatPopup.classList.add('show');
-            displayWelcomeMessage(); // Appeler la fonction pour afficher le message d'accueil
+            chatIframe.src = chatIframe.src; // Recharge l'iframe pour déclencher l'affichage du message d'accueil
         }, 10); // Délai pour laisser le temps à l'élément de passer en display:block
         chatIcon.style.display = 'none';
     }
