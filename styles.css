@@ -7,17 +7,11 @@
     justify-content: center;
 }
 .article-container img {
+    padding-top: 80px;
     max-width: 60%;
     height: auto;
     display: block;
     margin: 0 auto;
-}
-/* Divider style */
-.section-divider {
-    height: 10px; /* Adjust the thickness of the divider */
-    background-color: #e0ff47; /* Match the theme color */
-    margin: 20px 0; /* Space around the divider */
-    border-radius: 2px; /* Rounded corners for the divider */
 }
 
 /* Additional Image */
@@ -29,7 +23,7 @@
     border-radius: 10px;
 }
 .additional-image img {
-    max-width: 65%;
+    max-width: 63%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -46,7 +40,7 @@
 }
 .new-images img {
     width: 100%; /* Utiliser la largeur complète du conteneur parent */
-    max-width: 1000px; /* Ajuster selon la taille désirée */
+    max-width: 63%; /* Ajuster selon la taille désirée */
     height: auto; /* Garder le ratio de l'image */
     display: block;
     margin: 0 auto; /* Centrer les images */
