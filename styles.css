@@ -1057,19 +1057,25 @@ body, html {
     .photo-item {
         flex: 1 1 100%; /* Un seul élément par ligne sur mobile */
     }
+    .carousel-container {
+        position: relative; /* Ensure this is relative to position buttons correctly */
+    }
+
     .carousel-button {
-        position: static;
-        transform: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         display: inline-block;
-        margin: 21%;
+        margin: 24%; /* Remove any margins to control spacing with positioning */
+        margin-top: 28%;
     }
 
     .carousel-button.prev {
-        order: 1;
+        left: 50px; /* Adjust to bring the arrow closer */
     }
 
     .carousel-button.next {
-        order: 2;
+        right: 50px; /* Adjust to bring the arrow closer */
     }
 
     .carousel-buttons-container {
