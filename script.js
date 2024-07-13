@@ -64,10 +64,6 @@ function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 }
 
-document.querySelector('.nav-button[href="#chatbot"]').addEventListener('click', function() {
-    document.getElementById('chat-popup').classList.add('expanded');
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
@@ -147,9 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Appeler cette fonction une fois lors du chargement de la page pour s'assurer que le chatbot est dimensionné correctement
     window.addEventListener('load', adjustChatbotHeight);
-
-    // Assurez-vous que displayWelcomeMessage est accessible globalement
-    window.displayWelcomeMessage = displayWelcomeMessage;
 });
 
 // Fonction pour enregistrer les clics sur les boutons de promotion
