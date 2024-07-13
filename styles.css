@@ -1056,6 +1056,26 @@ body, html {
     .photo-item {
         flex: 1 1 100%; /* Un seul élément par ligne sur mobile */
     }
+    .carousel-button {
+        position: static;
+        transform: none;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .carousel-button.prev {
+        order: 1;
+    }
+
+    .carousel-button.next {
+        order: 2;
+    }
+
+    .carousel-buttons-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 @media (min-width: 769px) {
