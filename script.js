@@ -95,6 +95,23 @@ function displayMessage(message, sender) {
 function scrollToBottom(container) {
     container.scrollTop = container.scrollHeight;
 }
+// Fonction effet pulsation pour le bouton assistant
+document.addEventListener('DOMContentLoaded', function() {
+    var assistantButton = document.querySelectorAll('a[href="#chatbot"]'); // Sélectionne tous les liens vers le chatbot
+    var chatIcon = document.getElementById('chat-icon');
+
+    assistantButton.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            chatIcon.classList.add('pulse'); // Ajoute la classe d'animation
+
+            // Supprime la classe d'animation après 1 seconde pour permettre de la réappliquer au prochain clic
+            setTimeout(function() {
+                chatIcon.classList.remove('pulse');
+            }, 1000);
+        });
+    });
+});
 
 // Fonction pour formater un message en HTML
 function formatMessage(text) {
