@@ -635,12 +635,13 @@ header > :last-child, footer > :last-child {
 }
 /* Effet de respiration pour l'image de l'icône */
 @keyframes breath {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.animate-breath {
+    animation: breath 1s ease-in-out;
 }
 
 #chat-icon-content img {
