@@ -1083,6 +1083,9 @@ body, html {
         justify-content: center;
         width: 100%;
     }
+    #expand-button {
+        display: none;
+    }
 }
 
 @media (min-width: 769px) {
