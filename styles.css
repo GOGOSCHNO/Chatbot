@@ -1,64 +1,32 @@
-/* Article Container */
-.article-container {
-    padding-top: 100px; /* Espace supérieur pour laisser un espace entre le header et l'image */
-    background-color: white; /* Fond blanc pour cette section */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.article-container img {
-    padding-top: 80px;
-    max-width: 60%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Additional Image */
-.additional-image {
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    padding: 0px 0; /* Espace autour de l'image */
-    border-radius: 10px;
-}
-.additional-image img {
-    max-width: 63%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-/* New Images */
-.new-images {
-    background-color: white; /* Fond blanc pour cette section */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espace entre les deux images */
-    padding: 20px 0; /* Espace autour des images */
-    flex-wrap: wrap; /* Permet aux images de passer à la ligne si l'espace est insuffisant */
-}
-.new-images img {
-    width: 100%; /* Utiliser la largeur complète du conteneur parent */
-    max-width: 63%; /* Ajuster selon la taille désirée */
-    height: auto; /* Garder le ratio de l'image */
-    display: block;
-    margin: 0 auto; /* Centrer les images */
-    border-radius: 10px; /* Ajouter des coins arrondis aux images */
-}
-/* Dégradé de fond pour le conteneur principal */
-.main-content {
-    padding: 20px;
-    flex-grow: 1; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
-    width: 100%;
+/* Styles généraux pour le corps et les éléments principaux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrer les éléments horizontalement */
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background: radial-gradient(ellipse, #2c9181, #164e45);
+    overflow: auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
+html, body {
+    overflow-x: hidden; /* Empêcher le défilement horizontal */
+}
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour le header */
 .header-logo {
     width: 100%;
-    padding: 10px 20px; /* Ajuster selon vos besoins */
+    padding: 10px 20px;
     background-color: #164e45;
     color: white;
     position: fixed;
@@ -71,6 +39,11 @@
     align-items: center;
 }
 
+.logo {
+    max-height: 70px;
+    margin-left: 20%; /* Ajustez la marge gauche pour le logo en pourcentage */
+}
+
 .header-content {
     display: flex;
     gap: 20px; /* Espacement entre les boutons */
@@ -78,6 +51,7 @@
     margin-right: auto;
     margin-left: auto;
 }
+
 .nav-button {
     color: white;
     padding: 10px 15px;
@@ -88,56 +62,12 @@
     font-weight: bold;
     transition: background-color 0.3s;
 }
+
 .nav-button:hover {
     background-color: #2c9181; /* Couleur de survol */
     border-radius: 5px;
 }
-/* Styles pour les sections de contenu */
-#article-container, #new-images, #chatbot {
-    padding-top: 60px; /* Ajuster pour éviter que le contenu soit masqué par le header */
-}
-#article-container {
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
 
-.logo {
-    max-height: 70px;
-    margin-left: 20%; /* Ajustez la marge gauche pour le logo en pourcentage */
-}
-
-.header-title {
-    background-color: none;
-    color: #f5f5f5;
-    width: 100%;
-    text-align: center;
-    padding: 60px 20px 20px; /* Espace supplémentaire pour éviter que le contenu soit masqué par le header */
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Pour centrer verticalement */
-    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
-}
-
-.header-title h1 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700; /* Assure une police en gras */
-    color: white;
-    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
-    font-size: 36px;
-}
-
-.description {
-    font-size: 28px;
-    font-weight: normal;
-    /* Vous pouvez également ajuster cette valeur pour augmenter l'espace au-dessus de la description */
-    margin-top: 10px; 
-}
 .orderNowButton {
     background-color: #2c9181; /* Couleur du bouton */
     color: white;
@@ -156,402 +86,7 @@
     background-color: #247165;
 }
 
-.title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Espacement entre l'image et le texte */
-    width: 90%; /* Ajuster pour centrer le contenu */
-    max-width: 1000px;
-    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
-}
-
-.title-image {
-    max-width: 400px; /* Ajustez la taille de l'image selon vos besoins */
-    height: auto;
-}
-
-.title-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligne le texte à gauche de l'image */
-    text-align: left; /* Assurez-vous que le texte est aligné à gauche */
-}
-
-/* Style pour les mots en couleur */
-.highlight {
-    color: #e0ff47;
-}
-
-footer {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #ffffff; /* Ou autre couleur de fond */
-    color: white;
-    text-align: center;
-    position: relative; /* Modifier si nécessaire selon la disposition du contenu */
-    bottom: 0;
-    left: 0;
-}
-
-footer img {
-    max-height: 650px; /* Ajuster selon la taille désirée */
-    margin-bottom: 10px;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* Organiser les enfants verticalement */
-    align-items: center; /* Centrer les éléments horizontalement */
-    height: auto; /* Laisser la hauteur s'ajuster au contenu */
-    min-height: 100vh; /* Assurer un minimum de hauteur pleine fenêtre */
-    background: radial-gradient(ellipse, #2c9181, #164e45); /* Dégradé de vert */
-    overflow: auto; /* Permettre le défilement vertical si le contenu dépasse */
-    padding-top: 40px; /* Ajuster selon la hauteur de l'en-tête */
-    padding-bottom: 60px;
-}
-#main-container {
-    background: none; /* Dégradé de vert */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-top: 20px; /* Ajout d'un peu d'espace au-dessus du chatbot */
-    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la largeur */
-}
-
-#chatbot {
-    width: 90%;
-    max-width: 900px;
-    min-height: 500px;
-    background-color: #164e45;
-    border: 2px solid #dedede;
-    border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 5px; /* Espace entre le header et le chatbot */
-    margin-bottom: 40px; /* Espacement entre le chatbot et les images */
-    transition: height 0.3s ease; /* Transition douce pour le changement de hauteur */
-}
-.question-buttons {
-    display: flex;
-    flex-direction: column; /* Aligner les boutons verticalement */
-    gap: 10px;
-    margin: 10px; /* Espace autour des boutons */
-    justify-content: flex-end; /* Alignement à droite */
-    position: absolute;
-    bottom: 20px; /* Distance depuis le bas */
-    right: 20px; /* Distance depuis la droite */
-}
-
-.question-button {
-    background-color: #2c9181;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Roboto Condensed', sans-serif;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    width: 300px; /* Ajuster la largeur selon vos besoins */
-}
-
-.question-button:hover {
-    background-color: #247165;
-}
-#messages {
-    flex: 8; /* Cela permet à #messages d'occuper 80% de l'espace disponible */
-    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
-    margin-bottom: 20px;
-    padding: 10px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: relative; /* Pour positionner les éléments en absolu à l'intérieur */
-}
-
-#userInput, #sendButton {
-    flex-grow: 0;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius: 4px;
-}
-
-#userInput {
-    flex: 2; /* Cela permet à l'input de prendre 10% de l'espace restant */
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-#sendButton {
-    flex: 0,5; /* Cela permet au bouton d'occuper les 10% de l'espace restant */
-    padding: 10px 20px;
-    background-color: #2c9181;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-/* Container pour userInput et sendButton pour les aligner horizontalement */
-.input-container {
-    display: flex;
-    justify-content: space-between; /* Cela sépare le champ de texte et le bouton */
-    align-items: center;
-    width: 100%; /* Cela prend la pleine largeur de #chatbot */
-}
-
-#sendButton:hover {
-    background-color: #0056b3; /* Assombrir le bouton au survol */
-}
-#extra-content {
-    display: flex;
-    justify-content: center; /* Centre les éléments horizontalement */
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-    gap: 20px; /* Espace entre les images */
-    margin-bottom: 40px; /* Ajout d'espace en dessous des images */
-    width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
-    max-width: 1000px;
-    box-sizing: border-box;
-}
-.typing-indicator {
-    display: flex;
-    justify-content: flex-start; /* Alignement à gauche */
-    align-items: center; /* Alignement vertical au centre */
-    height: 24px; /* Ajuste selon tes besoins */
-    font-size: 24px; /* Augmente la taille de la police pour rendre les points plus visibles */
-    margin-left: 10px; /* Ajouter une marge à gauche pour les espacer du bord */
-}
-
-.typing-indicator span {
-    animation: blink 1.4s infinite; /* Augmente la durée de l'animation pour un effet plus doux */
-    display: inline-block;
-    margin: 0 4px; /* Augmente l'espacement entre les points */
-}
-
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-.title-photo {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    color: #f5f5f5;
-}
-
-.title-photo h1, .title-photo p {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700; /* Assure une police en gras */
-    color: white;
-    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
-     padding-top: 10px
-}
-
-.photo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.carousel-container {
-    position: relative;
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.photo-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-.photo {
-    width: 100%;
-    max-width: 600px; /* Ajustez cette valeur en fonction de la taille souhaitée */
-    display: block;
-    margin: auto;
-    border-radius: 10px;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 24px; /* Adjust the size of the arrows */
-}
-
-.prev {
-    left: 30px; /* Adjusted to center the buttons more */
-}
-
-.next {
-    right: 30px; /* Adjusted to center the buttons more */
-}
-
-/* Ajouter un espace entre le nom et les étoiles */
-.rating {
-    font-size: 16px;
-    margin-left: 10px;
-    color: #FFD700; /* Couleur des étoiles */
-}
-
-/* Effet de brillance léger pour les étoiles */
-.shiny-stars {
-    position: relative;
-    display: inline-block;
-    animation: shine 2s infinite;
-    margin-left: 10px;
-}
-
-@keyframes shine {
-    0% {
-        color: #FFD700;
-        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
-    }
-    100% {
-        color: #FFD700;
-        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
-    }
-}
-.photo-item img {
-    width: 100%;
-    max-width: 400px; /* Ajustez cette valeur selon vos besoins */
-    height: auto;
-    border-radius: 10px; /* Coins arrondis pour l'image */
-}
-
-.title-photo1, .title-photo2, .title-photo3, .title-photo4 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    color: #f5f5f5;
-}
-
-.title-photo1 h1, .title-photo2 h1, .title-photo3 h1, .title-photo4 h1 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700; /* Assure une police en gras */
-    color: white;
-    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
-    font-size: 24px; /* Ajustez cette valeur selon vos besoins */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes blink {
-    0%, 80%, 100% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-    }
-}
-
-/* Importation des polices depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
-
-.image-response {
-    max-width: 100%;
-    height: auto;
-    margin: 10px auto;
-}
-
-.user, .bot {
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 10px;
-    color: #ffffff;
-}
-.bot {
-    color: #333; /* Couleur foncée pour le texte de l'assistant, remplacez selon vos besoins */
-    background-color: #ffffff; /* Arrière-plan blanc, vous pouvez omettre cette ligne si le fond est déjà blanc */
-    /* ... autres styles ... */
-}
-
-.user {
-    background-color: #164e45;
-    color: #333
-    align-self: flex-end;
-}
-.image-link {
-    flex: 1 1 30%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
-    max-width: 30%; /* Prend un tiers de l'espace disponible */
-    box-sizing: border-box; /* Inclut padding et border dans la largeur */
-    transition: transform 0.3s ease; /* Animation de la transformation */
-}
-
-.image-link img {
-    max-width: 100%; /* Assure que l'image ne dépasse pas son conteneur */
-    height: auto;
-    display: block; /* Supprime les espaces blancs autour des images */
-    border-radius: 10px; /* Arrondit les bords des images */
-}
-
-.image-link:hover {
-    transform: scale(1.1); /* Agrandit l'image de 10% au survol */
-}
-
-.image-link a {
-    display: block; /* Assure que le lien enveloppe complètement l'image */
-}
-.hidden {
-    display: none;
-}
-/* Réinitialiser les marges pour le body et les éléments de header/footer */
-body, h1, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Assurez-vous que le header et le footer collent au haut et au bas de la page */
-header, footer {
-    width: 100%;
-    /* ... autres styles ... */
-}
-
-/* Si vous avez des espaces dus aux premiers et derniers enfants du header ou du footer */
-header > :first-child, footer > :first-child {
-    margin-top: 0;
-}
-
-header > :last-child, footer > :last-child {
-    margin-bottom: 0;
-}
-/* Styles pour le bouton hamburger et le menu déroulant */
+/* Styles pour le menu déroulant et le bouton hamburger */
 .hamburger-menu {
     font-size: 30px;
     background: none;
@@ -586,33 +121,271 @@ header > :last-child, footer > :last-child {
     background-color: #2c9181;
 }
 
-/* Par défaut, afficher les images de bureau et masquer les images mobiles */
-.article-container .article-image {
-    display: block;
+/* Styles pour les sections de contenu */
+.article-container {
+    padding-top: 100px; /* Espace supérieur pour laisser un espace entre le header et l'image */
+    background-color: white; /* Fond blanc pour cette section */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
-.article-containermobile .article-imagemobile {
+.article-container img {
+    padding-top: 80px;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.article-containermobile {
+    display: block;
+    padding: 20px;
+    padding-top: 30px; /* Ajout d'espace au-dessus du chatbot */
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.article-containermobile img {
+    width: 100%;
+    height: auto;
+}
+.article-container .article-image {
     display: none;
 }
-.article-image {
-    width: 100%;
+.article-containermobile .article-imagemobile {
+    display: block;
+    width: 100%; /* Adapter la largeur à l'écran */
+    height: auto; /* Maintenir les proportions */
+}
+.section-divider {
+    height: 4px;
+    background-color: #164e45;
+    margin: 20px 0;
+    border-radius: 2px;
+}
+.additional-image {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding: 0px 0; /* Espace autour de l'image */
     border-radius: 10px;
 }
-@keyframes pulse {
+.additional-image img {
+    max-width: 63%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.additional-imagemobile {
+    display: none; /* Masquer l'image pour ordinateur sur mobile */
+}
+.additional-imagemobile {
+    display: block; /* Afficher les images pour mobile */
+    width: 100%;
+    height: auto;
+}
+
+/* Styles pour les images */
+.new-images {
+    background-color: white; /* Fond blanc pour cette section */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les deux images */
+    padding: 20px 0; /* Espace autour des images */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si l'espace est insuffisant */
+}
+.new-images img {
+    width: 100%; /* Utiliser la largeur complète du conteneur parent */
+    max-width: 63%; /* Ajuster selon la taille désirée */
+    height: auto; /* Garder le ratio de l'image */
+    display: block;
+    margin: 0 auto; /* Centrer les images */
+    border-radius: 10px; /* Ajouter des coins arrondis aux images */
+}
+.new-imagesmobile {
+    display: none;
+}
+.new-imagesmobile img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styles pour les avis, shipping, et garantie */
+.avis {
+    display: block; /* Afficher les images pour mobile */
+    width: 100%;
+    height: auto;
+}
+.shipping {
+    display: block; /* Afficher les images pour mobile */
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+}
+.guarantee {
+    display: block; /* Afficher les images pour mobile */
+    width: 100%;
+    height: auto;
+}
+
+/* Styles pour le carrousel */
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.photo-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.photo {
+    width: 100%;
+    max-width: 600px; /* Ajustez cette valeur en fonction de la taille souhaitée */
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 24px; /* Adjust the size of the arrows */
+}
+.prev {
+    left: 30px; /* Adjusted to center the buttons more */
+}
+.next {
+    right: 30px; /* Adjusted to center the buttons more */
+}
+.carousel-buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Styles pour les titres et la description */
+.title-photo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+.title-photo h1, .title-photo p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700; /* Assure une police en gras */
+    color: white;
+    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+    padding-top: 10px;
+}
+.title-photo1, .title-photo2, .title-photo3, .title-photo4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+.title-photo1 h1, .title-photo2 h1, .title-photo3 h1, .title-photo4 h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700; /* Assure une police en gras */
+    color: white;
+    margin-bottom: 10px; /* Ajustez cette valeur pour augmenter l'espace sous le titre */
+    font-size: 24px; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajouter un espace entre le nom et les étoiles */
+.rating {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #FFD700; /* Couleur des étoiles */
+}
+
+/* Effet de brillance léger pour les étoiles */
+.shiny-stars {
+    position: relative;
+    display: inline-block;
+    animation: shine 2s infinite;
+    margin-left: 10px;
+}
+
+@keyframes shine {
     0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
+        color: #FFD700;
+        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
     }
     100% {
-        transform: scale(1);
+        color: #FFD700;
+        text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 3px #FFD700;
     }
 }
 
-.pulse {
-    animation: pulse 1s infinite;
+/* Styles pour les images promotionnelles */
+.image-link {
+    flex: 1 1 30%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
+    max-width: 30%; /* Prend un tiers de l'espace disponible */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur */
+    transition: transform 0.3s ease; /* Animation de la transformation */
 }
+.image-link img {
+    max-width: 100%; /* Assure que l'image ne dépasse pas son conteneur */
+    height: auto;
+    display: block; /* Supprime les espaces blancs autour des images */
+    border-radius: 10px; /* Arrondit les bords des images */
+}
+.image-link:hover {
+    transform: scale(1.1); /* Agrandit l'image de 10% au survol */
+}
+.image-link a {
+    display: block; /* Assure que le lien enveloppe complètement l'image */
+}
+
+/* Styles pour le footer */
+footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffffff; /* Ou autre couleur de fond */
+    color: white;
+    text-align: center;
+    position: relative; /* Modifier si nécessaire selon la disposition du contenu */
+    bottom: 0;
+    left: 0;
+}
+
+footer img {
+    max-height: 650px; /* Ajuster selon la taille désirée */
+    margin-bottom: 10px;
+}
+
+/* Styles pour le pop-up du chatbot et l'icône */
 #chat-icon {
     position: fixed;
     bottom: 20px;
@@ -633,39 +406,31 @@ header > :last-child, footer > :last-child {
     font-family: 'Roboto', sans-serif; /* Appliquer la police Roboto */
     font-weight: 700; /* Mettre le texte en gras */
 }
-/* Effet de respiration pour l'image de l'icône */
-@keyframes breath {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.animate-breath {
-    animation: breath 1s ease-in-out;
-}
-
 #chat-icon-content img {
     width: 40px; /* Taille de l'icône */
     height: 40px; /* Taille de l'icône */
     margin-left: 10px; /* Espace entre le texte et l'icône */
     animation: breath 2s infinite;
 }
-
+@keyframes breath {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
 #chat-icon-content span {
     font-size: 16px; /* Taille de la police */
     color: white; /* Couleur du texte */
 }
-/* Agrandir le pop-up (image + texte) au survol */
 #chat-icon-content:hover {
     transform: scale(1.1);
     transition: transform 0.3s;
 }
-/* Agrandir le pop-up grandement au clic sur "Assistant" du header */
 #chat-icon-content.expanded {
     width: 300px;
     height: 400px;
     transition: width 0.3s ease, height 0.3s ease;
 }
+
 #chat-popup {
     position: fixed;
     bottom: 20px;
@@ -681,12 +446,14 @@ header > :last-child, footer > :last-child {
     opacity: 0;
     transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease; /* Ajoutez cette ligne */
 }
-
 #chat-popup.show {
     display: block;
     opacity: 1; /* Ajoutez cette ligne */
 }
-
+#chat-popup.expanded {
+    width: 600px;
+    height: 800px;
+}
 #chat-popup iframe {
     width: 100%;
     height: calc(100% - 100px); /* Ajusté pour tenir compte de l'en-tête et du logo */
@@ -705,7 +472,6 @@ header > :last-child, footer > :last-child {
     border-top-left-radius: 10px; /* Ajouter un rayon de bordure pour le coin supérieur gauche */
     border-top-right-radius: 10px; /* Ajouter un rayon de bordure pour le coin supérieur droit */
 }
-
 #expand-button {
     border: none;
     background: none;
@@ -714,7 +480,6 @@ header > :last-child, footer > :last-child {
     color: white;
     font-weight: 1000; /* Mettre le texte en gras */
 }
-
 #menu-button {
     color: white;
     border: none;
@@ -726,7 +491,6 @@ header > :last-child, footer > :last-child {
     margin-top: 0 px; /* Ajustez pour aligner verticalement */
     font-weight: 1000; /* Mettre le texte en gras */
 }
-
 #minimize-button {
     color: white;
     border: none;
@@ -751,13 +515,11 @@ header > :last-child, footer > :last-child {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1001;
 }
-
 #dropdown-menu p {
     margin: 0;
     padding: 10px;
     cursor: pointer;
 }
-
 #dropdown-menu p:hover {
     background-color: #f1f1f1;
 }
@@ -768,24 +530,20 @@ header > :last-child, footer > :last-child {
     padding: 10px;
     background-color: #164e45;
 }
-
 #chat-logo {
     width: 40px;
     height: 40px;
     margin-right: 10px;
     border-radius: 40%; /* Rendre le logo rond */
 }
-
 #chat-info-text {
     color: white;
 }
-
 #chat-info-text h1 {
     margin: 0;
     margin-left: 5px;
     font-size: 16px;
 }
-
 #chat-info-text p {
     margin-top: 3px;
     margin-left: 5px;
@@ -793,7 +551,6 @@ header > :last-child, footer > :last-child {
     display: flex;
     align-items: center;
 }
-
 #online-indicator {
     display: inline-block;
     width: 10px;
@@ -814,29 +571,21 @@ header > :last-child, footer > :last-child {
     }
 }
 
-#chat-popup.expanded {
-    width: 600px;
-    height: 800px;
-}
+/* Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
-body, html {
-    overflow-x: hidden; /* Pour éviter la barre de défilement horizontale */
-}
-
-/* Style mobile */
+/* Styles spécifiques pour les appareils mobiles */
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
         margin: 0;
         padding: 0;
     }
-
-    /* Ajouter un fond au-delà de la barre d'état */
     body {
         padding-top: env(safe-area-inset-top); /* Ajoute de l'espace pour la barre d'état sur les appareils avec encoche */
         background-color: #164e45; /* Couleur de fond pour le corps */
     }
-
     .header-logo {
         width: 100%;
         height: 60px; /* Hauteur fixe pour le header */
@@ -853,13 +602,11 @@ body, html {
         align-items: center; /* Aligner verticalement les éléments au centre */
         margin-top: 0; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
-
     .header-logo .logo {
         max-height: 40px; /* Ajuster la hauteur du logo selon vos besoins */
         margin-left: 0;
         margin-top: 0;
     }
-
     .header-logo .hamburger-menu {
         font-size: 30px;
         background: none;
@@ -869,11 +616,9 @@ body, html {
         display: block; /* Afficher le bouton hamburger sur mobile */
         margin-right: 10px; /* Ajuster la marge à droite */
     }
-
     .header-content {
         display: none; /* Masquer le contenu du header sur mobile */
     }
-
     .dropdown-menu {
         position: absolute;
         top: 60px;
@@ -883,34 +628,28 @@ body, html {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         z-index: 1000;
     }
-
     .dropdown-menu a {
         display: block;
         padding: 10px 20px;
         color: white;
         text-decoration: none;
     }
-
     .title-container {
         flex-direction: column;
         align-items: center;
         padding-top: 10px; /* Ajouter un padding supérieur pour éviter que le contenu soit masqué par le header */
     }
-
     .orderNowButton {
         margin-right: 0;
         margin-top: 0; /* Remettre la marge à zéro pour l'affichage côte à côte */
     }
-
     .header-title {
         padding: 10px; /* Réduit pour un meilleur ajustement sur les écrans mobiles */
         height: auto; /* Hauteur automatique pour s'adapter au contenu */
     }
-
     .header-title h1 {
         font-size: 20px; /* Ajuster la taille de la police pour correspondre à la nouvelle hauteur */
     }
-
     .description {
         font-size: 16px;
     }
@@ -920,7 +659,6 @@ body, html {
         margin: 20px 0;
         border-radius: 2px;
     }
-
     #chatbot {
         min-height: 100vh; /* Assurez-vous que le conteneur peut s'étendre sur toute la hauteur de l'écran */
         height: 100vh; /* S'étend sur toute la hauteur de l'écran */
@@ -929,29 +667,24 @@ body, html {
         flex-direction: column;
         overflow: auto; /* Permettre le défilement */
     }
-
     .input-container {
         flex-direction: column;
     }
-
     #userInput, #sendButton {
         width: 100%;
         margin: 5px 0;
     }
-
     #extra-content {
         width: 90%; /* Ajustez pour correspondre à la largeur du chatbot */
         justify-content: center; /* Centrer les images horizontalement */
         align-items: center; /* Centrer les images verticalement */
     }
-
     .image-link {
         flex: 1 1 100%; /* Les éléments peuvent grandir et rétrécir, avec une base de 30% */
         max-width: 100%; /* Prend un tiers de l'espace disponible */
         justify-content: center; /* Centrer les images horizontalement */
         align-items: center; /* Centrer les images verticalement */
     }
-
     #main-container {
         flex-grow: 1;
         overflow: auto; /* Permettre le défilement */
@@ -961,7 +694,6 @@ body, html {
         justify-content: center; /* Centrer les images horizontalement */
         align-items: center; /* Centrer les images verticalement */
     }
-
     .new-images {
         display: none;
     }
@@ -972,57 +704,39 @@ body, html {
         width: 100%;
         height: auto;
     }
-
     html, body {
         height: 100%;
         overflow-x: hidden; /* Empêche le défilement horizontal */
     }
-
     body {
         display: flex;
         flex-direction: column;
     }
-
     #messages {
         flex-grow: 1;
         overflow-y: auto; /* Permettre le défilement vertical */
     }
-
     /* Agrandir les images dans les conteneurs */
     #article-container img {
         width: 100%;
         height: auto;
     }
-
     #article-containermobile img {
         width: 100%;
         height: auto;
     }
-
     .new-images img {
         width: 100%;
         height: auto;
     }
-
     .article-container .article-image {
         display: none;
     }
-
     .article-containermobile .article-imagemobile {
         display: block;
         width: 100%; /* Adapter la largeur à l'écran */
         height: auto; /* Maintenir les proportions */
     }
-        #article-containermobile {
-        display: block;
-        padding: 20px;
-        padding-top: 30px; /* Ajout d'espace au-dessus du chatbot */
-        background-color: #f5f5f5;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
-
     .additional-image {
         display: none; /* Masquer l'image pour ordinateur sur mobile */
     }
@@ -1063,15 +777,12 @@ body, html {
         display: inline-block;
         margin: 10px;
     }
-
     .carousel-button.prev {
         order: 1;
     }
-
     .carousel-button.next {
         order: 2;
     }
-
     .carousel-buttons-container {
         display: flex;
         justify-content: center;
@@ -1096,20 +807,19 @@ body, html {
         display: block; /* Afficher l'image pour ordinateur */
     }
     .new-imagesmobile {
-    display: none;
+        display: none;
     }
     .avis {
-    display: none;
+        display: none;
     }
     .shipping {
-    display: none;
+        display: none;
     }
     .guarantee {
-    display: none;
+        display: none;
     }
     .photo-item {
         flex: 1 1 calc(50% - 40px); /* Deux éléments par ligne avec un espace de 20px de chaque côté */
         max-width: calc(50% - 40px);
     }
-    
 }
