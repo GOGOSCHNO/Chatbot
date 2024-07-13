@@ -95,17 +95,6 @@ function displayMessage(message, sender) {
 function scrollToBottom(container) {
     container.scrollTop = container.scrollHeight;
 }
-// Fonction effet pulsation pour le bouton assistant
-document.addEventListener('DOMContentLoaded', function() {
-    var chatIcon = document.getElementById('chat-icon');
-
-    function animateChatIcon() {
-        chatIcon.classList.add('animate-breath');
-        setTimeout(function() {
-            chatIcon.classList.remove('animate-breath');
-        }, 1000); // Durée de l'animation en millisecondes
-    }
-});
 
 // Fonction pour formater un message en HTML
 function formatMessage(text) {
