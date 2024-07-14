@@ -1111,7 +1111,7 @@ body, html {
     }
     #minimize-button {
         display: flex;
-        margin-right: 15px; /* Centrer horizontalement */
+        font-size: 40px; /* Augmente la taille de la police */
     }
     #logopura {
         display: block; /* Afficher sur les écrans de 768px de large ou moins */
