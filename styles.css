@@ -1086,7 +1086,7 @@ body, html {
     
     #chat-popup {
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 60px);
         bottom: 0;
         right: 0;
         border-radius: 0;
