@@ -305,15 +305,15 @@
         }
 
         // Fonction pour afficher le message d'accueil
-        function displayWelcomeMessage() {
-            const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
-            const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
+        //function displayWelcomeMessage() {
+            //const welcomeMessage = "Welcome! I'm Paul, your dedicated virtual assistant for Puravive. How can I help you on your weight loss journey today?";
+            //const typingIndicator = showTypingIndicator(); // Afficher l'indicateur de saisie
             
-            setTimeout(() => {
-                hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
-                displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
-            }, 2000); // Ajouter une latence de 2 secondes
-        }
+            //setTimeout(() => {
+                //hideTypingIndicator(typingIndicator); // Cacher l'indicateur de saisie
+                //displayMessage(welcomeMessage, 'assistant'); // Afficher le message d'accueil
+            //}, 2000); // Ajouter une latence de 2 secondes
+        //}
 
         // Appeler displayWelcomeMessage lorsque la page est chargée
         window.addEventListener('load', displayWelcomeMessage); 
