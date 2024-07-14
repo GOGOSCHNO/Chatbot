@@ -822,6 +822,9 @@ header > :last-child, footer > :last-child {
 body, html {
     overflow-x: hidden; /* Pour éviter la barre de défilement horizontale */
 }
+#logopura {
+    display: none; /* Masquer par défaut */
+}
 
 /* Style mobile */
 @media (max-width: 768px) {
@@ -1102,6 +1105,13 @@ body, html {
 
     #expand-button {
         display: none;
+    }
+    #logopura {
+        display: block; /* Afficher sur les écrans de 768px de large ou moins */
+        width: 40px; /* Ajustez selon vos besoins */
+        height: auto; /* Conserve le ratio de l'image */
+        margin-left: auto; /* Centrer horizontalement */
+        margin-right: auto; /* Centrer horizontalement */
     }
 }
 
