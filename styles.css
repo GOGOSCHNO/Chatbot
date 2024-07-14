@@ -1101,9 +1101,6 @@ body, html {
         height: 60px;
     }
 
-    #chat-info {
-        display: none; /* Masque la partie supérieure du chat pour gagner de l'espace */
-    }
     #expand-button {
         display: none;
     }
