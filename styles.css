@@ -1106,6 +1106,13 @@ body, html {
     #expand-button {
         display: none;
     }
+    #menu-button {
+        display: none;
+    }
+    #minimize-button {
+        display: flex;
+        margin-right: 15px; /* Centrer horizontalement */
+    }
     #logopura {
         display: block; /* Afficher sur les écrans de 768px de large ou moins */
         width: 140px; /* Ajustez selon vos besoins */
