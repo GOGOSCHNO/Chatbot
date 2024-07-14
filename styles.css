@@ -1108,9 +1108,9 @@ body, html {
     }
     #logopura {
         display: block; /* Afficher sur les écrans de 768px de large ou moins */
-        width: 40px; /* Ajustez selon vos besoins */
+        width: 140px; /* Ajustez selon vos besoins */
         height: auto; /* Conserve le ratio de l'image */
-        margin-left: auto; /* Centrer horizontalement */
+        margin-left: 10px; /* Centrer horizontalement */
         margin-right: auto; /* Centrer horizontalement */
     }
 }
