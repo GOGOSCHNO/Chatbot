@@ -385,8 +385,12 @@
             const indicator = document.createElement('div');
             indicator.className = 'typing-indicator';
             indicator.innerHTML = '<img src="https://raw.githubusercontent.com/GOGOSCHNO/Chatbot/master/coacha.PNG" alt="Assistant Icon"><span class="dot"></span><span class="dot"></span><span class="dot"></span>';
-            container.appendChild(indicator);
-            scrollToBottom(container);
+        
+            setTimeout(() => {
+                container.appendChild(indicator);
+                scrollToBottom(container);
+            }, 1500); // Ajouter une latence de 1.5 secondes
+        
             return indicator;
         }
 
